@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{7814257E-2DD3-4EF0-AD92-047E3CEB133D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProyectoGrupo2/IDescarga.cs">
+    <Files>
+      <File FileName="ProyectoGrupo2/Program.cs" Line="13" Column="1" />
+      <File FileName="ProyectoGrupo2/User.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/PersilUser.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/Video.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/PlaylistVideoEmptyClass.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/BusquedaClass.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/CancionClass.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/PlaylistSpotifai.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/AbsMaster.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/IDescarga.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProyectoGrupo2" expanded="True">
+            <Node name="ProyectoGrupo2" expanded="True">
+              <Node name="IDescarga.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ProyectoGrupo2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
