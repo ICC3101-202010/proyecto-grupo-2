@@ -41,6 +41,9 @@
     <Compile Include="PlaylistSpotifai.cs" />
     <Compile Include="AbsMaster.cs" />
     <Compile Include="IDescarga.cs" />
+    <Compile Include="Director.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Reproductor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

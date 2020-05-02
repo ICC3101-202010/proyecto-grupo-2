@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{7814257E-2DD3-4EF0-AD92-047E3CEB133D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProyectoGrupo2/IDescarga.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProyectoGrupo2/Reproductor.cs">
     <Files>
       <File FileName="ProyectoGrupo2/Program.cs" Line="13" Column="1" />
       <File FileName="ProyectoGrupo2/User.cs" Line="1" Column="1" />
@@ -10,14 +10,17 @@
       <File FileName="ProyectoGrupo2/CancionClass.cs" Line="1" Column="1" />
       <File FileName="ProyectoGrupo2/PlaylistSpotifai.cs" Line="1" Column="1" />
       <File FileName="ProyectoGrupo2/AbsMaster.cs" Line="1" Column="1" />
-      <File FileName="ProyectoGrupo2/IDescarga.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/IDescarga.cs" Line="8" Column="1" />
+      <File FileName="ProyectoGrupo2/Director.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/Person.cs" Line="1" Column="1" />
+      <File FileName="ProyectoGrupo2/Reproductor.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ProyectoGrupo2" expanded="True">
             <Node name="ProyectoGrupo2" expanded="True">
-              <Node name="IDescarga.cs" selected="True" />
+              <Node name="Reproductor.cs" selected="True" />
             </Node>
           </Node>
         </State>
