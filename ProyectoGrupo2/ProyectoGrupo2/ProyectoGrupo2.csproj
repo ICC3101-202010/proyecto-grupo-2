@@ -44,6 +44,12 @@
     <Compile Include="Director.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Reproductor.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="RegisterEventArgs.cs" />
+    <Compile Include="DataBase.cs" />
+    <Compile Include="ChangePasswordEventArgs.cs" />
+    <Compile Include="MailSender.cs" />
+    <Compile Include="SMSSender.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

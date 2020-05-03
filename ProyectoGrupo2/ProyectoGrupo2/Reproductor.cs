@@ -1,10 +1,14 @@
 ﻿using System;
-namespace ProyectoGrupo2
-{
-    public class Reproductor
-    {
-        public Reproductor()
-        {
-        }
-    }
-}
+using System.Collections.Generic;
+using System.Linq;
+
+
+
+
+
+
+
+
+
+
+
