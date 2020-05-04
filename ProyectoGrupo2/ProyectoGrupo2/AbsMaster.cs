@@ -3,7 +3,7 @@ namespace ProyectoGrupo2
 {
     public class AbsMaster
     {
-        public AbsMaster()
+        public AbsMaster() // Alvarin
         {
         }
     }
