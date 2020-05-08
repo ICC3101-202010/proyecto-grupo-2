@@ -1,0 +1,18 @@
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/bin/Debug/ProyectoGrupo2.exe
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/bin/Debug/ProyectoGrupo2.pdb
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.csprojAssemblyReference.cache
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.csproj.CoreCompileInputs.cache
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.exe
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.pdb
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/proyecto mati/ProyectoGrupo2/bin/Debug/ProyectoGrupo2.exe
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/proyecto mati/ProyectoGrupo2/bin/Debug/ProyectoGrupo2.pdb
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/proyecto mati/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.csprojAssemblyReference.cache
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/proyecto mati/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.csproj.CoreCompileInputs.cache
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/proyecto mati/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.exe
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/proyecto mati/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.pdb
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/bin/Debug/ProyectoGrupo2.exe
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/bin/Debug/ProyectoGrupo2.pdb
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.csprojAssemblyReference.cache
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.csproj.CoreCompileInputs.cache
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.exe
+/Users/matiascornejolazcano/Desktop/proyecto-grupo-2/proyecto-grupo-2/ProyectoGrupo2/ProyectoGrupo2/obj/Debug/ProyectoGrupo2.pdb
