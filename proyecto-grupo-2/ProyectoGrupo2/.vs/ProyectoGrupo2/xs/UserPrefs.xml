@@ -1,11 +1,37 @@
 ﻿<Properties StartupConfiguration="{7814257E-2DD3-4EF0-AD92-047E3CEB133D}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProyectoGrupo2/Person.cs">
+    <Files>
+      <File FileName="ProyectoGrupo2/DataBase.cs" Line="26" Column="14" IsPinned="True" />
+      <File FileName="ProyectoGrupo2/Server.cs" Line="9" Column="18" IsPinned="True" />
+      <File FileName="ProyectoGrupo2/SMSSender.cs" Line="9" Column="18" />
+      <File FileName="ProyectoGrupo2/Login.cs" Line="4" Column="18" />
+      <File FileName="ProyectoGrupo2/RegisterEventArgs.cs" Line="14" Column="1" />
+      <File FileName="ProyectoGrupo2/SongClass.cs" Line="32" Column="1" />
+      <File FileName="ProyectoGrupo2/PrintAndReceive.cs" Line="4" Column="18" />
+      <File FileName="ProyectoGrupo2/Person.cs" Line="4" Column="18" />
+      <File FileName="ProyectoGrupo2/User.cs" Line="28" Column="13" NotebookId="1" />
+      <File FileName="ProyectoGrupo2/ProfilelUser.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="ProyectoGrupo2/Program.cs" Line="54" Column="45" NotebookId="1" />
+    </Files>
     <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProyectoGrupo2" expanded="True">
+            <Node name="ProyectoGrupo2" expanded="True">
+              <Node name="Person.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
       <Pad Id="ClassPad">
         <State name="__root__">
-          <Node name="ProyectoGrupo2" expanded="True" selected="True">
+          <Node name="ProyectoGrupo2" expanded="True">
             <Node name="ProyectoGrupo2" expanded="True">
               <Node name="References" expanded="True" />
+              <Node name="Lab5Poo" expanded="True" />
+              <Node name="ProyectoGrupo2" expanded="True">
+                <Node name="ProyectoGrupo2.Person" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

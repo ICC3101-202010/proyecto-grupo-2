@@ -12,10 +12,8 @@ namespace ProyectoGrupo2
         private string paymentInfo;
         private string plan;
         private DateTime registrationDate;
-        private List<ProfilelUser> profiles;
 
-   
-        public User(string name, int age, string lastname, string gender, string nationality, string occupation, string mail, string paymentInfo, string plan, DateTime registrationDate, List<ProfilelUser> profiles)
+        public User(string name, int age, string lastname, string gender, string nationality, string occupation, string mail, string paymentInfo, string plan, DateTime registrationDate)
         {
             this.Name = name;
             this.Age = age;
@@ -27,7 +25,11 @@ namespace ProyectoGrupo2
             this.PaymentInfo = paymentInfo;
             this.Plan = plan;
             this.RegistrationDate = registrationDate;
-            this.Profiles = profiles;
+            
+        }
+
+        public User()
+        {
         }
 
         public int EmailVerified { get; internal set; }
@@ -35,7 +37,7 @@ namespace ProyectoGrupo2
         public string PaymentInfo { get => paymentInfo; set => paymentInfo = value; }
         public string Plan { get => plan; set => plan = value; }
         public DateTime RegistrationDate { get => registrationDate; set => registrationDate = value; }
-        public List<ProfilelUser> Profiles { get => profiles; set => profiles = value; }
+        
 
 
         public delegate void EmailVerifiEventHandler(object source, EventArgs args);

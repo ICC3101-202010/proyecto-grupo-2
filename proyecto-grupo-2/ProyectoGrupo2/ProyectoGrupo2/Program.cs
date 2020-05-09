@@ -5,7 +5,7 @@ using ProyectoGrupo2;
 
 namespace Lab5Poo
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -50,6 +50,95 @@ namespace Lab5Poo
                     case "LogIn":
                         Console.Clear();
                         server.InicioSecion();
+
+                        int x = 2;//hacer que esto sea dependiento de su plan
+                        if (x == 2)
+                        {
+                            Console.WriteLine("BIENVENIDO A SPOTFLIX");
+                            Console.WriteLine("1)Mi musica");
+                            Console.WriteLine("2)Playlist musica");//
+                            Console.WriteLine("3)playlis video");
+                            Console.WriteLine("4)");
+                            Console.WriteLine("5)");
+                           
+                            Console.WriteLine("6)ajustes");
+                            Console.WriteLine("7)salir");
+                            int ma;
+
+                            ma = int.Parse(Console.ReadLine());
+
+                           
+
+                            if (ma == 1) { }
+                            if (ma == 2)
+                            {
+                                Console.WriteLine("1)Mis Playlist");
+                                Console.WriteLine("2)Crear nueva Playlist");
+                                Console.WriteLine("3)Eliminar playlist");
+                                int me;
+                                me = int.Parse(Console.ReadLine());
+
+                                if (me == 1)
+                                {
+                                    //agregar metodo mostrar playlist
+                                }
+                                if (me == 2)
+                                {
+                                    //agregar metodo Crear Playlis
+                                }
+                                if (me == 3)
+                                {
+                                    //agregar metodo Eliminar playlist
+                                }
+                            }
+                            if (ma == 3)
+                            {
+                                Console.WriteLine("1)Mis Playlist");
+                                Console.WriteLine("2)Crear nueva Playlist");
+                                Console.WriteLine("3)Eliminar playlist");
+                                int me;
+                                me = int.Parse(Console.ReadLine());
+
+                                if (me == 1)
+                                {
+                                    //agregar metodo mostrar playlist
+                                }
+                                if (me == 2)
+                                {
+                                    //agregar metodo Crear Playlis
+                                }
+                                if (me == 3)
+                                {
+                                    //agregar metodo Eliminar playlist
+                                }
+                            }
+
+                            //completar dependiento de metodos
+                            if (ma == 4) { }
+                            if (ma == 5) { }
+                            if (ma==6)
+                            {
+                                Console.WriteLine("1)Cambiar contraseña");//funcionando
+                                int me;
+                                me = int.Parse(Console.ReadLine());
+                                if (me == 1)
+                                {
+                                    server.ChangePassword();
+                                    Console.WriteLine("Contraseña cambiada con exito\n");
+                                    Console.WriteLine("secion cerrada, para continuar ingrese nuevamente");
+                                    break;
+                                }
+                                
+
+                                        
+
+                            }
+                            if (ma==7)
+                            {
+                                break;
+                            }
+
+                        }
                         break;
 
 

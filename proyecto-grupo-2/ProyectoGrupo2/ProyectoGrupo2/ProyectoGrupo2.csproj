@@ -55,6 +55,7 @@
     <Compile Include="Properties\Player.cs" />
     <Compile Include="Actor.cs" />
     <Compile Include="Album.cs" />
+    <Compile Include="ProfilelUser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
