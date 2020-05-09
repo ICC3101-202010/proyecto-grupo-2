@@ -1,0 +1,62 @@
+﻿<Properties StartupConfiguration="{7814257E-2DD3-4EF0-AD92-047E3CEB133D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Login.cs">
+    <Files>
+      <File FileName="Program.cs" Line="8" Column="11" IsPinned="True" />
+      <File FileName="Person.cs" Line="5" Column="18" IsPinned="True" />
+      <File FileName="Actor.cs" Line="31" Column="1" IsPinned="True" />
+      <File FileName="Properties/Singer.cs" Line="42" Column="1" IsPinned="True" />
+      <File FileName="Director.cs" Line="27" Column="1" IsPinned="True" />
+      <File FileName="User.cs" Line="16" Column="30" IsPinned="True" />
+      <File FileName="PlaylistVideoEmptyClass.cs" Line="4" Column="18" />
+      <File FileName="PrintAndReceive.cs" Line="1" Column="1" />
+      <File FileName="Video.cs" Line="2" Column="1" />
+      <File FileName="SMSSender.cs" Line="9" Column="18" />
+      <File FileName="AbsMaster.cs" Line="5" Column="18" />
+      <File FileName="ChangePasswordEventArgs.cs" Line="11" Column="6" />
+      <File FileName="DataBase.cs" Line="9" Column="18" />
+      <File FileName="PlaylistSpotifai.cs" Line="4" Column="18" />
+      <File FileName="RegisterEventArgs.cs" Line="6" Column="18" />
+      <File FileName="Server.cs" Line="12" Column="30" />
+      <File FileName="Properties/DataBase.cs" />
+      <File FileName="Properties/Player.cs" />
+      <File FileName="MailSender.cs" Line="1" Column="1" />
+      <File FileName="Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="Album.cs" Line="1" Column="1" />
+      <File FileName="SearchClass.cs" Line="4" Column="18" />
+      <File FileName="SongClass.cs" Line="37" Column="1" />
+      <File FileName="ProfilelUser.cs" Line="1" Column="1" />
+      <File FileName="Login.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProyectoGrupo2" expanded="True">
+            <Node name="ProyectoGrupo2" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="Login.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="ProyectoGrupo2" expanded="True">
+            <Node name="ProyectoGrupo2" expanded="True">
+              <Node name="Lab5Poo" expanded="True" />
+              <Node name="ProyectoGrupo2" expanded="True">
+                <Node name="ProyectoGrupo2.BusquedaClass" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ProyectoGrupo2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

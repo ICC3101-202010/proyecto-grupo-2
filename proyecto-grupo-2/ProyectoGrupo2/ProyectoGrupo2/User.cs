@@ -1,43 +1,59 @@
 ﻿using System;
 using System.Threading;
+using System.Collections.Generic;
 
-namespace Lab5Poo
+namespace ProyectoGrupo2
 
 {
 
-    public class User //(2)
+    public class User:Person
     {
+        private string mail;
+        private string paymentInfo;
+        private string plan;
+        private DateTime registrationDate;
+        private List<ProfilelUser> profiles;
+
+   
+        public User(string name, int age, string lastname, string gender, string nationality, string occupation, string mail, string paymentInfo, string plan, DateTime registrationDate, List<ProfilelUser> profiles)
+        {
+            this.Name = name;
+            this.Age = age;
+            this.Lastname = lastname;
+            this.Gender = gender;
+            this.Nationality = nationality;
+            this.Occupation = occupation;
+            this.Mail = mail;
+            this.PaymentInfo = paymentInfo;
+            this.Plan = plan;
+            this.RegistrationDate = registrationDate;
+            this.Profiles = profiles;
+        }
+
         public int EmailVerified { get; internal set; }
+        public string Mail { get => mail; set => mail = value; }
+        public string PaymentInfo { get => paymentInfo; set => paymentInfo = value; }
+        public string Plan { get => plan; set => plan = value; }
+        public DateTime RegistrationDate { get => registrationDate; set => registrationDate = value; }
+        public List<ProfilelUser> Profiles { get => profiles; set => profiles = value; }
 
 
-        //aqui creare el evento de EmailVerified
-
-        // Paso 1: Creamos el delegate para el evento de verificar mail
         public delegate void EmailVerifiEventHandler(object source, EventArgs args);
-        // Paso 2: Creamos el evento que se engatilla cuando el usuario se registra
+        
         public event EmailVerifiEventHandler EmailVerifi;
 
         protected virtual void OnEmailVerified(User user, EventArgs args)
         {
-            OnEmailVerified(this, new EventArgs());  //lanza el evento despues del correo de confirmacion
+            OnEmailVerified(this, new EventArgs());  
 
         }
-        //crearemos el metodo
-
-
-
-        public void OnEmailSent(object source, EventArgs args)  //este solamente es lanzado cuando el usuario se registra correctamente y se coloca en mailsender despues de que se registro correctamente
-
-
-
-
+        
+        public void OnEmailSent(object source, EventArgs args)
         {
 
             Console.WriteLine("¿Desea verificar el correo ?\n\n");
             Console.WriteLine("1) SI");
-
             Console.WriteLine("2)NO");
-
             string a = Console.ReadLine();
             int num = Convert.ToInt32(a);
             if (num == 1)
