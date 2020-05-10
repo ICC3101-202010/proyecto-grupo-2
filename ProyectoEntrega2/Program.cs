@@ -46,6 +46,10 @@ namespace ProyectoGrupo2
                     case "Registrarse":
                         Console.Clear();
                         server.Register();
+                        if (user.Plan == "1")
+                        {
+                            user.AddProfile();
+                        }//Perfil agregado
                         break;
 
 
@@ -55,12 +59,13 @@ namespace ProyectoGrupo2
                         server.InicioSecion();
                         string plan = Console.ReadLine();
                         user.Plan = plan;
-                        Console.WriteLine(user.Plan);
-                        if (  user.Plan == "1")
-                        {
-                            Console.WriteLine("ASDASDASD");
 
-                        }
+                        Console.WriteLine(user.Plan);
+
+                        if (  user.Plan == "1") // ESTO SE TIENE QUE ARREGLAR
+                        {
+                            printAndReceive.BasicPlan();
+                        } 
 
 
 

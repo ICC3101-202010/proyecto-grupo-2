@@ -80,7 +80,7 @@ namespace ProyectoGrupo2
 
         }
 
-        public void AgregarPerfil()
+        public void AddProfile()
         {
             Console.WriteLine("ds2s2");
         }
