@@ -14,7 +14,6 @@ namespace ProyectoGrupo2
             Console.WriteLine("3)playlis video");
             Console.WriteLine("4)Buscar Musica");
             Console.WriteLine("5)Buscar Video");
-
             Console.WriteLine("6)ajustes");
             Console.WriteLine("7)salir");
         }
@@ -61,6 +60,20 @@ namespace ProyectoGrupo2
         public void PrintMenu7()
         {
             Console.WriteLine("Gracias , volvera al menu de inicio");
+
+        }
+        public void BasicPlan()
+        {
+            Console.WriteLine("Usted tiene un plan basico");
+            Console.WriteLine("Cual es su nombre?");
+            string name = Console.ReadLine();
+            Console.WriteLine("Preferencias de actores: "); // Se va guardando en cada perfil. Respectivamente
+            string actores = Console.ReadLine();
+            Console.WriteLine("Preferencias de directores: "); // Se va guardando en cada perfil. Respectivamente
+            string director = Console.ReadLine();
+            Console.WriteLine("Preferencias de cantantes: "); // Se va guardando en cada perfil. Respectivamente
+            string cantante = Console.ReadLine(); // Mas adelante se tendra que implementar por opciones.
+
 
         }
 

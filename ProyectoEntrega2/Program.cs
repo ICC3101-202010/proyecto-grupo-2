@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 namespace ProyectoGrupo2
 {
@@ -52,9 +53,12 @@ namespace ProyectoGrupo2
                         Console.Clear();
                         server.InicioSecion();
 
+                       
+
 
 
                         int x = 2;//hacer que esto sea dependiento de su plan
+
                         if (x == 2)
                         {
                             printAndReceive.PrintMenuPrincipal();
