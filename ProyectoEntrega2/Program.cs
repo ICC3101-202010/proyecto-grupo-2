@@ -17,6 +17,7 @@ namespace ProyectoGrupo2
 
             User user = new User();  //creamos el objeto de la nueva clase
             PrintAndReceive printAndReceive = new PrintAndReceive();
+            
 
 
 
@@ -52,8 +53,15 @@ namespace ProyectoGrupo2
                     case "LogIn":
                         Console.Clear();
                         server.InicioSecion();
+                        string plan = Console.ReadLine();
+                        user.Plan = plan;
+                        Console.WriteLine(user.Plan);
+                        if (  user.Plan == "1")
+                        {
+                            Console.WriteLine("ASDASDASD");
 
-                       
+                        }
+
 
 
 
