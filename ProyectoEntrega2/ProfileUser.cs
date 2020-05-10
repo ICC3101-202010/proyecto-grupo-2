@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using ProyectoEntrega2;
 
 namespace ProyectoGrupo2
 {
@@ -15,13 +14,13 @@ namespace ProyectoGrupo2
         private List<Singer> followedSingers;
         private List<Actor> followedActors;
         private List<Director> followedDirectors;
-        private List<Disk> followedDisk;
+        private List<Album> followedDisk;
         private List<SongClass> downloadsSongs;
         private List<SongClass> likesSongs;
         private List<Video> likesVideos;
         private string profileType;
 
-        public ProfilelUser(List<ProfilelUser> followers, List<PlaylistVideoEmptyClass> followedPlaylistVideo, List<PlaylistSpotifai> followedPlaylistSongs, List<ProfilelUser> followedProfile, List<Singer> followedSingers, List<Actor> followedActors, List<Director> followedDirectors, List<Disk> followedDisk, List<SongClass> downloadsSongs, List<SongClass> likesSongs, List<Video> likesVideos, string profileType)
+        public ProfilelUser(List<ProfilelUser> followers, List<PlaylistVideoEmptyClass> followedPlaylistVideo, List<PlaylistSpotifai> followedPlaylistSongs, List<ProfilelUser> followedProfile, List<Singer> followedSingers, List<Actor> followedActors, List<Director> followedDirectors, List<Album> followedDisk, List<SongClass> downloadsSongs, List<SongClass> likesSongs, List<Video> likesVideos, string profileType)
         {
             this.Followers = followers;
             this.FollowedPlaylistVideo = followedPlaylistVideo;
@@ -43,7 +42,7 @@ namespace ProyectoGrupo2
         public List<Singer> FollowedSingers { get => followedSingers; set => followedSingers = value; }
         public List<Actor> FollowedActors { get => followedActors; set => followedActors = value; }
         public List<Director> FollowedDirectors { get => followedDirectors; set => followedDirectors = value; }
-        public List<Disk> FollowedDisk { get => followedDisk; set => followedDisk = value; }
+        public List<Album> FollowedDisk { get => followedDisk; set => followedDisk = value; }
         public List<SongClass> DownloadsSongs { get => downloadsSongs; set => downloadsSongs = value; }
         public List<SongClass> LikesSongs { get => likesSongs; set => likesSongs = value; }
         public List<Video> LikesVideos { get => likesVideos; set => likesVideos = value; }

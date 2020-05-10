@@ -21,7 +21,7 @@ namespace ProyectoGrupo2
             if (Registered != null)
             {
                 // Engatilla el evento
-                Registered(this, new RegisterEventArgs() { VerificationLink = verificationlink, Password = password, Username = username, Email = email, Plan = plan, InfoPago = infopago });
+                Registered(this, new RegisterEventArgs() { VerificationLink = verificationlink, Password = password, Username = username, Email = email, Plan = plan, InfoPayment = infopago });
 
             }
         }
