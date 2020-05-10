@@ -8,7 +8,8 @@ namespace ProyectoGrupo2
         //ALVARO NUEVa
         private string nameAlbum;
         private string gender;
-        private string producer;
+        private string producer;  
+         
         private List<SongClass> listSongs;
         private Singer singer;
         private DateTime publicationDate;
