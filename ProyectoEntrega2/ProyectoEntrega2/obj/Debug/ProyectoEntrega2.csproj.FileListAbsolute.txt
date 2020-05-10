@@ -1,0 +1,11 @@
+/Users/matiascornejolazcano/Desktop/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.csprojAssemblyReference.cache
+/Users/matiascornejolazcano/Desktop/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.csproj.CoreCompileInputs.cache
+/Users/matiascornejolazcano/Desktop/entrega2/ProyectoEntrega2/ProyectoEntrega2/bin/Debug/ProyectoEntrega2.exe
+/Users/matiascornejolazcano/Desktop/entrega2/ProyectoEntrega2/ProyectoEntrega2/bin/Debug/ProyectoEntrega2.pdb
+/Users/matiascornejolazcano/Desktop/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.exe
+/Users/matiascornejolazcano/Desktop/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.pdb
+/Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/bin/Debug/ProyectoEntrega2.exe
+/Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/bin/Debug/ProyectoEntrega2.pdb
+/Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.csprojAssemblyReference.cache
+/Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.exe
+/Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.pdb

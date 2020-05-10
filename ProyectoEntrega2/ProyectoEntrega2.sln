@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoEntrega2", "ProyectoEntrega2\ProyectoEntrega2.csproj", "{EE8901EE-4110-4C4B-85F6-9358493D914D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE8901EE-4110-4C4B-85F6-9358493D914D}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{EE8901EE-4110-4C4B-85F6-9358493D914D}.Debug|anycpu.Build.0 = Debug|anycpu
+		{EE8901EE-4110-4C4B-85F6-9358493D914D}.Release|anycpu.ActiveCfg = Release|anycpu
+		{EE8901EE-4110-4C4B-85F6-9358493D914D}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
