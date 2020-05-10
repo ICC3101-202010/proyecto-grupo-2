@@ -5,7 +5,7 @@ namespace ProyectoGrupo2
 {
     public class Album
     {
-        //ALVARO NUEVO
+        //ALVARO NUEVi
         private string nameAlbum;
         private string gender;
         private string producer;  
