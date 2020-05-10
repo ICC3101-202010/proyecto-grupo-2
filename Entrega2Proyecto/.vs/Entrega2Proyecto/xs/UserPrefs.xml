@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{EC8193C9-FC63-4885-B7E3-34AD0517F948}|Default">
+  <MonoDevelop.Ide.ItemProperties.Entrega2Proyecto FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entrega2Proyecto/.gitignore">
+    <Files>
+      <File FileName="Entrega2Proyecto/Program.cs" Line="1" Column="1" />
+      <File FileName="Entrega2Proyecto/.gitignore" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Entrega2Proyecto" expanded="True">
+            <Node name="Entrega2Proyecto" expanded="True">
+              <Node name=".gitignore" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
