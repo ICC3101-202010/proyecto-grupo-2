@@ -9,3 +9,7 @@
 /Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.csprojAssemblyReference.cache
 /Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.exe
 /Users/antoocb/Downloads/entrega2/ProyectoEntrega2/ProyectoEntrega2/obj/Debug/ProyectoEntrega2.pdb
+C:\Users\alvar\Desktop\proyecto-grupo-2\ProyectoEntrega2\ProyectoEntrega2\obj\Debug\ProyectoEntrega2.csprojAssemblyReference.cache
+C:\Users\alvar\Desktop\proyecto-grupo-2\ProyectoEntrega2\ProyectoEntrega2\obj\Debug\ProyectoEntrega2.csproj.CoreCompileInputs.cache
+C:\Users\alvar\Desktop\proyecto-grupo-2\ProyectoEntrega2\ProyectoEntrega2\obj\Debug\ProyectoEntrega2.exe
+C:\Users\alvar\Desktop\proyecto-grupo-2\ProyectoEntrega2\ProyectoEntrega2\obj\Debug\ProyectoEntrega2.pdb
