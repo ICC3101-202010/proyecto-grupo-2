@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ProyectoGrupo2
 {
-
+    //hola gente
     public class AbsMaster
     {
         private string gender;
