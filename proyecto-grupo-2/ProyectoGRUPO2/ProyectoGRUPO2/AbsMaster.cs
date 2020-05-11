@@ -4,6 +4,7 @@ using System.Threading;
 namespace ProyectoGRUPO2
 {
     //hola gente
+    //11 de mayo
     public class AbsMaster //PROBANDO NUEVAMENTE - ALVARO
     {
         private string gender;
