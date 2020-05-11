@@ -39,7 +39,7 @@
     <Compile Include="ChangePasswordEventArgs.cs" />
     <Compile Include="ClaseAgregada.cs" />
     <Compile Include="DataBase.cs" />
-    <Compile Include="Directo.cs" />
+    <Compile Include="Director.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MailSender.cs" />
     <Compile Include="MediaPlayer.cs" />

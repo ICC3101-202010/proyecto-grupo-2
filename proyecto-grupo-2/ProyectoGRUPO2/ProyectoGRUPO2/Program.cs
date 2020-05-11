@@ -389,14 +389,30 @@ namespace ProyectoGRUPO2
         //------------ IMPORTAR CANCION ----------------------------------------------
         static public void AddSong(List<SongClass> cancion)
         {
-            Console.Write("Nombre: ");
-            string name = Console.ReadLine();
+            Console.Write("Titulo de la cancion: ");
+            string title = Console.ReadLine();
             Console.Write("Cantante: ");
-            string lastName = Console.ReadLine();
+            string singer = Console.ReadLine();
             Console.Write("Año publicacion: ");
-            int age = int.Parse(Console.ReadLine());
-            // Arreglar despues.
-            //cancion.Add(new SongClass(name, lastName, age));
+            string publicationYear = Console.ReadLine();
+            Console.Write("Genero de la cancion: ");
+            string gender = Console.ReadLine();
+            Console.WriteLine("Estudio de grabacion: ");
+            string study = Console.ReadLine();
+            Console.Write("Palabra Clave. ( sirve para encontrar la cancion) ");
+            string keyword = Console.ReadLine();
+            Console.Write("Compositor: ");
+            string composer = Console.ReadLine();
+            Console.Write("Album al que pertenece: ");
+            string album = Console.ReadLine();
+            Console.WriteLine("Formato de la cancion: ");
+            string format = Console.ReadLine();
+            Console.WriteLine("Letra de la cancion: ");
+            string lyrics = Console.ReadLine();
+            var rand = new Random();
+            rand.Next(1, 50);
+            // Arreglar despues. por aohra sera 5
+            cancion.Add(new SongClass(gender, publicationYear, title,5,100,study,keyword,composer,singer,album,lyrics,format));
 
         }
 
@@ -420,15 +436,27 @@ namespace ProyectoGRUPO2
         //------------ IMPORTAR VIDEO ----------------------------------------
         static public void AddVideo(List<Video> video)
         {
-            Console.Write("Nombre: ");
-            string name = Console.ReadLine();
-            Console.Write("Cantante: ");
-            string lastName = Console.ReadLine();
-            Console.Write("Año publicacion: ");
-            int age = int.Parse(Console.ReadLine());
-            // Arreglar despues.
-            //cancion.Add(new SongClass(name, lastName, age));
-
+            Console.Write("Titulo del video: ");
+            string title = Console.ReadLine();
+            Console.Write("Director: ");
+            string director = Console.ReadLine();
+            Console.Write("Actor principal: ");
+            string mainActor = Console.ReadLine();
+            Console.WriteLine("Descripcion del video: ");
+            string description = Console.ReadLine();
+            Console.WriteLine("Genero del video: ");
+            string gender = Console.ReadLine();
+            Console.WriteLine("Año de publicacion: ");
+            string año = Console.ReadLine();
+            Console.WriteLine("Estudio donde se grabo: ");
+            string study = Console.ReadLine();
+            Console.WriteLine("Palabra Clave: ");
+            string keyword = Console.ReadLine();
+            Console.WriteLine("Formato del video: ");
+            string format = Console.ReadLine();
+            //Duracion 5 memoria 100 por ahora
+            //Arreglar despues.
+            video.Add(new Video(gender, año, title,5,100,study,keyword,description, mainActor, director,format));
         }
 
         //Metodos para Serializar Videos

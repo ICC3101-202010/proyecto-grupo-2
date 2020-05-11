@@ -3,35 +3,37 @@ using System.Collections.Generic;
 using System.Threading;
 namespace ProyectoGRUPO2
 {
+    [Serializable]
     public class Video : AbsMaster
     {
-        private string category;
-        private List<Actor> actors;
+        //private List<Actor> actors;
         private string description;
-        //CAMBIAR LOS SUBTITUTLOS, DARSELOS A CANCION.
-        private Actor mainActor;
-        public Video(string gender, string publicationYear, int numReproduction,
-                     string title, int duration, int memory, string study, string keyword, string category,
-                     string description, Actor mainActor, List<Actor> actors)
+        private string mainActor;//PONERLOS EN SUS CLASES
+        private string director; //
+        private string format;
+
+        public Video(string gender, string publicationYear,
+                     string title, int duration, int memory, string study, string keyword,
+                     string description, string mainActor, string director, string format)
         {
-            this.Gender = gender;
-            this.PublicationYear = publicationYear;
-            this.NumReproduction = numReproduction;
-            this.Title = title;
+            this.Gender = gender; // Listo
+            this.PublicationYear = publicationYear; // Listo
+            this.Title = title; //Listo
             this.Duration = duration;
             this.Memory = memory;
-            this.Study = study;
-            this.Keyword = keyword;
-            this.Category = category;
-            this.Description = description;
-            this.MainActor = mainActor;
-            this.Actors = actors;
+            this.Study = study; // Listo
+            this.Keyword = keyword; // Listo
+            this.Description = description; // Listo
+            this.MainActor = mainActor; // Listo
+            //this.Actors = actors; No se como poner aun
+            this.Director = director;  //Listo
+            this.format = format;
         }
-
-        public string Category { get => category; set => category = value; }
-        public List<Actor> Actors { get => actors; set => actors = value; }
+        public  string Director { get => director; set => director = value; }
+        public string Format { get => format; set => format = value; }
+        //public List<Actor> Actors { get => actors; set => actors = value; }
         public string Description { get => description; set => description = value; }
-        public Actor MainActor { get => mainActor; set => mainActor = value; }
+        public string MainActor { get => mainActor; set => mainActor = value; }
 
         public void AddData() //Cambiar UML  void
         {
