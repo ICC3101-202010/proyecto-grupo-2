@@ -10,12 +10,12 @@ namespace ProyectoGrupo2
         private string description;
         //CAMBIAR LOS SUBTITUTLOS, DARSELOS A CANCION.
         private Actor mainActor;
-        public Video(string gender, string añoPublicacion, int numReproduction,
-                     string title, int duration, int memory, string study, string keyword, string categoria,
-                     string description, Actor nainActor, List<Actor> actors)
+        public Video(string gender, string publicationYear, int numReproduction,
+                     string title, int duration, int memory, string study, string keyword, string category,
+                     string description, Actor mainActor, List<Actor> actors)
         {
             this.Gender = gender;
-            this.PublicationYear = PublicationYear;
+            this.PublicationYear = publicationYear;
             this.NumReproduction = numReproduction;
             this.Title = title;
             this.Duration = duration;
