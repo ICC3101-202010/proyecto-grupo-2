@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using System.IO; //Agregadas Para la serializacion
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 
 namespace ProyectoGRUPO2
@@ -340,6 +343,47 @@ namespace ProyectoGRUPO2
             }
 
             return options[Convert.ToInt16(Console.ReadLine())];
+        }
+
+        //Metodo para agregar usuarios y quede guardados. 
+        //Ver como se agrega, debido que esta registrado.
+        //Ver con mati
+        static public void AddUser(List<User> usuario)
+        {
+            Console.WriteLine("nada");
+        }
+
+        //Metodo para guardar el usuario registrado.
+        //Se tiene que hacer cada vez que se registra un usuario. 
+        //Subir usuario.
+        static private void SaveUser(List<User> usuario)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, usuario);
+            stream.Close();
+        }
+
+        //Metodo para subir las personas una vez cerrado el programa.
+        //Se tiene que uniciar automaticamente una vez abierto el programa.
+        static private List<User> LoadUser()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            List<User> usuario = (List <User>) formatter.Deserialize(stream);
+            stream.Close();
+            return usuario;
+        } 
+
+        //Metodo Para mostrar los perfiles.
+        //Puede servir para buscar los distintos perfiles.
+        static public void ShowProfileUser(List<ProfilelUser> perfil)
+        {
+            foreach(ProfilelUser persona in perfil)
+            {
+                Console.WriteLine(persona);
+            }
+            Console.WriteLine(" ");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Threading;
 namespace ProyectoGRUPO2
 
 {
-
+    [Serializable]//Serializar usuarios.
     public class User : Person
     {
         private string mail;

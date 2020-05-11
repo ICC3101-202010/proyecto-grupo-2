@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 namespace ProyectoGRUPO2
 {
+    [Serializable] // Necesario para poder importar canciones y videos. Necesito guardar usuarios.
     public class ProfilelUser
     {
 
