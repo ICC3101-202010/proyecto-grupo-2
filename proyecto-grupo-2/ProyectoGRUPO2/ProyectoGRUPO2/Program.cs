@@ -5,6 +5,7 @@ using System.Threading;
 using System.IO; //Agregadas Para la serializacion
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Soap; // Para cargar formato UML
 
 
 namespace ProyectoGRUPO2
@@ -344,7 +345,7 @@ namespace ProyectoGRUPO2
 
             return options[Convert.ToInt16(Console.ReadLine())];
         }
-
+        //------------ AGREGAR USUARIO --------------------------------------------------------
         //Metodo para agregar usuarios y quede guardados. 
         //Ver como se agrega, debido que esta registrado.
         //Ver con mati
@@ -384,6 +385,68 @@ namespace ProyectoGRUPO2
                 Console.WriteLine(persona);
             }
             Console.WriteLine(" ");
+        }
+        //------------ IMPORTAR CANCION ----------------------------------------------
+        static public void AddSong(List<SongClass> cancion)
+        {
+            Console.Write("Nombre: ");
+            string name = Console.ReadLine();
+            Console.Write("Cantante: ");
+            string lastName = Console.ReadLine();
+            Console.Write("Año publicacion: ");
+            int age = int.Parse(Console.ReadLine());
+            // Arreglar despues.
+            //cancion.Add(new SongClass(name, lastName, age));
+
+        }
+
+        //Metodos para Serializar canciones
+        static private void SaveSong(List<SongClass> cancion)
+        {
+            SoapFormatter formatter = new SoapFormatter();
+            Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, cancion);
+            stream.Close();
+        }
+        //Deserializacion de cancion.
+        static private List<SongClass> LoadSong()
+        {
+            SoapFormatter formatter = new SoapFormatter();
+            Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            List<SongClass> cancion = (List<SongClass>)formatter.Deserialize(stream);
+            stream.Close();
+            return cancion;
+        }
+        //------------ IMPORTAR VIDEO ----------------------------------------
+        static public void AddVideo(List<Video> video)
+        {
+            Console.Write("Nombre: ");
+            string name = Console.ReadLine();
+            Console.Write("Cantante: ");
+            string lastName = Console.ReadLine();
+            Console.Write("Año publicacion: ");
+            int age = int.Parse(Console.ReadLine());
+            // Arreglar despues.
+            //cancion.Add(new SongClass(name, lastName, age));
+
+        }
+
+        //Metodos para Serializar Videos
+        static private void SaveVideo(List<Video> video)
+        {
+            SoapFormatter formatter = new SoapFormatter();
+            Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, video);
+            stream.Close();
+        }
+        //Deserializacion de Video.
+        static private List<Video> LoadVideo()
+        {
+            SoapFormatter formatter = new SoapFormatter();
+            Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            List<Video> video = (List<Video>)formatter.Deserialize(stream);
+            stream.Close();
+            return video;
         }
     }
 }
