@@ -17,7 +17,7 @@ namespace ProyectoGrupo2
 
             User user = new User();  //creamos el objeto de la nueva clase
             PrintAndReceive printAndReceive = new PrintAndReceive();
-            
+
 
 
 
@@ -46,10 +46,31 @@ namespace ProyectoGrupo2
                     case "Registrarse":
                         Console.Clear();
                         server.Register();
+
                         if (user.Plan == "1")
                         {
-                            user.AddProfile();
+                            user.AddProfile();              // datos del usuario 
+
+
                         }//Perfil agregado
+
+                        if (user.Plan == "2")
+
+                        {
+                            user.AddProfile();
+
+
+
+                        }
+
+
+                        if (user.Plan == "3")
+                        {
+                            user.AddProfiles();
+                        }
+
+
+
                         break;
 
 
@@ -62,18 +83,140 @@ namespace ProyectoGrupo2
 
                         Console.WriteLine(user.Plan);
 
-                        if (  user.Plan == "1") // ESTO SE TIENE QUE ARREGLAR
+                        if (user.Plan == "1") // ESTO SE TIENE QUE ARREGLAR
                         {
-                            printAndReceive.BasicPlan();
-                        } 
+                            printAndReceive.MenuBasicPlan();
+                            int ma;
+                            ma = int.Parse(Console.ReadLine());
+
+                            if (ma == 1) { }
+                            if (ma == 2) { }
+
+
+                            if (ma == 3)
+                            {
+
+
+                            }
+
+
+
+                            if (ma == 4)
+                            {
+                                printAndReceive.PrintMenu7();
+                            }
+
+                        }
+
 
 
 
 
                         int x = 2;//hacer que esto sea dependiento de su plan
 
-                        if (x == 2)
+                        if (x == 2)//plan Premiun
                         {
+                            printAndReceive.PrintMenuPrincipal();
+                            int ma;
+
+                            ma = int.Parse(Console.ReadLine());
+
+
+
+                            if (ma == 1)
+                            {
+                                printAndReceive.PrintMenu1();
+                            }
+                            if (ma == 2)
+                            {
+                                printAndReceive.PrintMenu2();
+                                int me;
+                                me = int.Parse(Console.ReadLine());
+
+                                if (me == 1)
+                                {
+                                    //agregar metodo mostrar playlist
+                                }
+                                if (me == 2)
+                                {
+                                    //agregar metodo Crear Playlis
+                                }
+                                if (me == 3)
+                                {
+                                    //agregar metodo Eliminar playlist
+                                }
+                            }
+                            if (ma == 3)
+                            {
+                                printAndReceive.PrintMenu3();
+
+                                int me;
+                                me = int.Parse(Console.ReadLine());
+
+                                if (me == 1)
+                                {
+                                    //agregar metodo mostrar playlist
+                                }
+                                if (me == 2)
+                                {
+                                    //agregar metodo Crear Playlis
+                                }
+                                if (me == 3)
+                                {
+                                    //agregar metodo Eliminar playlist
+                                }
+                            }
+
+                            //completar dependiento de metodos
+                            if (ma == 4)
+                            {
+                                printAndReceive.PrintMenu4();
+                            }
+                            if (ma == 5)
+                            {
+                                printAndReceive.PrintMenu5();
+                            }
+                            if (ma == 6)
+                            {
+                                printAndReceive.PrintMenu7();
+                                int me;
+                                me = int.Parse(Console.ReadLine());
+                                if (me == 1)
+                                {
+
+
+
+                                }
+                                if (me == 2) { }
+                                if (me == 3)
+                                {
+                                    server.ChangePassword();
+
+                                    break;
+
+                                }
+                                if (me == 4)
+                                {
+                                    break;
+                                }
+
+                            }
+                            //if (ma == 7)
+                            //{
+                               // printAndReceive.PrintMenu8();
+                              //  break;
+                            //}
+
+                        }
+
+
+
+
+
+
+                        if (x == 3)//plan familiar
+                        {
+                            //escoger usuario 1,2,3 o 4
                             printAndReceive.PrintMenuPrincipal();
                             int ma;
 
@@ -155,17 +298,21 @@ namespace ProyectoGrupo2
                                     server.ChangePassword();
 
                                     break;
+
+                                }
+                                if (me == 7)
+                                {
+                                    break;
                                 }
 
-
                             }
-                            if (ma == 7)
-                            {
-                                printAndReceive.PrintMenu7();
-                                break;
-                            }
-
+                            //if (ma == 7)
+                           // {
+                                //printAndReceive.PrintMenu8();
+                              //  break;
+                            //}
                         }
+
                         break;
 
 

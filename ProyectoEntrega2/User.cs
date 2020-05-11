@@ -80,9 +80,29 @@ namespace ProyectoGrupo2
 
         }
 
-        public void AddProfile()
+        public void AddProfile() //tiene que guardarse sus gustos 
         {
-            Console.WriteLine("ds2s2");
+            Console.WriteLine("ds2s2"); //para agregar 1 PERFIL
+            Console.WriteLine("Nombre Perfil?");
+
+            Console.WriteLine("Actor Favorito: "); // Se va guardando en cada perfil. Respectivamente
+            Console.WriteLine("Director favorito: "); // Se va guardando en cada perfil. Respectivamente
+            Console.WriteLine("Cantante Favorito: ");
+            Console.WriteLine("Grupo Favorito: ");
+            Console.WriteLine("Cancion Favorita: ");// Se va guardando en cada perfil. Respectivamente
+
+            // Mas adelante se tendra que implementar por opciones.
+        }
+        public void AddProfiles()
+        {
+            Console.WriteLine(); //para agregar usuarios plan FAMILIAR ,Hacer lista de listas
+            Console.WriteLine("Nombre Perfil?");
+
+            Console.WriteLine("Actor Favorito: "); // Se va guardando en cada perfil. Respectivamente
+            Console.WriteLine("Director favorito: "); // Se va guardando en cada perfil. Respectivamente
+            Console.WriteLine("Cantante Favorito: ");
+            Console.WriteLine("Grupo Favorito: ");
+            Console.WriteLine("Cancion Favorita: ");// Se va guardando en cada perfil. Respectivamente
         }
         public bool EliminarPerfil()
         {
@@ -117,4 +137,3 @@ namespace ProyectoGrupo2
 
     }
 }
-//hhhh

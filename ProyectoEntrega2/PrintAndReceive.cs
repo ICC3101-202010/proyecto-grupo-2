@@ -6,7 +6,7 @@ namespace ProyectoGrupo2
         public PrintAndReceive()
         {
         }
-        public void PrintMenuPrincipal()
+        public void PrintMenuPrincipal()//para usuarios premiun y plan familiar 
         {
             Console.WriteLine("BIENVENIDO A SPOTFLIX");
             Console.WriteLine("1)Mi musica");
@@ -18,6 +18,17 @@ namespace ProyectoGrupo2
             Console.WriteLine("7)salir");
         }
 
+        public void MenuBasicPlan() //para usuarios plan basico
+        {
+
+            Console.WriteLine("BIENVENIDO A SPOTFLIX");
+            Console.WriteLine("1) Buscar Cancion");
+            Console.WriteLine("2)Buscar Video");
+
+            Console.WriteLine("3)ajustes");
+            Console.WriteLine("4)salir");
+
+        }
         public void PrintMenu1()
         { }
         public void PrintMenu2()
@@ -53,7 +64,7 @@ namespace ProyectoGrupo2
             Console.WriteLine("2)Agregar Perfil");
             Console.WriteLine("3)Eliminar Perfil");
             Console.WriteLine("4)Cambiar Plan");
-            Console.WriteLine("5)Cambiar Target Pay");
+            Console.WriteLine("5)Cambiar Tarjeta de pago");
             Console.WriteLine("6)Cambiar contraseña");//funcionando
 
         }
@@ -62,17 +73,7 @@ namespace ProyectoGrupo2
             Console.WriteLine("Gracias , volvera al menu de inicio");
 
         }
-        public void BasicPlan()
-        {
-            Console.WriteLine("Usted tiene un plan basico");
-            Console.WriteLine("Cual es su nombre?");
-            Console.WriteLine("Preferencias de actores: "); // Se va guardando en cada perfil. Respectivamente
-            Console.WriteLine("Preferencias de directores: "); // Se va guardando en cada perfil. Respectivamente
-            Console.WriteLine("Preferencias de cantantes: "); // Se va guardando en cada perfil. Respectivamente
-            // Mas adelante se tendra que implementar por opciones.
 
-
-        }
 
 
     }
