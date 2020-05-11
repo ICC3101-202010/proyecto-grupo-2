@@ -403,7 +403,7 @@ namespace ProyectoGRUPO2
         //Metodos para Serializar canciones
         static private void SaveSong(List<SongClass> cancion)
         {
-            SoapFormatter formatter = new SoapFormatter();
+            IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
             formatter.Serialize(stream, cancion);
             stream.Close();
@@ -411,7 +411,7 @@ namespace ProyectoGRUPO2
         //Deserializacion de cancion.
         static private List<SongClass> LoadSong()
         {
-            SoapFormatter formatter = new SoapFormatter();
+            IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
             List<SongClass> cancion = (List<SongClass>)formatter.Deserialize(stream);
             stream.Close();
@@ -434,7 +434,7 @@ namespace ProyectoGRUPO2
         //Metodos para Serializar Videos
         static private void SaveVideo(List<Video> video)
         {
-            SoapFormatter formatter = new SoapFormatter();
+            IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
             formatter.Serialize(stream, video);
             stream.Close();
@@ -442,7 +442,7 @@ namespace ProyectoGRUPO2
         //Deserializacion de Video.
         static private List<Video> LoadVideo()
         {
-            SoapFormatter formatter = new SoapFormatter();
+            IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream("MyFile.bin", FileMode.Create, FileAccess.Write, FileShare.None);
             List<Video> video = (List<Video>)formatter.Deserialize(stream);
             stream.Close();
