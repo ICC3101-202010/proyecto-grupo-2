@@ -2,7 +2,7 @@
 namespace ProyectoGrupo2
 {
     //hola gente
-    public class AbsMaster
+    public class AbsMaster //PROBANDO NUEVAMENTE - ALVARO
     {
         private string gender;
         private string publicationYear;
