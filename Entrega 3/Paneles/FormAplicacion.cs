@@ -1436,6 +1436,9 @@ namespace Entrega_3.Paneles
        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            panel27.Visible = false;
+            panel25.Visible = false;
+            panel23.Visible = false;
             try
             {
                 canciones = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));

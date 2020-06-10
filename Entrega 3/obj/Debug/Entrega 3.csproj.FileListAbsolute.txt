@@ -53,3 +53,21 @@ C:\Users\anton\Desktop\EntregaP\Entrega 3\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Interop.WMPLib.dll
 C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.ResolveComReference.cache
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\bin\Debug\Entrega 3.exe.config
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\bin\Debug\Entrega 3.exe
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\bin\Debug\Entrega 3.pdb
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\bin\Debug\Interop.WMPLib.dll
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega 3.csprojAssemblyReference.cache
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Interop.WMPLib.dll
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega 3.csproj.ResolveComReference.cache
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega_3.Paneles.FormAplicacion.resources
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega_3.Paneles.guardarpaneles.resources
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega_3.Form1.resources
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega_3.Paneles.FormsRegistro.resources
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega_3.Properties.Resources.resources
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega 3.csproj.GenerateResource.cache
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega 3.csproj.CoreCompileInputs.cache
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega 3.exe
+C:\Users\matistark\Desktop\proyecto-grupo-2\Entrega 3\obj\Debug\Entrega 3.pdb
