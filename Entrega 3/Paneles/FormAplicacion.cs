@@ -1370,7 +1370,7 @@ namespace Entrega_3.Paneles
 
         private void btnCambiarClave_Click(object sender, EventArgs e)
         {
-           
+            MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
         }
 
         private void b1_Click(object sender, EventArgs e)
@@ -3197,6 +3197,37 @@ namespace Entrega_3.Paneles
             {
                 MessageBox.Show("Debe seleccionar un item.");
             }
+        }
+
+        private void btncambiarp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            Reproductor2.Ctlcontrols.fastReverse();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            Reproductor2.Ctlcontrols.stop();
+            this.Hide();
+            Form1 form = new Form1();
+            form.Show();
+
+            //FormAplicacion formAplicacion = new FormAplicacion(us);
+            //formAplicacion.Show();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            panel30.Visible = true;
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            panel30.Visible = false;
         }
     }
 }
