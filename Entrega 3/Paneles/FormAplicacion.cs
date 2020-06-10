@@ -2098,7 +2098,7 @@ namespace Entrega_3.Paneles
             e5.Visible = true;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e) //Playlist favoritos.
         {
 
         }
@@ -2797,81 +2797,90 @@ namespace Entrega_3.Paneles
 
         private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            listBox4.Items.Clear();
-            //Mostrar la informacion d ela playlist
-            if (algo == "musica")
+            try
             {
-                int error = 1;
-                if (listBox3.SelectedItem != null)
+                listBox4.Items.Clear();
+                //Mostrar la informacion d ela playlist
+                if (algo == "musica")
                 {
-                    for (int a = 0; a < usuario.Profiles.Count(); a++)
+                    int error = 1;
+                    if (listBox3.SelectedItem != null)
                     {
-                        if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                        for (int a = 0; a < usuario.Profiles.Count(); a++)
                         {
-                            for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
+                            if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
                             {
-                                error--;
-                                if (listBox3.SelectedItem.ToString() == usuario.Profiles[a].PlaylistCanciones[b].Nombre && usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Count() > 0)
+                                for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
                                 {
-
-                                    for (int c = 0; c < usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Count(); c++)
+                                    error--;
+                                    if (listBox3.SelectedItem.ToString() == usuario.Profiles[a].PlaylistCanciones[b].Nombre && usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Count() > 0)
                                     {
-                                        listBox4.Items.Add(usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c]);
+
+                                        for (int c = 0; c < usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Count(); c++)
+                                        {
+                                            listBox4.Items.Add(usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c]);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        error++;
                                     }
                                 }
-                                else
-                                {
-                                    error++;
-                                }
-                            }
 
+                            }
                         }
                     }
-                }
-                if (error > 0)
-                {
-                    listBox4.Items.Add("NO HAY CANCIONES");
-                }
-            }
-            else if(algo == "video")
-            {
-                int error = 1;
-                if (listBox3.SelectedItem != null)
-                {
-                    for (int a = 0; a < usuario.Profiles.Count(); a++)
+                    if (error > 0)
                     {
-                        if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                        listBox4.Items.Add("NO HAY CANCIONES");
+                    }
+                }
+                else if (algo == "video")
+                {
+                    int error = 1;
+                    if (listBox3.SelectedItem != null)
+                    {
+                        for (int a = 0; a < usuario.Profiles.Count(); a++)
                         {
-                            for (int b = 0; b < usuario.Profiles[a].PlaylistVideos.Count(); b++)
+                            if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
                             {
-                                error--;
-                                if (listBox3.SelectedItem.ToString() == usuario.Profiles[a].PlaylistVideos[b].Name && usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Count() > 0)
+                                for (int b = 0; b < usuario.Profiles[a].PlaylistVideos.Count(); b++)
                                 {
-
-                                    for (int c = 0; c < usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Count(); c++)
+                                    error--;
+                                    if (listBox3.SelectedItem.ToString() == usuario.Profiles[a].PlaylistVideos[b].Name && usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Count() > 0)
                                     {
-                                        listBox4.Items.Add(usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c]);
+
+                                        for (int c = 0; c < usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Count(); c++)
+                                        {
+                                            listBox4.Items.Add(usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c]);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        error++;
                                     }
                                 }
-                                else
-                                {
-                                    error++;
-                                }
-                            }
 
+                            }
                         }
                     }
+                    if (error > 0)
+                    {
+                        listBox4.Items.Add("NO HAY VIDEOS");
+                    }
                 }
-                if (error > 0)
-                {
-                    listBox4.Items.Add("NO HAY VIDEOS");
-                }
+
             }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Debe seleccionar un item.");
+            }
+
         }
 
         private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
         {
+
             listBox2.Visible =true;
             if (reproduciendo == "musica")
             {
@@ -2953,65 +2962,101 @@ namespace Entrega_3.Paneles
 
         private void listBox2_SelectedIndexChanged_1(object sender, EventArgs e) // AQUI SE SELECCIONA PARA AGREGAR LA CANCIONES A LA PLYALIST
         {//este el panel
-            if ( reproduciendo == "musica")
+            try
             {
-                for (int a = 0; a < usuario.Profiles.Count(); a++)
+                if (reproduciendo == "musica")
                 {
-                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    int error1 = 1;
+                    
+                    for (int a = 0; a < usuario.Profiles.Count(); a++)
                     {
-                        for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
+                        if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
                         {
-                            if (usuario.Profiles[a].PlaylistCanciones[b].Nombre == listBox2.SelectedItem.ToString())
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
                             {
-                                usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Add(cancionSonando);
-                                List<Clases.User> todosUsuarios = new List<Clases.User>();
-                                List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
-                                if (deserializarUser.Count > 0)
+                                error1--;
+                                if (listBox2.SelectedItem != null)
                                 {
-                                    for (int c = 0; c < deserializarUser.Count; c++)
+                                    if (usuario.Profiles[a].PlaylistCanciones[b].Nombre == listBox2.SelectedItem.ToString())
                                     {
-                                        todosUsuarios.Add(deserializarUser[c]);
+                                        usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Add(cancionSonando);
+                                        List<Clases.User> todosUsuarios = new List<Clases.User>();
+                                        List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                                        if (deserializarUser.Count > 0)
+                                        {
+                                            for (int c = 0; c < deserializarUser.Count; c++)
+                                            {
+                                                todosUsuarios.Add(deserializarUser[c]);
+                                            }
+                                        }
+                                        todosUsuarios.Add(usuario);
+                                        serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                                        MessageBox.Show("Cancion Guardada");
                                     }
                                 }
-                                todosUsuarios.Add(usuario);
-
-                                serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
-                                MessageBox.Show("Cancion Guardada");
+                                else
+                                {
+                                    error1++;
+                                }
                             }
                         }
                     }
-                }
-            }
-            else if ( reproduciendo == "video")
-            {
-                for (int a = 0; a < usuario.Profiles.Count(); a++)
-                {
-                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    if (error1 > 0)
                     {
-                        for (int b = 0; b < usuario.Profiles[a].PlaylistVideos.Count(); b++)
+                        MessageBox.Show("Debe seleccionar un item");
+                    }
+                }
+                else if (reproduciendo == "video")
+                {
+                    int error1 = 1;
+                    for (int a = 0; a < usuario.Profiles.Count(); a++)
+                    {
+
+                        if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
                         {
-                            if (usuario.Profiles[a].PlaylistVideos[b].Name == listBox2.SelectedItem.ToString())
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistVideos.Count(); b++)
                             {
-                                usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Add(videoSonando);
-                                List<Clases.User> todosUsuarios = new List<Clases.User>();
-                                List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
-                                if (deserializarUser.Count > 0)
+                                error1--;
+                                if(listBox2.SelectedItem != null)
                                 {
-                                    for (int c = 0; c < deserializarUser.Count; c++)
+                                    if (usuario.Profiles[a].PlaylistVideos[b].Name == listBox2.SelectedItem.ToString())
                                     {
-                                        todosUsuarios.Add(deserializarUser[c]);
+                                        usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Add(videoSonando);
+                                        List<Clases.User> todosUsuarios = new List<Clases.User>();
+                                        List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                                        if (deserializarUser.Count > 0)
+                                        {
+                                            for (int c = 0; c < deserializarUser.Count; c++)
+                                            {
+                                                todosUsuarios.Add(deserializarUser[c]);
+                                            }
+                                        }
+                                        todosUsuarios.Add(usuario);
+
+                                        serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                                        MessageBox.Show("Video Guardada");
+                                        //Serilizar
                                     }
                                 }
-                                todosUsuarios.Add(usuario);
-
-                                serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
-                                MessageBox.Show("Video Guardada");
-                                //Serilizar
+                                else
+                                {
+                                    error1++;
+                                }
+                                
                             }
                         }
                     }
+                    if (error1 > 0)
+                    {
+                        MessageBox.Show("Debe seleccionar un item");
+                    }
                 }
             }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Debe seleccionar un item.");
+            }
+
         }
         private void listBox2_MouseMove(object sender, MouseEventArgs e)
         {
@@ -3036,55 +3081,121 @@ namespace Entrega_3.Paneles
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (algo == "musica")
+            try
             {
-                for (int a = 0; a < usuario.Profiles.Count(); a++)
+                if (algo == "musica")
                 {
-                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    int error = 1;
+                    int error2 = 1;
+                    for (int a = 0; a < usuario.Profiles.Count(); a++)
                     {
-                        for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
-                        {
-                            if (usuario.Profiles[a].PlaylistCanciones[b].Nombre == listBox3.SelectedItem.ToString())
-                            {
-                                for (int c = 0; c < usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Count(); c++)
-                                {
-                                    string nombre = listBox4.SelectedItem.ToString();
-                                    string[] listaStr = nombre.Split(' '); //BUSCAOS EL NOMBER QUE ES UNNICO
 
-                                    if (usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Title == listaStr[0])
+                        if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                        {
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
+                            {
+                                error2--;
+                                if(listBox3.SelectedItem != null)
+                                {
+                                    if (usuario.Profiles[a].PlaylistCanciones[b].Nombre == listBox3.SelectedItem.ToString())
                                     {
-                                        Reproductor2.URL = usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Url;
+                                        for (int c = 0; c < usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist.Count(); c++)
+                                        {
+                                            error--;
+                                            try
+                                            {
+                                                if (listBox4.SelectedItem != null)
+                                                {
+                                                    string nombre = listBox4.SelectedItem.ToString();
+                                                    string[] listaStr = nombre.Split(' '); //BUSCAOS EL NOMBER QUE ES UNNICO
+
+                                                    if (usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Title == listaStr[0])
+                                                    {
+                                                        Reproductor2.URL = usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Url;
+                                                    }
+                                                }
+                                                else
+                                                {
+
+                                                    error++;
+                                                }
+                                            }
+                                            catch (System.NullReferenceException)
+                                            {
+                                                MessageBox.Show("Debe seleccionar un item.");
+                                            }
+
+                                        }
                                     }
                                 }
+                                else
+                                {
+                                    error2++;
+                                }
+
+                            }
+                        }
+
+                    }
+                    if (error > 0 || error2>0)
+                    {
+                        MessageBox.Show("Debe seleccionar un item.");
+                    }
+                }
+                else if (algo == "video")
+                {
+                    int error = 1;
+                    int error2 = 1;
+                    for (int a = 0; a < usuario.Profiles.Count(); a++)
+                    {
+                        if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                        {
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistVideos.Count(); b++)
+                            {
+                                error2--;
+                                if (listBox3.SelectedItem != null)
+                                {
+                                    
+                                    if (usuario.Profiles[a].PlaylistVideos[b].Name == listBox3.SelectedItem.ToString())
+                                    {
+                                        error--;
+                                        for (int c = 0; c < usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Count(); c++)
+                                        {
+                                            if (listBox4.SelectedItem != null)
+                                            {
+                                                string nombre = listBox4.SelectedItem.ToString();
+                                                string[] listaStr = nombre.Split(' '); //BUSCAOS EL NOMBER QUE ES UNNICO
+
+                                                if (usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Title == listaStr[0])
+                                                {
+                                                    Reproductor2.URL = usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Url;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                error++;
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    error2++;
+                                }
+                                   
                             }
                         }
                     }
+                    if(error>0|| error2>0)
+                    {
+                        MessageBox.Show("Debe seleccionar un item.");
+                    }
                 }
+
             }
-            else if (algo == "video")
+            catch (System.NullReferenceException)
             {
-                for (int a = 0; a < usuario.Profiles.Count(); a++)
-                {
-                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
-                    {
-                        for (int b = 0; b < usuario.Profiles[a].PlaylistVideos.Count(); b++)
-                        {
-                            if (usuario.Profiles[a].PlaylistVideos[b].Name == listBox3.SelectedItem.ToString())
-                            {
-                                for(int c = 0; c < usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist.Count(); c++)
-                                {
-                                    string nombre = listBox4.SelectedItem.ToString();
-                                    string[] listaStr = nombre.Split(' '); //BUSCAOS EL NOMBER QUE ES UNNICO
-
-                                    if (usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Title == listaStr[0])
-                                    {
-                                        Reproductor2.URL = usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Url;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                MessageBox.Show("Debe seleccionar un item.");
             }
         }
     }
