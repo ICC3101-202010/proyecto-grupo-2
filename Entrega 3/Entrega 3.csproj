@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A8F650C-CF92-41AD-8FFF-0ED242280865}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Entrega_3</RootNamespace>
+    <AssemblyName>Entrega 3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\Actor.cs" />
+    <Compile Include="Clases\Album.cs" />
+    <Compile Include="Clases\ChangePasswordEventargs.cs" />
+    <Compile Include="Clases\Database.cs" />
+    <Compile Include="Clases\Director.cs" />
+    <Compile Include="Clases\Login.cs" />
+    <Compile Include="Clases\MailSender.cs" />
+    <Compile Include="Clases\MediaPlayer.cs" />
+    <Compile Include="Clases\Person.cs" />
+    <Compile Include="Clases\PlaylistSpotifai.cs" />
+    <Compile Include="Clases\PlaylistVideoEmptyClass.cs" />
+    <Compile Include="Clases\PrintAndReceive.cs" />
+    <Compile Include="Clases\Profile.cs" />
+    <Compile Include="Clases\ProfileManagment.cs" />
+    <Compile Include="Clases\ProfileUser.cs" />
+    <Compile Include="Clases\RegisterEventArgs.cs" />
+    <Compile Include="Clases\SearchClass.cs" />
+    <Compile Include="Clases\Serialization.cs" />
+    <Compile Include="Clases\Server.cs" />
+    <Compile Include="Clases\Singer.cs" />
+    <Compile Include="Clases\SongClass.cs" />
+    <Compile Include="Clases\User.cs" />
+    <Compile Include="Clases\Video.cs" />
+    <Compile Include="Paneles\FormAplicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paneles\FormAplicacion.Designer.cs">
+      <DependentUpon>FormAplicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paneles\guardarpaneles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paneles\guardarpaneles.Designer.cs">
+      <DependentUpon>guardarpaneles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paneles\PanelPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paneles\PanelPrincipal.Designer.cs">
+      <DependentUpon>PanelPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paneles\FormsRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paneles\FormsRegistro.Designer.cs">
+      <DependentUpon>FormsRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Paneles\FormAplicacion.resx">
+      <DependentUpon>FormAplicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paneles\guardarpaneles.resx">
+      <DependentUpon>guardarpaneles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paneles\PanelPrincipal.resx">
+      <DependentUpon>PanelPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paneles\FormsRegistro.resx">
+      <DependentUpon>FormsRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

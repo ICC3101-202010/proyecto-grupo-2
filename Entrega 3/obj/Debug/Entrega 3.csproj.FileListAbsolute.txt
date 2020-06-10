@@ -1,0 +1,55 @@
+C:\Users\anton\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.exe.config
+C:\Users\anton\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.exe
+C:\Users\anton\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.pdb
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csprojAssemblyReference.cache
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Form1.resources
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormsRegistro.resources
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Properties.Resources.resources
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.GenerateResource.cache
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.exe
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.pdb
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormsUsuario.resources
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.guardarpaneles.resources
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.exe.config
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.exe
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.pdb
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csprojAssemblyReference.cache
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.guardarpaneles.resources
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Form1.resources
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormsRegistro.resources
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Properties.Resources.resources
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.GenerateResource.cache
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.CoreCompileInputs.cache
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.exe
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.pdb
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormAplicacion.resources
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormAplicacion.resources
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csprojAssemblyReference.cache
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormAplicacion.resources
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.guardarpaneles.resources
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Form1.resources
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Paneles.FormsRegistro.resources
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega_3.Properties.Resources.resources
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.GenerateResource.cache
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.CoreCompileInputs.cache
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.exe
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.pdb
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.exe.config
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.exe
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\bin\Debug\Entrega 3.pdb
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\bin\Debug\Interop.WMPLib.dll
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Interop.WMPLib.dll
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\matistark\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.ResolveComReference.cache
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Interop.WMPLib.dll
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.ResolveComReference.cache
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\bin\Debug\Interop.WMPLib.dll
+C:\Users\alvar\Desktop\EntregaP\Entrega 3\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\anton\Desktop\EntregaP\Entrega 3\bin\Debug\Interop.WMPLib.dll
+C:\Users\anton\Desktop\EntregaP\Entrega 3\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Interop.WMPLib.dll
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\anton\Desktop\EntregaP\Entrega 3\obj\Debug\Entrega 3.csproj.ResolveComReference.cache
