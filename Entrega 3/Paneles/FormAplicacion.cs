@@ -25,6 +25,7 @@ namespace Entrega_3.Paneles
         int numreproducciones;
         int nota;
         int notaActual;
+        string contraseña;
         string reproduciendo;
         SongClass cancionSonando; //PARA AGREGAR CANCOINES PLAYLISt
         Video videoSonando;
@@ -3408,7 +3409,7 @@ namespace Entrega_3.Paneles
 
         private void btncambiarp_Click(object sender, EventArgs e)
         {
-
+            contraseña = txt3.Text;
 
             //MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
             //MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
@@ -3513,10 +3514,20 @@ namespace Entrega_3.Paneles
                     }
                     if (error3 <=1)
                     {
-                        MessageBox.Show("Plan ha sido cambiado con exito");
-                        this.Hide();
-                        FormAplicacion formAplicacion = new FormAplicacion(us);
-                        formAplicacion.Show();
+                        if (radioButton1.Checked == true)
+                        {
+                            panel31.Visible = false;
+                            MessageBox.Show("Plan cambiado con exito ");
+                            this.Hide();
+                            FormAplicacion formAplicacion = new FormAplicacion(us);
+                            formAplicacion.Show();
+                        }
+                        else
+                        {
+                            panel31.Visible = true;
+                        }
+                       
+                       
                     }
                     serializar.Serialize(deserializarUser, File.Open("data.bin", FileMode.Create));
 
@@ -3563,12 +3574,51 @@ namespace Entrega_3.Paneles
 
         private void btnVolverTarjeta_Click(object sender, EventArgs e)
         {
-            panel23.Visible = false;
+            panel31.Visible = false;
         }
 
         private void btnContinuarTarjeta_Click(object sender, EventArgs e)
         {
+            List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+            if (txt3.Text == "")
+            {
+                MessageBox.Show("POR FAVOR INGRESE LA CONTRAEÑA");
+            }
 
+            else if (deserializarUser.Count > 0)//aca hay que poner que se verifique el inicio de secion
+            {
+                int error = 1;
+                int avanzar = 0;
+                int error2 = 1;
+                Clases.User us = new Clases.User();
+                for (int d = 0; d < deserializarUser.Count; d++)
+                {
+                    error--;
+                    if (deserializarUser[d].Password == contraseña)
+                    {
+
+                        us = deserializarUser[d];//guardo la informacion del usuario en US
+                        avanzar += 1;
+                    }
+                    else
+                    {
+                        error++;
+                    }
+
+                }
+           
+                if (txtNumeroTarjeta.Text !="" && comboBox2.SelectedItem!=null && comboBox3 != null && txtCodigoSeguridadTarjeta.Text!="")
+            {
+                MessageBox.Show("Plan cambiado con exito");
+                this.Hide();
+                FormAplicacion formAplicacion = new FormAplicacion(us);
+                formAplicacion.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor rellene todos los datos");
+            }
         }
     }
+}
 }
