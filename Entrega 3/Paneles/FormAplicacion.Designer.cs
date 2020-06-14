@@ -180,7 +180,6 @@
             this.btnAgregarInfo = new System.Windows.Forms.Button();
             this.Adjuntar = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.listCanciones = new System.Windows.Forms.ListBox();
             this.subpanel3 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -244,6 +243,18 @@
             this.b14 = new System.Windows.Forms.Button();
             this.b15 = new System.Windows.Forms.Button();
             this.b16 = new System.Windows.Forms.Button();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.btnVolverTarjeta = new System.Windows.Forms.Button();
+            this.btnContinuarTarjeta = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtCodigoSeguridadTarjeta = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtNumeroTarjeta = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverNormalidad)).BeginInit();
@@ -308,6 +319,7 @@
             this.panel2.SuspendLayout();
             this.panelSubMenuAjustes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel31.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -638,7 +650,6 @@
             // 
             this.panelContenedorPincipal.AutoSize = true;
             this.panelContenedorPincipal.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelContenedorPincipal.Controls.Add(this.panel30);
             this.panelContenedorPincipal.Controls.Add(this.panel4);
             this.panelContenedorPincipal.Controls.Add(this.panel3);
             this.panelContenedorPincipal.Controls.Add(this.panel7);
@@ -646,7 +657,6 @@
             this.panelContenedorPincipal.Controls.Add(this.panel6);
             this.panelContenedorPincipal.Controls.Add(this.panel14);
             this.panelContenedorPincipal.Controls.Add(this.SubirArchivo);
-            this.panelContenedorPincipal.Controls.Add(this.button5);
             this.panelContenedorPincipal.Controls.Add(this.listCanciones);
             this.panelContenedorPincipal.Controls.Add(this.subpanel3);
             this.panelContenedorPincipal.Controls.Add(this.subpanel2);
@@ -662,6 +672,7 @@
             this.panelContenedorPincipal.Controls.Add(this.pictureBox1);
             this.panelContenedorPincipal.Controls.Add(this.txtBusqueda);
             this.panelContenedorPincipal.Controls.Add(this.panel2);
+            this.panelContenedorPincipal.Controls.Add(this.panel30);
             this.panelContenedorPincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedorPincipal.Location = new System.Drawing.Point(0, 0);
             this.panelContenedorPincipal.Name = "panelContenedorPincipal";
@@ -726,6 +737,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel4.Controls.Add(this.panel31);
             this.panel4.Controls.Add(this.btncambiarp);
             this.panel4.Controls.Add(this.btnCambiarClave);
             this.panel4.Controls.Add(this.radioButton5);
@@ -2164,17 +2176,6 @@
             this.listBox1.Size = new System.Drawing.Size(188, 43);
             this.listBox1.TabIndex = 6;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(659, 29);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(85, 26);
-            this.button5.TabIndex = 41;
-            this.button5.Text = "Crear";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // listCanciones
             // 
             this.listCanciones.FormattingEnabled = true;
@@ -3005,6 +3006,157 @@
             this.b16.Visible = false;
             this.b16.Click += new System.EventHandler(this.b16_Click);
             // 
+            // panel31
+            // 
+            this.panel31.Controls.Add(this.label39);
+            this.panel31.Controls.Add(this.label40);
+            this.panel31.Controls.Add(this.comboBox2);
+            this.panel31.Controls.Add(this.comboBox3);
+            this.panel31.Controls.Add(this.btnVolverTarjeta);
+            this.panel31.Controls.Add(this.btnContinuarTarjeta);
+            this.panel31.Controls.Add(this.label41);
+            this.panel31.Controls.Add(this.label42);
+            this.panel31.Controls.Add(this.txtCodigoSeguridadTarjeta);
+            this.panel31.Controls.Add(this.label43);
+            this.panel31.Controls.Add(this.txtNumeroTarjeta);
+            this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel31.Location = new System.Drawing.Point(0, 0);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(395, 271);
+            this.panel31.TabIndex = 23;
+            this.panel31.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Lavender;
+            this.label39.Location = new System.Drawing.Point(304, 109);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(40, 19);
+            this.label39.TabIndex = 24;
+            this.label39.Text = "Año";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Lavender;
+            this.label40.Location = new System.Drawing.Point(216, 109);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(40, 19);
+            this.label40.TabIndex = 23;
+            this.label40.Text = "Mes";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.comboBox2.Location = new System.Drawing.Point(203, 131);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(63, 21);
+            this.comboBox2.TabIndex = 22;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"});
+            this.comboBox3.Location = new System.Drawing.Point(291, 130);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(63, 21);
+            this.comboBox3.TabIndex = 21;
+            // 
+            // btnVolverTarjeta
+            // 
+            this.btnVolverTarjeta.Location = new System.Drawing.Point(105, 230);
+            this.btnVolverTarjeta.Name = "btnVolverTarjeta";
+            this.btnVolverTarjeta.Size = new System.Drawing.Size(75, 23);
+            this.btnVolverTarjeta.TabIndex = 20;
+            this.btnVolverTarjeta.Text = "Volver";
+            this.btnVolverTarjeta.UseVisualStyleBackColor = true;
+            this.btnVolverTarjeta.Click += new System.EventHandler(this.btnVolverTarjeta_Click);
+            // 
+            // btnContinuarTarjeta
+            // 
+            this.btnContinuarTarjeta.Location = new System.Drawing.Point(245, 230);
+            this.btnContinuarTarjeta.Name = "btnContinuarTarjeta";
+            this.btnContinuarTarjeta.Size = new System.Drawing.Size(75, 23);
+            this.btnContinuarTarjeta.TabIndex = 19;
+            this.btnContinuarTarjeta.Text = "Continuar";
+            this.btnContinuarTarjeta.UseVisualStyleBackColor = true;
+            this.btnContinuarTarjeta.Click += new System.EventHandler(this.btnContinuarTarjeta_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label41.Location = new System.Drawing.Point(16, 198);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(143, 19);
+            this.label41.TabIndex = 18;
+            this.label41.Text = "codigo seguridad";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label42.Location = new System.Drawing.Point(19, 133);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(149, 19);
+            this.label42.TabIndex = 17;
+            this.label42.Text = "Fecha caducacion";
+            // 
+            // txtCodigoSeguridadTarjeta
+            // 
+            this.txtCodigoSeguridadTarjeta.Location = new System.Drawing.Point(177, 197);
+            this.txtCodigoSeguridadTarjeta.Name = "txtCodigoSeguridadTarjeta";
+            this.txtCodigoSeguridadTarjeta.PasswordChar = '*';
+            this.txtCodigoSeguridadTarjeta.Size = new System.Drawing.Size(48, 20);
+            this.txtCodigoSeguridadTarjeta.TabIndex = 16;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label43.Location = new System.Drawing.Point(19, 68);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(121, 19);
+            this.label43.TabIndex = 15;
+            this.label43.Text = "Numero tarjeta";
+            // 
+            // txtNumeroTarjeta
+            // 
+            this.txtNumeroTarjeta.Location = new System.Drawing.Point(182, 71);
+            this.txtNumeroTarjeta.Name = "txtNumeroTarjeta";
+            this.txtNumeroTarjeta.Size = new System.Drawing.Size(149, 20);
+            this.txtNumeroTarjeta.TabIndex = 14;
+            // 
             // FormAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3122,6 +3274,8 @@
             this.panel2.PerformLayout();
             this.panelSubMenuAjustes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3228,7 +3382,6 @@
         private System.Windows.Forms.Button btnPlaylisMusica;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.ListBox listCanciones;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel SubirArchivo;
         private System.Windows.Forms.Button btnAgregarInfo;
         private System.Windows.Forms.Button Adjuntar;
@@ -3344,5 +3497,17 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button btnVolverTarjeta;
+        private System.Windows.Forms.Button btnContinuarTarjeta;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtCodigoSeguridadTarjeta;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtNumeroTarjeta;
     }
 }

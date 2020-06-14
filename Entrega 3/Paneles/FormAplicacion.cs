@@ -3560,5 +3560,15 @@ namespace Entrega_3.Paneles
         {
 
         }
+
+        private void btnVolverTarjeta_Click(object sender, EventArgs e)
+        {
+            panel23.Visible = false;
+        }
+
+        private void btnContinuarTarjeta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
