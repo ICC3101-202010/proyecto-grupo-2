@@ -21,13 +21,15 @@ namespace Entrega_3.Paneles
         string algo; // para ver si era usica o video.
         //est es solo para probar busqueda
         static DateTime date = new DateTime();
-        int numlikes;
+        int numlikes; //PARA LOS LIKES DE LAS CANCIONES/VIDEOS
         int numreproducciones;
         int nota;
         int notaActual;
         string reproduciendo;
         SongClass cancionSonando; //PARA AGREGAR CANCOINES PLAYLISt
         Video videoSonando;
+        
+        static List<string> listaPerfilesLikes = new List<string>();
 
 
         static List<string> premios = new List<string>();
@@ -55,15 +57,15 @@ namespace Entrega_3.Paneles
         static Director d3 = new Director("nDi3", 22, "Last3", "gender3", "nationality3", "ocupatio3", videos, premios, 22);
         static Director d4 = new Director("nDi4", 222, "LastD4", "gender4", "nationality4", "ocupation4", videos, premios, 222);
 
-        SongClass cancion = new SongClass("Cgender", "publicationYear", "title", 22, 22, "study", "keyword", "composer", singer, album, "format", 1, 2,"url",0,0);
-        SongClass cancion2 = new SongClass("Cgender2", "publicationYear2", "title2", 22, 22, "study2", "keyword2", "composer2", singer2, album2, "format2", 11, 22, "url", 0, 0);
-        SongClass cancion3 = new SongClass("Cgender3", "publicationYear3", "title3", 22, 22, "study3", "keyword3", "composer3", singer3, album3, "format3", 111, 222, "url", 0, 0);
-        SongClass cancion4 = new SongClass("Cgender4", "publicationYear4", "title4", 22, 22, "study4", "keyword4", "composer4", singer4, album4, "format4", 1111, 2222, "url", 0, 0);
+        SongClass cancion = new SongClass("Cgender", "publicationYear", "title", 22, 22, "study", "keyword", "composer", singer, album, "format", 1, 2,"url",0,0, listaPerfilesLikes);
+        SongClass cancion2 = new SongClass("Cgender2", "publicationYear2", "title2", 22, 22, "study2", "keyword2", "composer2", singer2, album2, "format2", 11, 22, "url", 0, 0, listaPerfilesLikes);
+        SongClass cancion3 = new SongClass("Cgender3", "publicationYear3", "title3", 22, 22, "study3", "keyword3", "composer3", singer3, album3, "format3", 111, 222, "url", 0, 0, listaPerfilesLikes);
+        SongClass cancion4 = new SongClass("Cgender4", "publicationYear4", "title4", 22, 22, "study4", "keyword4", "composer4", singer4, album4, "format4", 1111, 2222, "url", 0, 0, listaPerfilesLikes);
 
-        Video video = new Video("Vgender", "publicationYear", "title", 22, 22, "study", "keyword", "description", Mactor, d, "format", 1, 2, "url", 0, 0);
-        Video video2 = new Video("Vgender2", "publicationYear2", "title2", 22, 22, "study2", "keyword2", "description2", Mactor2, d2, "format2", 11, 22, "url", 0, 0);
-        Video video3 = new Video("Vgender3", "publicationYear3", "title3", 22, 22, "study3", "keyword3", "description3", Mactor3, d3, "format3", 111, 222, "url", 0, 0);
-        Video video4 = new Video("Vgender4", "publicationYear4", "title4", 22, 22, "study4", "keyword4", "description4", Mactor4, d4, "format4", 1111, 2222, "url", 0, 0);
+        Video video = new Video("Vgender", "publicationYear", "title", 22, 22, "study", "keyword", "description", Mactor, d, "format", 1, 2, "url", 0, 0, listaPerfilesLikes);
+        Video video2 = new Video("Vgender2", "publicationYear2", "title2", 22, 22, "study2", "keyword2", "description2", Mactor2, d2, "format2", 11, 22, "url", 0, 0, listaPerfilesLikes);
+        Video video3 = new Video("Vgender3", "publicationYear3", "title3", 22, 22, "study3", "keyword3", "description3", Mactor3, d3, "format3", 111, 222, "url", 0, 0, listaPerfilesLikes);
+        Video video4 = new Video("Vgender4", "publicationYear4", "title4", 22, 22, "study4", "keyword4", "description4", Mactor4, d4, "format4", 1111, 2222, "url", 0, 0, listaPerfilesLikes);
 
 
 
@@ -1682,17 +1684,37 @@ namespace Entrega_3.Paneles
             listCanciones.Items.Clear();
         }
 
-        private void listCanciones_SelectedIndexChanged(object sender, EventArgs e)
+        private void listCanciones_SelectedIndexChanged(object sender, EventArgs e) //SERIALIZAR
         {
-            
+
+            //DESERIALIZANDO
+            List<SongClass> songAux0 = new List<SongClass>();
             try
-                
+            {
+                songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+
+            }
+            List<Video> videoAux0 = new List<Video>();
+            try
+            {
+                videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+
+            }
+            //HASTA ACA
+
+            try
             {
                 if (listCanciones.SelectedItem != null) 
                 { 
                     string answer = listCanciones.SelectedItem.ToString();
                     string[] listaStr = answer.Split(' ');
-                    foreach (SongClass x in canciones)
+                    foreach (SongClass x in songAux0)
                     {
                         if (x.Title == listaStr[0])
                         {
@@ -1706,9 +1728,28 @@ namespace Entrega_3.Paneles
                             numlikes = x.Likes;
                             NumLike.Text = numlikes.ToString();
                             NumLike.Visible = true;
+
                             numreproducciones = x.NReproduction;
-                            numreproducciones += 1;
+                            numreproducciones += 1; //REPRODUCCIONES
+                            x.NReproduction = numreproducciones;
+
                             NumReproducciones.Text = numreproducciones.ToString();
+                            if (x.ProfileLikes.Count()>0)
+                            {
+                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                {
+                                    manito.Visible = false;
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+
                             e6.Visible = true;
                             e7.Visible = true;
                             e8.Visible = true;
@@ -1719,7 +1760,8 @@ namespace Entrega_3.Paneles
                             panel23.Visible = false;
                         }
                     }
-                    foreach(Video x in videos)
+                    serializar.Serialize(songAux0, File.Open("Canciones.bin", FileMode.Create));
+                    foreach (Video x in videoAux0)
                     {
                         if (x.Title == listaStr[0])
                         {
@@ -1733,9 +1775,30 @@ namespace Entrega_3.Paneles
                             numlikes = x.Likes;
                             NumLike.Text = numlikes.ToString();
                             NumLike.Visible = true;
+
                             numreproducciones = x.NReproduction;
-                            numreproducciones += 1;
+                            numreproducciones += 1; //REPRODUCCIONES
+                            x.NReproduction = numreproducciones;
+
                             NumReproducciones.Text = numreproducciones.ToString();
+
+                            if (x.ProfileLikes.Count() > 0)
+                            {
+                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                {
+                                    manito.Visible = false;
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+
+
                             e6.Visible = true;
                             e7.Visible = true;
                             e8.Visible = true;
@@ -1744,6 +1807,7 @@ namespace Entrega_3.Paneles
                             //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
                         }
                     }
+                    serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
                 }
                 else
                 {
@@ -1846,6 +1910,7 @@ namespace Entrega_3.Paneles
 
 
 
+
             int startIndex = ArchivoMP3.Length - 4;
             int final = 4;
             String substring = ArchivoMP3.Substring(startIndex, final);
@@ -1877,7 +1942,7 @@ namespace Entrega_3.Paneles
 
                     //Preguntarle al pefil si quiere rellenar los datos de Singer y Album
                     double duration123 = Reproductor.Ctlcontrols.currentItem.duration;
-                    SongClass ob = new SongClass(gender, publicationYear, title, duration123, 123, study, keyWord, composer, singer123, album123, ArchivoMP3, 123, 123, rutaArchivoMP3,0,0);
+                    SongClass ob = new SongClass(gender, publicationYear, title, duration123, 123, study, keyWord, composer, singer123, album123, ArchivoMP3, 123, 123, rutaArchivoMP3,0,0, listaPerfilesLikes);
                     //Deserializando
 
                     List<SongClass> songAux = new List<SongClass>();
@@ -1928,7 +1993,7 @@ namespace Entrega_3.Paneles
                     Director d123 = new Director(director, 22, "LastD", "gender", "nationality", "ocupation", videos, premios, 22);
                     double duration123 = Reproductor.Ctlcontrols.currentItem.duration; //SOn segundos
 
-                    Video ob2 = new Video(gender, publicationYear, title, duration123, 123, study, keyWord, description, Mactor123, d123, ArchivoMP3, 123, 123, rutaArchivoMP3,0,0);
+                    Video ob2 = new Video(gender, publicationYear, title, duration123, 123, study, keyWord, description, Mactor123, d123, ArchivoMP3, 123, 123, rutaArchivoMP3,0,0,listaPerfilesLikes);
 
                     //videos123.Add(ob2);
                     List<Video> videoAux = new List<Video>();
@@ -1945,7 +2010,8 @@ namespace Entrega_3.Paneles
                         videoAux123.Add(x);
                     }
                     videoAux123.Add(ob2);
-                    serializar.Serialize(videoAux123, File.Open("Videos.bin", FileMode.Create));
+                    serializar.Serialize(videoAux123, File.Open("Videos.bin", FileMode.Create)); 
+                    // Lo hicimos xq para que no se repitieran las canciones
                 }
             }
             catch
@@ -1972,31 +2038,6 @@ namespace Entrega_3.Paneles
 
         }
 
-       /* private void button6_Click(object sender, EventArgs e)
-        {
-            List<Video> videoAuxayuda = new List<Video>();
-            List<SongClass> songAuxayuda = new List<SongClass>();
-            try
-            {
-                songAuxayuda = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
-                videoAuxayuda = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
-                foreach (SongClass x in songAuxayuda)
-                {
-                    listBox2.Items.Add(x);
-                }
-                foreach(Video x in videoAuxayuda)
-                {
-                    listBox2.Items.Add(x);
-                }
-
-
-            }
-            catch (System.Runtime.Serialization.SerializationException)
-            {
-
-            }
-        }
-       */
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -2025,11 +2066,94 @@ namespace Entrega_3.Paneles
             Reproductor2.Ctlcontrols.play();
         }
         
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e) // BOTON DE LIKE
         {
-            numlikes+=1;
-            manito.Visible =false;
+            List<SongClass> songAux123 = new List<SongClass>();
+            List<Video> videoAux123 = new List<Video>();
+
+            numlikes += 1;
             NumLike.Text = numlikes.ToString();
+            if ( reproduciendo == "musica")
+            {
+                List<SongClass> songAux = new List<SongClass>();
+
+                try
+                {
+                    songAux = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+                }
+                catch (System.Runtime.Serialization.SerializationException)
+                {
+
+                }
+                foreach (SongClass x in songAux)
+                {
+                    songAux123.Add(x);
+                }
+                foreach (SongClass x in songAux123)
+                {
+                    if (x.Title == cancionSonando.Title)
+                    {
+                        x.Likes++;
+                        x.ProfileLikes.Add(perfilActual.NameProfile);
+                        if (x.ProfileLikes.Count() > 0)
+                        {
+                            if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                            {
+                                manito.Visible = false;
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+                        }
+
+                    }
+                }
+                serializar.Serialize(songAux123, File.Open("Canciones.bin", FileMode.Create));
+            }
+
+            else
+            {
+                if (videoSonando.ProfileLikes.Count() > 0)
+                {
+                    if (true == videoSonando.ProfileLikes.Contains(perfilActual.NameProfile))
+                    {
+                        manito.Visible = false;
+                    }
+                    else
+                    {
+                        manito.Visible = true;
+                    }
+                }
+                else
+                {
+                    manito.Visible = true;
+                }
+                List<Video> videoAux = new List<Video>();
+                try
+                {
+                    videoAux = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                }
+                catch (System.Runtime.Serialization.SerializationException)
+                {
+
+                }
+                foreach (Video x in videoAux)
+                {
+                    videoAux123.Add(x);
+                }
+                foreach (Video x in videoAux123)
+                {
+                    if (x.Title == videoSonando.Title)
+                    {
+                        x.Likes++;
+                        x.ProfileLikes.Add(perfilActual.NameProfile);
+
+                    }
+                }
+                serializar.Serialize(videoAux123, File.Open("Videos.bin", FileMode.Create));
+            }
+
 
         }
 

@@ -29,6 +29,8 @@ namespace Entrega_3.Clases
         private int nReproduction;
         private int likes;
 
+        private List<string> profileLikes;
+
         public string Composer { get => composer; set => composer = value; }
         public Singer Singer { get => singer; set => singer = value; }
         public Album Album { get => album; set => album = value; }
@@ -46,10 +48,11 @@ namespace Entrega_3.Clases
         public string Url { get => url; set => url = value; }
         public int NReproduction { get => nReproduction; set => nReproduction = value; }
         public int Likes { get => likes; set => likes = value; }
+        public List<string> ProfileLikes { get => profileLikes; set => profileLikes = value; }
 
         public SongClass(string gender, string publicationYear,
                      string title, double duration, int memory, string study, string keyword,
-                     string composer, Singer singer, Album album, string format, int evaluation, int resolution, string url, int nReproduction, int likes)
+                     string composer, Singer singer, Album album, string format, int evaluation, int resolution, string url, int nReproduction, int likes, List<string> profileLikes)
         {
             this.Gender = gender; // listo
             this.PublicationYear = publicationYear;//listo
@@ -68,6 +71,7 @@ namespace Entrega_3.Clases
             this.Url = url;
             this.NReproduction = nReproduction;
             this.Likes = likes;
+            this.ProfileLikes = profileLikes;
         }
         public SongClass()
         {
