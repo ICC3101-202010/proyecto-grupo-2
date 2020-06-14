@@ -1040,9 +1040,9 @@ namespace Entrega_3.Paneles
             l1.Visible = true;
             l2.Visible = true;
             l3.Visible = true;
-            l4.Visible = true;
-            l5.Visible = true;
-            l6.Visible = true;
+            txt1.Visible = true;
+            txt2.Visible = true;
+            txt3.Visible = true;
             radioButton1.Visible = false;
             radioButton4.Visible = false;
             radioButton5.Visible = false;
@@ -1067,9 +1067,9 @@ namespace Entrega_3.Paneles
             l2.Visible = false;
             l3.Visible = true;
             l3.Text = "Contraseña";
-            l4.Visible = false;
-            l5.Visible = false;
-            l6.Visible = true;
+            txt1.Visible = false;
+            txt2.Visible = false;
+            txt3.Visible = true;
             btnCambiarClave.Visible = false;
             btncambiarp.Visible = true;
             radioButton1.Visible = true;
@@ -1372,7 +1372,90 @@ namespace Entrega_3.Paneles
 
         private void btnCambiarClave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
+            //MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
+            string a = "c";//suponemos es premiun
+            string b = "b";//suponemos es familiar
+            List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+            if (txt1.Text == "" || txt2.Text == "" || txt3.Text == "")
+            {
+                MessageBox.Show("POR FAVOR RELLENE TODOS DATOS");
+            }
+
+            else if (deserializarUser.Count > 0)//aca hay que poner que se verifique el inicio de secion
+            {
+                int error = 1;
+                int avanzar = 0;
+                Clases.User us = new Clases.User();
+                for (int d = 0; d < deserializarUser.Count; d++)
+                {
+                    error--;
+                    if (deserializarUser[d].Password == txt1.Text)
+                    {
+
+                        us = deserializarUser[d];
+
+                    }
+                    else
+                    {
+                        error++;
+                    }
+
+                }
+                if (error > 0)
+                {
+                    MessageBox.Show("contraseña invalida");
+                }
+                if (txt2.Text != txt3.Text)
+                {
+                    MessageBox.Show("su nueva contraseña no coincide ");
+
+                }
+                if (txt2.Text == txt3.Text)
+                {
+                    if (txt1.Text == txt2.Text)
+                    {
+                        MessageBox.Show("Su contraseña nueva no puede ser igual a la anterior");
+
+                    }
+                    else
+                    {
+                        avanzar += 1;
+                    }
+                }
+                if (avanzar > 0)
+                {
+                    int error3 = 1;
+                    for (int d = 0; d < deserializarUser.Count; d++)
+                    {
+                        error3--;
+                        if (deserializarUser[d].Password == txt1.Text)
+                        {
+
+
+                            deserializarUser[d].Password = txt2.Text;
+                            panel4.Visible = false;
+                            
+
+                        }
+                        else
+                        {
+                            error3++;
+                        }
+
+                    }
+                    if (error3 <= 0)
+                    {
+                        MessageBox.Show("Contraseña cambiada con exito");
+                    }
+                    serializar.Serialize(deserializarUser, File.Open("data.bin", FileMode.Create));
+
+                    //solo falta agregar la nueva contraseña al usuario
+
+
+                }
+
+
+            }
         }
 
         private void b1_Click(object sender, EventArgs e)
@@ -3325,7 +3408,126 @@ namespace Entrega_3.Paneles
 
         private void btncambiarp_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
+
+
+            //MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
+            //MessageBox.Show("Disculpa ,estamos presentando dificultades por el momento , intenta en otra entrega :(");
+
+            List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+            if (txt3.Text == "")
+            {
+                MessageBox.Show("POR FAVOR INGRESE LA CONTRAEÑA");
+            }
+
+            else if (deserializarUser.Count > 0)//aca hay que poner que se verifique el inicio de secion
+            {
+                int error = 1;
+                int avanzar = 0;
+                int error2 = 1;
+                Clases.User us = new Clases.User();
+                for (int d = 0; d < deserializarUser.Count; d++)
+                {
+                    error--;
+                    if (deserializarUser[d].Password == txt3.Text)
+                    {
+
+                        us = deserializarUser[d];//guardo la informacion del usuario en US
+                        avanzar += 1;
+                    }
+                    else
+                    {
+                        error++;
+                    }
+
+                }
+                if (error > 0)
+                {
+                    MessageBox.Show("contraseña invalida");
+                }
+                if (radioButton1.Checked == false && radioButton4.Checked == false && radioButton5.Checked == false)
+                {
+                    MessageBox.Show("Por favor seleccione alguna de las alternativas");
+                }
+                if (us.Plan == "Basico" && radioButton1.Checked == true)
+                {
+                    MessageBox.Show("No puede cambiarse a un plan en el cual se encuentra actualmente");
+                    error2 += 1;
+
+
+                }
+                if (us.Plan == "Premium" && radioButton4.Checked == true)
+                {
+                    MessageBox.Show("No puede cambiarse a un plan en el cual se encuentra actualmente");
+                    error2 += 1;
+
+                }
+                if (us.Plan == "Familiar" && radioButton5.Checked == true)
+                {
+                    MessageBox.Show("No puede cambiarse a un plan en el cual se encuentra actualmente");
+                    error2 += 1;
+
+                }
+
+
+
+                if (avanzar > 0)
+                {
+                    int error3 = 1;
+
+                    for (int d = 0; d < deserializarUser.Count; d++)
+                    {
+                        error3--;
+                        if (deserializarUser[d].Password == txt3.Text)
+                        {
+
+                            if (radioButton1.Checked == true)
+                            {
+                                deserializarUser[d].Plan = "Basico";
+                               
+                                
+                               
+                            }
+                            if (radioButton4.Checked == true)
+                            {
+                                deserializarUser[d].Plan = "Premium";
+                               
+                                
+                            }
+
+
+
+                            if (radioButton5.Checked == true)
+                            {
+                                deserializarUser[d].Plan = "Familiar";
+                                
+                                
+                            }
+
+                        }
+                        else
+                        {
+                            error3++;
+
+                        }
+
+                    }
+                    if (error3 <=1)
+                    {
+                        MessageBox.Show("Plan ha sido cambiado con exito");
+                        this.Hide();
+                        FormAplicacion formAplicacion = new FormAplicacion(us);
+                        formAplicacion.Show();
+                    }
+                    serializar.Serialize(deserializarUser, File.Open("data.bin", FileMode.Create));
+
+                    //solo falta agregar la nueva contraseña al usuario
+
+
+                }
+
+
+            }
+
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -3352,6 +3554,11 @@ namespace Entrega_3.Paneles
         private void button11_Click_1(object sender, EventArgs e)
         {
             panel30.Visible = false;
+        }
+
+        private void panel23_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
