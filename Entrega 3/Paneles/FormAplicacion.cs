@@ -2306,11 +2306,6 @@ namespace Entrega_3.Paneles
             e5.Visible = true;
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e) //Playlist favoritos.
-        {
-
-        }
-
         private void b13_Click(object sender, EventArgs e)
         {
             for (int a = 0; a<usuario.Profiles.Count; a++)
@@ -2766,15 +2761,10 @@ namespace Entrega_3.Paneles
                     }
 
                 }
-                
-                
-
             }
-        
-
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) //PlaylistVideo
         {
             algo = "video";
             listBox3.Items.Clear();
@@ -2808,8 +2798,6 @@ namespace Entrega_3.Paneles
 
                     }
                 }
-                
-
             }
         }
 
@@ -3300,6 +3288,7 @@ namespace Entrega_3.Paneles
 
                         if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
                         {
+                            //if()
                             for (int b = 0; b < usuario.Profiles[a].PlaylistCanciones.Count(); b++)
                             {
                                 error2--;
@@ -3332,9 +3321,9 @@ namespace Entrega_3.Paneles
                                             {
                                                 MessageBox.Show("Debe seleccionar un item.");
                                             }
-
                                         }
                                     }
+
                                 }
                                 else
                                 {
@@ -3620,5 +3609,170 @@ namespace Entrega_3.Paneles
             }
         }
     }
-}
+
+        private void button6_Click(object sender, EventArgs e) //PlaylistFavoritosVideos
+        {
+            algo = "video";
+            listBox3.Items.Clear();
+            if (panel26.Visible == true)
+            {
+                panel26.Visible = false;
+            }
+            else
+            {
+                panel6.Visible = true;
+                panel23.Visible = true;
+                panel25.Visible = true;
+                panel27.Visible = true;
+
+                for (int a = 0; a < usuario.Profiles.Count(); a++)
+                {
+
+                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    {
+                        if (usuario.Profiles[a].PlaylistFavoritasVideos.Count() > 0)
+                        {
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasVideos.Count(); b++)
+                            {
+                                listBox3.Items.Add(usuario.Profiles[a].PlaylistFavoritasVideos[b].Title);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La playlist no contiene canciones");
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e) //PlaylistFavoritaCancion
+        {
+            listBox3.Items.Clear();
+            algo = "musica";
+            if (panel26.Visible == true)
+            {
+                panel26.Visible = false;
+            }
+            else
+            {
+                panel6.Visible = true;
+                panel23.Visible = true;
+                panel25.Visible = true;
+                panel27.Visible = true;
+
+                for (int a = 0; a < usuario.Profiles.Count(); a++)
+                {
+
+                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    {
+                        if (usuario.Profiles[a].PlaylistFavoritasCanciones.Count() > 0)
+                        {
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasCanciones.Count(); b++)
+                            {
+                                foreach(SongClass x in usuario.Profiles[a].PlaylistFavoritasCanciones)
+                                {
+                                    listBox4.Items.Add(x);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La playlist no contiene canciones");
+                        }
+
+                    }
+
+                }
+            }
+        }
+        private void pictureBox3_Click(object sender, EventArgs e) //Playlist favoritos.BOTON CORAZON
+        {
+            if (reproduciendo == "musica")
+            {
+                for (int a = 0; a < usuario.Profiles.Count(); a++)
+                {
+                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    {
+                        if(usuario.Profiles[a].PlaylistFavoritasCanciones.Count() > 0)
+                        {
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasCanciones.Count(); b++)
+                            {
+                                if (usuario.Profiles[a].PlaylistFavoritasCanciones[b].Title == cancionSonando.Title)
+                                {
+                                    MessageBox.Show("La cancion ya ha sido agregada previamente.");
+                                }
+                                else
+                                {
+                                    usuario.Profiles[a].PlaylistFavoritasCanciones.Add(cancionSonando);
+                                    List<Clases.User> todosUsuarios = new List<Clases.User>();
+                                    List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                                    if (deserializarUser.Count > 0)
+                                    {
+                                        for (int c = 0; c < deserializarUser.Count; c++)
+                                        {
+                                            todosUsuarios.Add(deserializarUser[c]);
+                                        }
+                                    }
+                                    todosUsuarios.Add(usuario);
+                                    serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                                    MessageBox.Show("Cancion Guardada");
+                                }
+                            }
+                        }
+                        else
+                        {
+
+                            usuario.Profiles[a].PlaylistFavoritasCanciones.Add(cancionSonando);
+                            List<Clases.User> todosUsuarios = new List<Clases.User>();
+                            List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                            if (deserializarUser.Count > 0)
+                            {
+                                for (int c = 0; c < deserializarUser.Count; c++)
+                                {
+                                    todosUsuarios.Add(deserializarUser[c]);
+                                }
+                            }
+                            todosUsuarios.Add(usuario);
+                            serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                            MessageBox.Show("Cancion Guardada");
+                        }
+                    }
+                }
+            }
+            else if (reproduciendo == "video")
+            {
+                for (int a = 0; a < usuario.Profiles.Count(); a++)
+                {
+                    if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
+                    {
+                        for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasVideos.Count(); b++)
+                        {
+                            if (usuario.Profiles[a].PlaylistFavoritasVideos[b].Title == videoSonando.Title)
+                            {
+                                MessageBox.Show("El video ya ha sido agregado previamente.");
+                            }
+                            else
+                            {
+                                usuario.Profiles[a].PlaylistFavoritasVideos.Add(videoSonando);
+                                List<Clases.User> todosUsuarios = new List<Clases.User>();
+                                List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                                if (deserializarUser.Count > 0)
+                                {
+                                    for (int c = 0; c < deserializarUser.Count; c++)
+                                    {
+                                        todosUsuarios.Add(deserializarUser[c]);
+                                    }
+                                }
+                                todosUsuarios.Add(usuario);
+                                serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                                MessageBox.Show("Cancion Guardada");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
