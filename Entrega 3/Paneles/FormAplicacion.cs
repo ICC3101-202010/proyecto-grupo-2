@@ -3316,6 +3316,7 @@ namespace Entrega_3.Paneles
                                                         if (usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Title == listaStr[0])
                                                         {
                                                             Reproductor2.URL = usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Url;
+                                                            txtBarraMusica.Text = usuario.Profiles[a].PlaylistCanciones[b].CancionesPlaylist[c].Title;
                                                         }
                                                     }
                                                     else
@@ -3362,6 +3363,7 @@ namespace Entrega_3.Paneles
                                             if (usuario.Profiles[a].PlaylistFavoritasCanciones[b].Title == listaStr[0])
                                             {
                                                 Reproductor2.URL = usuario.Profiles[a].PlaylistFavoritasCanciones[b].Url;
+                                                txtBarraMusica.Text = usuario.Profiles[a].PlaylistFavoritasCanciones[b].Title;
                                             }
                                         }
                                         else
@@ -3415,6 +3417,7 @@ namespace Entrega_3.Paneles
                                                         if (usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Title == listaStr[0])
                                                         {
                                                             Reproductor2.URL = usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Url;
+                                                            txtBarraMusica.Text = usuario.Profiles[a].PlaylistVideos[b].VideosPlaylist[c].Title;
                                                         }
                                                     }
                                                     else
@@ -3460,6 +3463,7 @@ namespace Entrega_3.Paneles
                                             if (usuario.Profiles[a].PlaylistFavoritasVideos[b].Title == listaStr[0])
                                             {
                                                 Reproductor2.URL = usuario.Profiles[a].PlaylistFavoritasVideos[b].Url;
+                                                txtBarraMusica.Text = usuario.Profiles[a].PlaylistFavoritasVideos[b].Title;
                                             }
                                         }
                                         else
@@ -3727,7 +3731,10 @@ namespace Entrega_3.Paneles
                         {
                             for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasVideos.Count(); b++)
                             {
-                                listBox3.Items.Add(usuario.Profiles[a].PlaylistFavoritasVideos[b].Title);
+                                foreach (Video x in usuario.Profiles[a].PlaylistFavoritasVideos)
+                                {
+                                    listBox4.Items.Add(x);
+                                }
                             }
                         }
                         else
@@ -3736,6 +3743,7 @@ namespace Entrega_3.Paneles
                         }
 
                     }
+
                 }
             }
         }
@@ -3817,7 +3825,6 @@ namespace Entrega_3.Paneles
                         }
                         else
                         {
-
                             usuario.Profiles[a].PlaylistFavoritasCanciones.Add(cancionSonando);
                             List<Clases.User> todosUsuarios = new List<Clases.User>();
                             List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
@@ -3841,28 +3848,47 @@ namespace Entrega_3.Paneles
                 {
                     if (usuario.Profiles[a].NameProfile == perfilActual.NameProfile)
                     {
-                        for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasVideos.Count(); b++)
+                        if (usuario.Profiles[a].PlaylistFavoritasVideos.Count() > 0)
                         {
-                            if (usuario.Profiles[a].PlaylistFavoritasVideos[b].Title == videoSonando.Title)
+                            for (int b = 0; b < usuario.Profiles[a].PlaylistFavoritasVideos.Count(); b++)
                             {
-                                MessageBox.Show("El video ya ha sido agregado previamente.");
-                            }
-                            else
-                            {
-                                usuario.Profiles[a].PlaylistFavoritasVideos.Add(videoSonando);
-                                List<Clases.User> todosUsuarios = new List<Clases.User>();
-                                List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
-                                if (deserializarUser.Count > 0)
+                                if (usuario.Profiles[a].PlaylistFavoritasVideos[b].Title == videoSonando.Title)
                                 {
-                                    for (int c = 0; c < deserializarUser.Count; c++)
-                                    {
-                                        todosUsuarios.Add(deserializarUser[c]);
-                                    }
+                                    MessageBox.Show("El video ya ha sido agregado previamente.");
                                 }
-                                todosUsuarios.Add(usuario);
-                                serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
-                                MessageBox.Show("Cancion Guardada");
+                                else
+                                {
+                                    usuario.Profiles[a].PlaylistFavoritasVideos.Add(videoSonando);
+                                    List<Clases.User> todosUsuarios = new List<Clases.User>();
+                                    List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                                    if (deserializarUser.Count > 0)
+                                    {
+                                        for (int c = 0; c < deserializarUser.Count; c++)
+                                        {
+                                            todosUsuarios.Add(deserializarUser[c]);
+                                        }
+                                    }
+                                    todosUsuarios.Add(usuario);
+                                    serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                                    MessageBox.Show("Video Guardado");
+                                }
                             }
+                        }
+                        else
+                        {
+                            usuario.Profiles[a].PlaylistFavoritasVideos.Add(videoSonando);
+                            List<Clases.User> todosUsuarios = new List<Clases.User>();
+                            List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+                            if (deserializarUser.Count > 0)
+                            {
+                                for (int c = 0; c < deserializarUser.Count; c++)
+                                {
+                                    todosUsuarios.Add(deserializarUser[c]);
+                                }
+                            }
+                            todosUsuarios.Add(usuario);
+                            serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
+                            MessageBox.Show("Video Guardado");
                         }
                     }
                 }

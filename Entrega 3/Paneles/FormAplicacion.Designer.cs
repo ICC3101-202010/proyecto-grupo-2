@@ -678,6 +678,7 @@
             // 
             this.panelContenedorPincipal.AutoSize = true;
             this.panelContenedorPincipal.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelContenedorPincipal.Controls.Add(this.panel30);
             this.panelContenedorPincipal.Controls.Add(this.panel4);
             this.panelContenedorPincipal.Controls.Add(this.panel3);
             this.panelContenedorPincipal.Controls.Add(this.panel7);
@@ -700,7 +701,6 @@
             this.panelContenedorPincipal.Controls.Add(this.pictureBox1);
             this.panelContenedorPincipal.Controls.Add(this.txtBusqueda);
             this.panelContenedorPincipal.Controls.Add(this.panel2);
-            this.panelContenedorPincipal.Controls.Add(this.panel30);
             this.panelContenedorPincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedorPincipal.Location = new System.Drawing.Point(0, 0);
             this.panelContenedorPincipal.Margin = new System.Windows.Forms.Padding(4);
@@ -745,7 +745,6 @@
             this.panel31.Controls.Add(this.txtCodigoSeguridadTarjeta);
             this.panel31.Controls.Add(this.label43);
             this.panel31.Controls.Add(this.txtNumeroTarjeta);
-            this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel31.Location = new System.Drawing.Point(0, 0);
             this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
