@@ -58,6 +58,11 @@
             this.pic1 = new System.Windows.Forms.PictureBox();
             this.panelCrearUsuario = new System.Windows.Forms.Panel();
             this.panelContenedorPincipal = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel31 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
@@ -84,6 +89,7 @@
             this.l3 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.VerCola = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnDetener = new System.Windows.Forms.PictureBox();
             this.txtBarraMusica = new System.Windows.Forms.TextBox();
@@ -232,11 +238,6 @@
             this.btnPlaylisMusica = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label38 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Crear = new System.Windows.Forms.Button();
@@ -270,9 +271,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.panelCrearUsuario.SuspendLayout();
             this.panelContenedorPincipal.SuspendLayout();
+            this.panel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VerCola)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDetener)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPausa)).BeginInit();
@@ -318,8 +322,6 @@
             this.panel2.SuspendLayout();
             this.panelSubMenuAjustes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel30.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -709,6 +711,65 @@
             this.panelContenedorPincipal.TabIndex = 31;
             this.panelContenedorPincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorPincipal_Paint);
             // 
+            // panel30
+            // 
+            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel30.Controls.Add(this.pictureBox6);
+            this.panel30.Controls.Add(this.button23);
+            this.panel30.Controls.Add(this.button11);
+            this.panel30.Controls.Add(this.label38);
+            this.panel30.Location = new System.Drawing.Point(480, 272);
+            this.panel30.Margin = new System.Windows.Forms.Padding(4);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(431, 217);
+            this.panel30.TabIndex = 44;
+            this.panel30.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(167, 81);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(89, 79);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 46;
+            this.pictureBox6.TabStop = false;
+            // 
+            // button23
+            // 
+            this.button23.Location = new System.Drawing.Point(279, 170);
+            this.button23.Margin = new System.Windows.Forms.Padding(4);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(100, 28);
+            this.button23.TabIndex = 24;
+            this.button23.Text = "Confirmar";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(69, 170);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(100, 28);
+            this.button11.TabIndex = 23;
+            this.button11.Text = "Cancelar";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label38.Location = new System.Drawing.Point(40, 20);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(339, 64);
+            this.label38.TabIndex = 17;
+            this.label38.Text = "¿Estas seguro que \r\ndeseas cerrar tu sesión?";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
@@ -725,10 +786,10 @@
             this.panel4.Controls.Add(this.l2);
             this.panel4.Controls.Add(this.l3);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Location = new System.Drawing.Point(269, 359);
+            this.panel4.Location = new System.Drawing.Point(269, 327);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(482, 360);
+            this.panel4.Size = new System.Drawing.Size(487, 392);
             this.panel4.TabIndex = 11;
             this.panel4.Visible = false;
             // 
@@ -748,7 +809,7 @@
             this.panel31.Location = new System.Drawing.Point(0, 0);
             this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(482, 360);
+            this.panel31.Size = new System.Drawing.Size(487, 388);
             this.panel31.TabIndex = 23;
             this.panel31.Visible = false;
             // 
@@ -1059,6 +1120,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel3.Controls.Add(this.VerCola);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.btnDetener);
             this.panel3.Controls.Add(this.txtBarraMusica);
@@ -1074,6 +1136,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(933, 95);
             this.panel3.TabIndex = 1;
+            // 
+            // VerCola
+            // 
+            this.VerCola.Image = ((System.Drawing.Image)(resources.GetObject("VerCola.Image")));
+            this.VerCola.Location = new System.Drawing.Point(825, 20);
+            this.VerCola.Name = "VerCola";
+            this.VerCola.Size = new System.Drawing.Size(59, 41);
+            this.VerCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VerCola.TabIndex = 19;
+            this.VerCola.TabStop = false;
+            this.VerCola.Click += new System.EventHandler(this.VerCola_Click);
             // 
             // pictureBox2
             // 
@@ -1131,6 +1204,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 14;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // pictureBox11
             // 
@@ -1451,12 +1525,11 @@
             // 
             // panel27
             // 
-            this.panel27.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel27.Controls.Add(this.label37);
             this.panel27.Controls.Add(this.listBox4);
             this.panel27.Controls.Add(this.label36);
             this.panel27.Controls.Add(this.listBox3);
-            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel27.Location = new System.Drawing.Point(0, 0);
             this.panel27.Margin = new System.Windows.Forms.Padding(4);
             this.panel27.Name = "panel27";
@@ -3032,65 +3105,6 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // panel30
-            // 
-            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel30.Controls.Add(this.pictureBox6);
-            this.panel30.Controls.Add(this.button23);
-            this.panel30.Controls.Add(this.button11);
-            this.panel30.Controls.Add(this.label38);
-            this.panel30.Location = new System.Drawing.Point(480, 272);
-            this.panel30.Margin = new System.Windows.Forms.Padding(4);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(431, 217);
-            this.panel30.TabIndex = 44;
-            this.panel30.Visible = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(167, 81);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(89, 79);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 46;
-            this.pictureBox6.TabStop = false;
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(279, 170);
-            this.button23.Margin = new System.Windows.Forms.Padding(4);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(100, 28);
-            this.button23.TabIndex = 24;
-            this.button23.Text = "Confirmar";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(69, 170);
-            this.button11.Margin = new System.Windows.Forms.Padding(4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 28);
-            this.button11.TabIndex = 23;
-            this.button11.Text = "Cancelar";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click_1);
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label38.Location = new System.Drawing.Point(40, 20);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(339, 64);
-            this.label38.TabIndex = 17;
-            this.label38.Text = "¿Estas seguro que \r\ndeseas cerrar tu seción?";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -3410,12 +3424,16 @@
             this.panelCrearUsuario.PerformLayout();
             this.panelContenedorPincipal.ResumeLayout(false);
             this.panelContenedorPincipal.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VerCola)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDetener)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPausa)).EndInit();
@@ -3468,9 +3486,6 @@
             this.panel2.PerformLayout();
             this.panelSubMenuAjustes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel30.ResumeLayout(false);
-            this.panel30.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3704,5 +3719,6 @@
         private System.Windows.Forms.TextBox txtCodigoSeguridadTarjeta;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtNumeroTarjeta;
+        private System.Windows.Forms.PictureBox VerCola;
     }
 }

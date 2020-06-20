@@ -30,6 +30,7 @@ namespace Entrega_3.Paneles
         SongClass cancionSonando; //PARA AGREGAR CANCOINES PLAYLISt
         Video videoSonando;
         string tipoPlaylist;
+        Queue<string> cola;
         
         static List<string> listaPerfilesLikes = new List<string>();
 
@@ -1092,7 +1093,7 @@ namespace Entrega_3.Paneles
 
         private void btnOtro_Click(object sender, EventArgs e)
         {
-           
+            panel27.Visible = false;
             if (usuario.Plan == "Basico")
             {
                 if (usuario.Profiles.Count == 0)
@@ -3893,6 +3894,24 @@ namespace Entrega_3.Paneles
                     }
                 }
             }
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e) //Agregar a cola. Boton.
+        {
+            //Debemos agregar las canciones.
+            if(reproduciendo == "musica")
+            {
+                cola.Enqueue(cancionSonando.Url);
+            }
+            else if( reproduciendo == "video")
+            {
+                cola.Enqueue(videoSonando.Url);
+            }
+        }
+
+        private void VerCola_Click(object sender, EventArgs e) //Ver las canciones en la cola.
+        {
+
         }
     }
 }
