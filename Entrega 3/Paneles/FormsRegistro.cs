@@ -175,6 +175,7 @@ namespace Entrega_3.Paneles
         
             DateTime dateRegister = DateTime.Now;
             int edad;
+            List<Clases.Video> videosComprados = new List<Clases.Video>();
             if (birthDate.Month < dateRegister.Month)
             {
                
@@ -206,7 +207,7 @@ namespace Entrega_3.Paneles
                 string planSeleccionado = "Basico";
                 string infopago = "";
 
-                Clases.User usuario = new Clases.User(usr, number, psswd, name, edad, lastname, gender, nationality, ocuppation, email, infopago, planSeleccionado, birthDate,perfiles);
+                Clases.User usuario = new Clases.User(usr, number, psswd, name, edad, lastname, gender, nationality, ocuppation, email, infopago, planSeleccionado, birthDate,perfiles,videosComprados);
                 List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
                 if (deserializarUser.Count>0)
                 {
@@ -301,6 +302,7 @@ namespace Entrega_3.Paneles
 
                 DateTime dateRegister = DateTime.Now;
                 int edad;
+                List<Clases.Video> videosComprados = new List<Clases.Video>();
                 if (birthDate.Month < dateRegister.Month)
                 {
 
@@ -369,7 +371,7 @@ namespace Entrega_3.Paneles
                     if (error2 == 0)
                     {
                         string infopago = txtNumeroTarjeta.Text;
-                        Clases.User usuario = new Clases.User(usr, number, psswd, name, edad, lastname, gender, nationality, ocuppation, email, infopago, planSeleccionado, birthDate, perfiles);
+                        Clases.User usuario = new Clases.User(usr, number, psswd, name, edad, lastname, gender, nationality, ocuppation, email, infopago, planSeleccionado, birthDate,perfiles, videosComprados);
                         
                         List<Clases.User> deserializarUser = new List<Clases.User>();
                         
@@ -455,7 +457,7 @@ namespace Entrega_3.Paneles
                         string infopago = txtNumeroTarjeta.Text;
                         //Agregar el usario a una lista de usuarios
                         List<Clases.User> deserializarUser = new List<Clases.User>();
-                        Clases.User usuario = new Clases.User(usr, number, psswd, name, edad, lastname, gender, nationality, ocuppation, email, infopago, planSeleccionado, birthDate, perfiles);
+                        Clases.User usuario = new Clases.User(usr, number, psswd, name, edad, lastname, gender, nationality, ocuppation, email, infopago, planSeleccionado, birthDate, perfiles, videosComprados);
                         try
                         {
                             deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));

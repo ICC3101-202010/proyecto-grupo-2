@@ -4137,9 +4137,27 @@ namespace Entrega_3.Paneles
 
         private void pic11_Click(object sender, EventArgs e)//imagen mulan
         {
-
+            for(int a = 0; a<usuario.VideosComprados.Count();a++)
+            {
+                if (usuario.VideosComprados[a].Title=="mulan")
+                {
+                    string ruta = Path.Combine(Application.StartupPath, "mulan.mp4");
+                    Reproductor2.URL = ruta;
+                    //aca poner para que se abra el panel del reproductor
+                }
+                else
+                {
+                    //metodos para abrir botones de cupon y comprar
+                }
+            }
+            
+            
         }
-        //
+        /*
+         * Metodos click boton confirmar compra dentro del panel donde se abrira la info de pago :
+         * Video video = new Video("Aventuras", "2020", "mulan", 22, 22, "study", "keyword", "description", Mactor, d, "format", 1, 2, "url", 0, 0, listaPerfilesLikes);
+         * 
+        */
 
     }
 }
