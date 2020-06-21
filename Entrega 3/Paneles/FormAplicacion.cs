@@ -34,7 +34,8 @@ namespace Entrega_3.Paneles
         SongClass cancionElegida;
         Video videoElegida;
         List<string> cola1 = new List<string>();
-        
+        List<string> cupones= new List<string>();
+        List<string> cuponesUsados = new List<string>();
         static List<string> listaPerfilesLikes = new List<string>();
 
 
@@ -202,13 +203,44 @@ namespace Entrega_3.Paneles
                 DateTime fechaActual = DateTime.Now;
                 if (user.RegistrationDate.Month == fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
                 {
-                    
-                    cumpleaños = "si";
-                    cupon = "si";
                     string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
-                    Reproductor2.URL = ruta;
+                    Random rnd = new Random();
+                    int numR = rnd.Next(2000000);
+                    int numR2 = rnd.Next(2000000);
+
+                    cumpleaños = "si";
+                    cupon = user.NameUser+numR+"H"+numR2;
+                    List<string> todosCupones = serializar.Deserialize<List<string>>(File.Open("cupones.bin", FileMode.Open));
+                    if (todosCupones.Count > 0)
+                    {
+                        for (int c = 0; c < todosCupones.Count; c++)
+                        {
+                            cupones.Add(todosCupones[c]);
+                        }
+                    }
+                    for (int a=0; a<cupones.Count(); a++)
+                    {
+                        if (cupones[a].Contains(user.NameUser))
+                        {
+                            MessageBox.Show("Su cupon es: "+cupones[a]); 
+                            
+                          
+                        }
+                        else
+                        {
+                            cupon = user.NameUser + numR + "H" + numR2;
+                            cupones.Add(cupon);
+                            MessageBox.Show("Por su cumpleaños, tiene un cupon para ver una pelicula en estreno! Su codigo es: " + cupon);
+                            Reproductor2.URL = ruta;
+                        }
+                    }
+                    
+
+                    serializar.Serialize(cupones, File.Open("cupones.bin", FileMode.Create));
+                    
+                    
                 }
-                    TipoCuenta = "Premium";
+                    
                 if (user.Profiles.Count == 0)
                 {
                     pic5.Visible = true;
@@ -249,12 +281,42 @@ namespace Entrega_3.Paneles
                 DateTime fechaActual = DateTime.Now;
                 if (user.RegistrationDate.Month == fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
                 {
-                    cumpleaños = "si";
-                    cupon = "si";
+                    Random rnd = new Random();
+                    int numR = rnd.Next(2000000);
+                    int numR2 = rnd.Next(2000000); 
                     string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
-                    Reproductor2.URL = ruta;
+
+                    cumpleaños = "si";
+                    
+                    List<string> todosCupones = serializar.Deserialize<List<string>>(File.Open("cupones.bin", FileMode.Open));
+                    if (todosCupones.Count > 0)
+                    {
+                        for (int c = 0; c < todosCupones.Count; c++)
+                        {
+                            cupones.Add(todosCupones[c]);
+                        }
+                    }
+                    for (int a = 0; a < cupones.Count(); a++)
+                    {
+                        if (cupones[a].Contains(user.NameUser))
+                        {
+                            MessageBox.Show("Su cupon es: " + cupones[a]);
+                            
+                            
+                        }
+                        else
+                        {
+                            cupon = user.NameUser + numR + "H" + numR2;
+                            cupones.Add(cupon);
+                            MessageBox.Show("Por su cumpleaños, tiene un cupon para ver una pelicula en estreno! Su codigo es: " + cupon); 
+                            Reproductor2.URL = ruta;
+                        }
+                    }
+
+                    serializar.Serialize(cupones, File.Open("cupones.bin", FileMode.Create));
+
                 }
-                TipoCuenta = "Familiar";
+   
                 if (user.Profiles.Count == 0)
                 {
                     pic5.Visible = true;
@@ -4072,5 +4134,12 @@ namespace Entrega_3.Paneles
                 
             
         }
+
+        private void pic11_Click(object sender, EventArgs e)//imagen mulan
+        {
+
+        }
+        //
+
     }
 }

@@ -1546,9 +1546,10 @@
             this.panel6.Controls.Add(this.Reproductor2);
             this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.listBox2);
-            this.panel6.Location = new System.Drawing.Point(200, 32);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(200, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(109, 583);
+            this.panel6.Size = new System.Drawing.Size(885, 618);
             this.panel6.TabIndex = 36;
             this.panel6.Visible = false;
             // 
@@ -1568,9 +1569,10 @@
             this.panel23.Controls.Add(this.button15);
             this.panel23.Controls.Add(this.button13);
             this.panel23.Controls.Add(this.label25);
-            this.panel23.Location = new System.Drawing.Point(0, 32);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(261, 583);
+            this.panel23.Size = new System.Drawing.Size(885, 618);
             this.panel23.TabIndex = 11;
             this.panel23.Visible = false;
             this.panel23.Paint += new System.Windows.Forms.PaintEventHandler(this.panel23_Paint);
@@ -1588,9 +1590,10 @@
             this.panel25.Controls.Add(this.label29);
             this.panel25.Controls.Add(this.button20);
             this.panel25.Controls.Add(this.label28);
-            this.panel25.Location = new System.Drawing.Point(0, 6);
+            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(275, 609);
+            this.panel25.Size = new System.Drawing.Size(885, 618);
             this.panel25.TabIndex = 30;
             this.panel25.Visible = false;
             // 
@@ -1602,9 +1605,10 @@
             this.panel27.Controls.Add(this.listBox4);
             this.panel27.Controls.Add(this.label36);
             this.panel27.Controls.Add(this.listBox3);
-            this.panel27.Location = new System.Drawing.Point(0, 19);
+            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel27.Location = new System.Drawing.Point(0, 0);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(55, 596);
+            this.panel27.Size = new System.Drawing.Size(885, 618);
             this.panel27.TabIndex = 27;
             this.panel27.Visible = false;
             // 
@@ -1627,9 +1631,10 @@
             this.panel32.Controls.Add(this.btnAgregarCola);
             this.panel32.Controls.Add(this.btnReproducir);
             this.panel32.Controls.Add(this.label44);
-            this.panel32.Location = new System.Drawing.Point(0, 32);
+            this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel32.Location = new System.Drawing.Point(0, 0);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(443, 583);
+            this.panel32.Size = new System.Drawing.Size(885, 618);
             this.panel32.TabIndex = 4;
             this.panel32.Visible = false;
             // 
@@ -2562,6 +2567,7 @@
             this.pic11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic11.TabIndex = 35;
             this.pic11.TabStop = false;
+            this.pic11.Click += new System.EventHandler(this.pic11_Click);
             // 
             // pic10
             // 
