@@ -30,7 +30,9 @@ namespace Entrega_3.Paneles
         SongClass cancionSonando; //PARA AGREGAR CANCOINES PLAYLISt
         Video videoSonando;
         string tipoPlaylist;
-        Queue<string> cola;
+        Queue<string> cola = new Queue<string>();
+        SongClass cancionElegida;
+        Video videoElegida;
         
         static List<string> listaPerfilesLikes = new List<string>();
 
@@ -1490,14 +1492,6 @@ namespace Entrega_3.Paneles
        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            panelContenedorPincipal.Visible = true;
-            panel6.Visible = true;
-            panel23.Visible = true;
-            panel25.Visible = true;
-            
-            panel27.Visible = true;
-         
-            panel32.Visible = true;
             
             try
             {
@@ -1746,7 +1740,14 @@ namespace Entrega_3.Paneles
 
         private void listCanciones_SelectedIndexChanged(object sender, EventArgs e) //SERIALIZAR
         {
+            panelContenedorPincipal.Visible = true;
+            panel6.Visible = true;
+            panel23.Visible = true;
+            panel25.Visible = true;
 
+            panel27.Visible = true;
+
+            panel32.Visible = true;
             //DESERIALIZANDO
             List<SongClass> songAux0 = new List<SongClass>();
             try
@@ -1766,122 +1767,39 @@ namespace Entrega_3.Paneles
             {
 
             }
+
             //HASTA ACA
-
-            try
+            if (listCanciones.SelectedItem != null)
             {
-                if (listCanciones.SelectedItem != null) 
-                { 
-                    string answer = listCanciones.SelectedItem.ToString();
-                    string[] listaStr = answer.Split(' ');
-                    foreach (SongClass x in songAux0)
-                    {
-                        if (x.Title == listaStr[0])
-                        {
-                            cancionSonando = x;
-                            reproduciendo = "musica";
-                            Reproductor2.URL = x.Url;
-                            txtBarraMusica.Text = x.Title + " autor;" + x.Singer.Name;
-                            btnPausa.Visible = true;
-                            btnPlay.Visible = false;
-                            panel6.Visible = true;
-                            numlikes = x.Likes;
-                            NumLike.Text = numlikes.ToString();
-                            NumLike.Visible = true;
-
-                            numreproducciones = x.NReproduction;
-                            numreproducciones += 1; //REPRODUCCIONES
-                            x.NReproduction = numreproducciones;
-
-                            NumReproducciones.Text = numreproducciones.ToString();
-                            if (x.ProfileLikes.Count()>0)
-                            {
-                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
-                                {
-                                    manito.Visible = false;
-                                }
-                                else
-                                {
-                                    manito.Visible = true;
-                                }
-                            }
-                            else
-                            {
-                                manito.Visible = true;
-                            }
-
-                            e6.Visible = true;
-                            e7.Visible = true;
-                            e8.Visible = true;
-                            e9.Visible = true;
-                            e10.Visible = true;
-                            panel27.Visible = false;
-                            panel25.Visible = false;
-                            panel23.Visible = false;
-                        }
-                    }
-                    serializar.Serialize(songAux0, File.Open("Canciones.bin", FileMode.Create));
-                    foreach (Video x in videoAux0)
-                    {
-                        if (x.Title == listaStr[0])
-                        {
-                            videoSonando = x;
-                            reproduciendo = "video";//Esto sirve para agregar en las playlists.
-                            Reproductor2.URL = x.Url;
-                            panel6.Visible = true;
-                            txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
-                            btnPausa.Visible = true;
-                            btnPlay.Visible = false;
-                            numlikes = x.Likes;
-                            NumLike.Text = numlikes.ToString();
-                            NumLike.Visible = true;
-
-                            numreproducciones = x.NReproduction;
-                            numreproducciones += 1; //REPRODUCCIONES
-                            x.NReproduction = numreproducciones;
-
-                            NumReproducciones.Text = numreproducciones.ToString();
-
-                            if (x.ProfileLikes.Count() > 0)
-                            {
-                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
-                                {
-                                    manito.Visible = false;
-                                }
-                                else
-                                {
-                                    manito.Visible = true;
-                                }
-                            }
-                            else
-                            {
-                                manito.Visible = true;
-                            }
-
-
-                            e6.Visible = true;
-                            e7.Visible = true;
-                            e8.Visible = true;
-                            e9.Visible = true;
-                            e10.Visible = true;
-                            //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
-                        }
-                    }
-                    serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
-                }
-                else
+                string answer = listCanciones.SelectedItem.ToString();
+                string[] listaStr = answer.Split(' ');
+                foreach(SongClass x in songAux0)
                 {
-                    MessageBox.Show("Debe seleccionar un item ");
+                    if (x.Title == listaStr[0])
+                    {
+                        lblTitle.Text = x.Title;
+                        lblStudy.Text = x.Study;
+                        lblPublicationYear.Text = x.PublicationYear;
+                        lblKeyword.Text = x.Keyword;
+                        lblGender.Text = x.Gender;
+                        lblDuration.Text = x.Duration.ToString();
+                        cancionElegida = x;
+                    }
                 }
-
+                foreach (Video x in videoAux0)
+                {
+                    if (x.Title == listaStr[0])
+                    {
+                        lblTitle.Text = x.Title;
+                        lblStudy.Text = x.Study;
+                        lblPublicationYear.Text = x.PublicationYear;
+                        lblKeyword.Text = x.Keyword;
+                        lblGender.Text = x.Gender;
+                        lblDuration.Text = x.Duration.ToString();
+                        videoElegida = x;
+                    }
+                }
             }
-
-            catch(System.NullReferenceException)
-            {
-                MessageBox.Show("Debe seleccionar un item.");
-            }
-
-
         }
 
         private void Adjuntar_Click(object sender, EventArgs e)
@@ -2208,7 +2126,17 @@ namespace Entrega_3.Paneles
                     {
                         x.Likes++;
                         x.ProfileLikes.Add(perfilActual.NameProfile);
-
+                        if (x.ProfileLikes.Count() > 0)
+                        {
+                            if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                            {
+                                manito.Visible = false;
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+                        }
                     }
                 }
                 serializar.Serialize(videoAux123, File.Open("Videos.bin", FileMode.Create));
@@ -3885,6 +3813,164 @@ namespace Entrega_3.Paneles
         private void VerCola_Click(object sender, EventArgs e) //Ver las canciones en la cola.
         {
 
+        }
+
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReproducir_Click(object sender, EventArgs e)
+        {
+            List<SongClass> songAux0 = new List<SongClass>();
+            try
+            {
+                songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+
+            }
+            List<Video> videoAux0 = new List<Video>();
+            try
+            {
+                videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+
+            }
+
+            try
+            {
+                if (listCanciones.SelectedItem != null)
+                {
+                    string answer = listCanciones.SelectedItem.ToString();
+                    string[] listaStr = answer.Split(' ');
+                    foreach (SongClass x in songAux0)
+                    {
+                        if (x.Title == listaStr[0])
+                        {
+                            cancionSonando = x;
+                            reproduciendo = "musica";
+                            Reproductor2.URL = x.Url;
+                            txtBarraMusica.Text = x.Title + " autor;" + x.Singer.Name;
+                            btnPausa.Visible = true;
+                            btnPlay.Visible = false;
+                            panel6.Visible = true;
+                            numlikes = x.Likes;
+                            NumLike.Text = numlikes.ToString();
+                            NumLike.Visible = true;
+
+                            numreproducciones = x.NReproduction;
+                            numreproducciones += 1; //REPRODUCCIONES
+                            x.NReproduction = numreproducciones;
+
+                            NumReproducciones.Text = numreproducciones.ToString();
+                            if (x.ProfileLikes.Count() > 0)
+                            {
+                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                {
+                                    manito.Visible = false;
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+
+                            e6.Visible = true;
+                            e7.Visible = true;
+                            e8.Visible = true;
+                            e9.Visible = true;
+                            e10.Visible = true;
+                            panel27.Visible = false;
+                            panel25.Visible = false;
+                            panel23.Visible = false;
+                        }
+                    }
+                    serializar.Serialize(songAux0, File.Open("Canciones.bin", FileMode.Create));
+                    foreach (Video x in videoAux0)
+                    {
+                        if (x.Title == listaStr[0])
+                        {
+                            videoSonando = x;
+                            reproduciendo = "video";//Esto sirve para agregar en las playlists.
+                            Reproductor2.URL = x.Url;
+                            panel6.Visible = true;
+                            txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                            btnPausa.Visible = true;
+                            btnPlay.Visible = false;
+                            numlikes = x.Likes;
+                            NumLike.Text = numlikes.ToString();
+                            NumLike.Visible = true;
+
+                            numreproducciones = x.NReproduction;
+                            numreproducciones += 1; //REPRODUCCIONES
+                            x.NReproduction = numreproducciones;
+
+                            NumReproducciones.Text = numreproducciones.ToString();
+
+                            if (x.ProfileLikes.Count() > 0)
+                            {
+                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                {
+                                    manito.Visible = false;
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+
+
+                            e6.Visible = true;
+                            e7.Visible = true;
+                            e8.Visible = true;
+                            e9.Visible = true;
+                            e10.Visible = true;
+                            panel27.Visible = false;
+                            panel25.Visible = false;
+                            panel23.Visible = false;
+                            //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                        }
+                    }
+                    serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un item ");
+                }
+
+            }
+
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Debe seleccionar un item.");
+            }
+        }
+
+        private void btnAgregarCola_Click(object sender, EventArgs e)
+        {
+
+
+            if (reproduciendo == "musica")
+            {
+                cola.Enqueue(cancionElegida.Url);
+                
+            }
+            else if (reproduciendo == "video")
+            {
+                cola.Enqueue(videoElegida.Url);
+            }
         }
     }
 }
