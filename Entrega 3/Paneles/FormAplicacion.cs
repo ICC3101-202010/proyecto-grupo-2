@@ -33,6 +33,7 @@ namespace Entrega_3.Paneles
         Queue<string> cola = new Queue<string>();
         SongClass cancionElegida;
         Video videoElegida;
+        List<string> cola1 = new List<string>();
         
         static List<string> listaPerfilesLikes = new List<string>();
 
@@ -3960,16 +3961,39 @@ namespace Entrega_3.Paneles
 
         private void btnAgregarCola_Click(object sender, EventArgs e)
         {
-
-
-            if (reproduciendo == "musica")
+            List<SongClass> songAux0 = new List<SongClass>();
+            try
             {
-                cola.Enqueue(cancionElegida.Url);
-                
+                songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
             }
-            else if (reproduciendo == "video")
+            catch (System.Runtime.Serialization.SerializationException)
             {
-                cola.Enqueue(videoElegida.Url);
+
+            }
+            List<Video> videoAux0 = new List<Video>();
+            try
+            {
+                videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+            }
+            catch (System.Runtime.Serialization.SerializationException)
+            {
+
+            }
+            cola1.Add(cancionElegida.Url);
+            if(reproduciendo != "musica" && reproduciendo != "video")
+            {
+                reproduciendo = "musica";
+                foreach (string x in cola1)
+                {
+                    Reproductor2.URL = x;
+                    foreach(SongClass z in songAux0)
+                    {
+                        if(z.Url == x)
+                        {
+                            txtBarraMusica.Text = z.Title;
+                        }
+                    }
+                }
             }
         }
     }
