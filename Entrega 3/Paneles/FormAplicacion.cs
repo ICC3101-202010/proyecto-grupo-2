@@ -94,7 +94,8 @@ namespace Entrega_3.Paneles
         List<SongClass> playlistFavoritasCanciones = new List<SongClass>();
         List<PlaylistSpotifai> playlistCanciones = new List<PlaylistSpotifai>();
         List<PlaylistVideoEmptyClass> playlistVideos = new List<PlaylistVideoEmptyClass>();
-
+        string cumpleaños = "";
+        string cupon = "";
 
         string TipoCuenta;
         public FormAplicacion(Clases.User user)
@@ -103,55 +104,111 @@ namespace Entrega_3.Paneles
             usuario = user;
             if (user.Plan == "Basico")
             {
-                TipoCuenta = "Basico";
-                btnSubirArchivos.Visible = false;
-                btnPlaylisMusica.Visible = false;
-                btnPlaylistVideo.Visible = false;
-                btnCambiarPerfil.Visible = false;
-                panel12.Visible = false;
-               
-                if (user.Profiles.Count == 0)
+                DateTime fechaActual = DateTime.Now;
+                if (user.RegistrationDate.Month==fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
                 {
-                    pic5.Visible = true;
-                    pic1.Visible = false;
-                    pic4.Visible = false;
-                    pic7.Visible = false;
-                    pic3.Visible = false;
-                    pic6.Visible = false;
-                    pic2.Visible = false;
-                    pic8.Visible = false;
-                    crear1.Visible = true;
-                    crear2.Visible = false;
-                    crear3.Visible = false;
-                    crear4.Visible = false;
+                    MessageBox.Show("Feliz cumpleaños!!, Te tenemos un regalo... hoy podras disfrutar los beneficios del plan premium");
+                    cumpleaños = "si";
+                    TipoCuenta = "Premium";
+                    if (user.Profiles.Count == 0)
+                    {
+                        pic5.Visible = true;
+                        pic1.Visible = false;
+                        pic4.Visible = false;
+                        pic7.Visible = false;
+                        pic3.Visible = false;
+                        pic6.Visible = false;
+                        pic2.Visible = false;
+                        pic8.Visible = false;
+                        crear1.Visible = true;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
+                    }
+                    else
+                    {
+                        pic5.Visible = false;
+                        pic1.Visible = true;
+                        crear1.Visible = false;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
+                        label8.Text = usuario.Profiles[0].NameProfile;
+                        label8.Visible = true;
+                        button1.Visible = true;
+                        pic6.Visible = false;
+                        pic7.Visible = false;
+                        pic8.Visible = false;
+                        pic4.Visible = false;
+                        pic3.Visible = false;
+                        pic2.Visible = false;
+                    }
+                    string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
+                    Reproductor2.URL = ruta;
+
                 }
                 else
                 {
-                    pic5.Visible = false;
-                    pic6.Visible = false;
-                    pic7.Visible = false;
-                    pic8.Visible = false;
+                    TipoCuenta = "Basico";
+                    btnSubirArchivos.Visible = false;
+                    btnPlaylisMusica.Visible = false;
+                    btnPlaylistVideo.Visible = false;
+                    btnCambiarPerfil.Visible = false;
+                    panel12.Visible = false;
 
-                    pic1.Visible = true;
-                    pic4.Visible = false;
-                    pic3.Visible = false;
-                    pic2.Visible = false;
+                    if (user.Profiles.Count == 0)
+                    {
+                        pic5.Visible = true;
+                        pic1.Visible = false;
+                        pic4.Visible = false;
+                        pic7.Visible = false;
+                        pic3.Visible = false;
+                        pic6.Visible = false;
+                        pic2.Visible = false;
+                        pic8.Visible = false;
+                        crear1.Visible = true;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
+                    }
+                    else
+                    {
+                        pic5.Visible = false;
+                        pic6.Visible = false;
+                        pic7.Visible = false;
+                        pic8.Visible = false;
 
-                    crear1.Visible = false;
-                    crear2.Visible = false;
-                    crear3.Visible = false;
-                    crear4.Visible = false;
+                        pic1.Visible = true;
+                        pic4.Visible = false;
+                        pic3.Visible = false;
+                        pic2.Visible = false;
 
-                    label8.Text = usuario.Profiles[0].NameProfile;
-                    label8.Visible = true;
-                    button1.Visible = true;
-                    
+                        crear1.Visible = false;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
 
+                        label8.Text = usuario.Profiles[0].NameProfile;
+                        label8.Visible = true;
+                        button1.Visible = true;
+
+
+                    }
                 }
+                
             }
             else if (user.Plan == "Premium")
             {
-                TipoCuenta = "Premiun";
+                DateTime fechaActual = DateTime.Now;
+                if (user.RegistrationDate.Month == fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
+                {
+                    
+                    cumpleaños = "si";
+                    cupon = "si";
+                    string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
+                    Reproductor2.URL = ruta;
+                }
+                    TipoCuenta = "Premium";
                 if (user.Profiles.Count == 0)
                 {
                     pic5.Visible = true;
@@ -189,6 +246,14 @@ namespace Entrega_3.Paneles
 
             else if (user.Plan == "Familiar")
             {
+                DateTime fechaActual = DateTime.Now;
+                if (user.RegistrationDate.Month == fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
+                {
+                    cumpleaños = "si";
+                    cupon = "si";
+                    string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
+                    Reproductor2.URL = ruta;
+                }
                 TipoCuenta = "Familiar";
                 if (user.Profiles.Count == 0)
                 {
@@ -818,37 +883,71 @@ namespace Entrega_3.Paneles
                 if (usuario.Plan == "Basico")
                 {
 
-
-                    if (usuario.Profiles.Count == 0)
+                    DateTime fechaActual = DateTime.Now;
+                    if (usuario.RegistrationDate.Month == fechaActual.Month && usuario.RegistrationDate.Day == fechaActual.Day)
                     {
-                        pic5.Visible = true;
-                        pic1.Visible = false;
-                        pic4.Visible = false;
-                        pic7.Visible = false;
-                        pic3.Visible = false;
-                        pic6.Visible = false;
-                        pic2.Visible = false;
-                        pic8.Visible = false;
-                        crear1.Visible = true;
-                        crear2.Visible = false;
-                        crear3.Visible = false;
-                        crear4.Visible = false;
-
+                        if (usuario.Profiles.Count == 0)
+                        {
+                            pic5.Visible = true;
+                            pic1.Visible = false;
+                            pic4.Visible = false;
+                            pic7.Visible = false;
+                            pic3.Visible = false;
+                            pic6.Visible = false;
+                            pic2.Visible = false;
+                            pic8.Visible = false;
+                            crear1.Visible = true;
+                            crear2.Visible = false;
+                            crear3.Visible = false;
+                            crear4.Visible = false;
+                        }
+                        else
+                        {
+                            pic5.Visible = false;
+                            pic1.Visible = true;
+                            crear1.Visible = false;
+                            crear2.Visible = false;
+                            crear3.Visible = false;
+                            crear4.Visible = false;
+                            label8.Text = usuario.Profiles[0].NameProfile;
+                            label8.Visible = true;
+                            button1.Visible = true;
+                        }
                     }
                     else
                     {
-                        pic5.Visible = false;
-                        pic1.Visible = true;
-                        crear1.Visible = false;
-                        crear2.Visible = false;
-                        crear3.Visible = false;
-                        crear4.Visible = false;
-                        label8.Text = usuario.Profiles[0].NameProfile;
-                        label8.Visible = true;
-                        button1.Visible = true;
+                        if (usuario.Profiles.Count == 0)
+                        {
+                            pic5.Visible = true;
+                            pic1.Visible = false;
+                            pic4.Visible = false;
+                            pic7.Visible = false;
+                            pic3.Visible = false;
+                            pic6.Visible = false;
+                            pic2.Visible = false;
+                            pic8.Visible = false;
+                            crear1.Visible = true;
+                            crear2.Visible = false;
+                            crear3.Visible = false;
+                            crear4.Visible = false;
+
+                        }
+                        else
+                        {
+                            pic5.Visible = false;
+                            pic1.Visible = true;
+                            crear1.Visible = false;
+                            crear2.Visible = false;
+                            crear3.Visible = false;
+                            crear4.Visible = false;
+                            label8.Text = usuario.Profiles[0].NameProfile;
+                            label8.Visible = true;
+                            button1.Visible = true;
 
 
+                        }
                     }
+                        
                 }
                 else if (usuario.Plan == "Premium")
                 {
@@ -2043,6 +2142,9 @@ namespace Entrega_3.Paneles
             btnPlay.Visible = false;
             btnPausa.Visible = true;
             Reproductor2.Ctlcontrols.play();
+            
+
+            
         }
         
         private void pictureBox2_Click(object sender, EventArgs e) // BOTON DE LIKE
@@ -3961,40 +4063,14 @@ namespace Entrega_3.Paneles
 
         private void btnAgregarCola_Click(object sender, EventArgs e)
         {
-            List<SongClass> songAux0 = new List<SongClass>();
-            try
-            {
-                songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
-            }
-            catch (System.Runtime.Serialization.SerializationException)
-            {
-
-            }
-            List<Video> videoAux0 = new List<Video>();
-            try
-            {
-                videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
-            }
-            catch (System.Runtime.Serialization.SerializationException)
-            {
-
-            }
+           
+          
             cola1.Add(cancionElegida.Url);
-            if(reproduciendo != "musica" && reproduciendo != "video")
-            {
-                reproduciendo = "musica";
-                foreach (string x in cola1)
-                {
-                    Reproductor2.URL = x;
-                    foreach(SongClass z in songAux0)
-                    {
-                        if(z.Url == x)
-                        {
-                            txtBarraMusica.Text = z.Title;
-                        }
-                    }
-                }
-            }
+            MessageBox.Show("Cancion agreada a la cola");
+            
+           
+                
+            
         }
     }
 }
