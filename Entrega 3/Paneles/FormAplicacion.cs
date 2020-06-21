@@ -474,6 +474,10 @@ namespace Entrega_3.Paneles
             {
                 panel26.Visible = false;
             }
+            if (panel32.Visible == true)
+            {
+                panel32.Visible = false;
+            }
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -510,66 +514,25 @@ namespace Entrega_3.Paneles
             {
                 panel26.Visible = false;
             }
+            if (panel32.Visible == true)
+            {
+                panel32.Visible = false;
+            }
         }
 
         private void pic12_Click(object sender, EventArgs e)
         {
-            if (subpanel1.Visible == true)
-            {
-                subpanel1.Visible = false;
-            }
-            else
-            {
-                subpanel1.Visible = true;
-            }
-            if (subpanel2.Visible == true)
-            {
-                subpanel2.Visible = false;
-            }
-            if (subpanel3.Visible == true)
-            {
-                subpanel3.Visible = false;
-            }
+           
         }
 
         private void pic13_Click(object sender, EventArgs e)
         {
-            if (subpanel1.Visible == true)
-            {
-                subpanel1.Visible = false;
-            }
-            if (subpanel2.Visible == true)
-            {
-                subpanel2.Visible = false;
-            }
-            else
-            {
-                subpanel2.Visible = true;
-            }
-            if (subpanel3.Visible == true)
-            {
-                subpanel3.Visible = false;
-            }
+           
         }
 
         private void pic14_Click(object sender, EventArgs e)
         {
-            if (subpanel1.Visible == true)
-            {
-                subpanel1.Visible = false;
-            }
-            if (subpanel2.Visible == true)
-            {
-                subpanel2.Visible = false;
-            }
-            if (subpanel3.Visible == true)
-            {
-                subpanel3.Visible = false;
-            }
-            else
-            {
-                subpanel3.Visible = true;
-            }
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -772,6 +735,7 @@ namespace Entrega_3.Paneles
             panelCrearUsuario.Visible = false;
             panel4.Visible = false;
             Reproductor.Ctlcontrols.stop();
+            panel32.Visible = false;
 
             
         }
@@ -1526,9 +1490,15 @@ namespace Entrega_3.Paneles
        
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            panel27.Visible = false;
-            panel25.Visible = false;
-            panel23.Visible = false;
+            panelContenedorPincipal.Visible = true;
+            panel6.Visible = true;
+            panel23.Visible = true;
+            panel25.Visible = true;
+            
+            panel27.Visible = true;
+         
+            panel32.Visible = true;
+            
             try
             {
                 canciones = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
@@ -1748,7 +1718,9 @@ namespace Entrega_3.Paneles
             {
                 MessageBox.Show("Terminos no validos.");
             }
+            
         }
+            
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -3898,6 +3870,7 @@ namespace Entrega_3.Paneles
 
         private void pictureBox12_Click(object sender, EventArgs e) //Agregar a cola. Boton.
         {
+
             //Debemos agregar las canciones.
             if(reproduciendo == "musica")
             {
