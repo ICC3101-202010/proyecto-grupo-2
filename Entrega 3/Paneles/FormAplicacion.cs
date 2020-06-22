@@ -1356,13 +1356,14 @@ namespace Entrega_3.Paneles
                 if (panel34.Visible == true)
                 {
                     panel34.Visible = false;
-                    panel15.Visible = false;
-                    panel18.Visible = false;
+                    
 
                 }
+                
                 else
                 {
                     panel34.Visible = true;
+                    
                 }
             }
             
@@ -4613,6 +4614,7 @@ namespace Entrega_3.Paneles
                 else
                 {
                     panel18.Visible = true;
+                  
                 }
             }
             
@@ -4923,6 +4925,11 @@ namespace Entrega_3.Paneles
             comboBox4.SelectedItem = null; 
             comboBox5.SelectedItem = null;
 
+
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
 
         }
     }
