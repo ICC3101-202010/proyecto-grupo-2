@@ -33,6 +33,7 @@ namespace Entrega_3.Paneles
         Queue<string> cola = new Queue<string>();
         SongClass cancionElegida;
         Video videoElegida;
+        string cosaElegida = "";
         List<string> cola1 = new List<string>();
         List<string> cupones= new List<string>();
         List<string> cuponesUsados = new List<string>();
@@ -2210,6 +2211,7 @@ namespace Entrega_3.Paneles
                         lblGender.Text = x.Gender;
                         lblDuration.Text = x.Duration.ToString();
                         cancionElegida = x;
+                        cosaElegida = "cancion";
                     }
                 }
                 foreach (Video x in videoAux0)
@@ -2223,6 +2225,7 @@ namespace Entrega_3.Paneles
                         lblGender.Text = x.Gender;
                         lblDuration.Text = x.Duration.ToString();
                         videoElegida = x;
+                        cosaElegida = "video";
                     }
                 }
             }
@@ -4464,10 +4467,50 @@ namespace Entrega_3.Paneles
 
         private void btnAgregarCola_Click(object sender, EventArgs e)
         {
-           
-          
-            cola1.Add(cancionElegida.Url);
-            MessageBox.Show("Cancion agreada a la cola");
+            if (cosaElegida == "video")
+            {
+                string comprado = "";
+                if (videoElegida.Title == "mulan" || videoElegida.Title == "joker" || videoElegida.Title == "avengers")
+                {
+                    List<User> deserializarUser = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+                    for (int h = 0; h < deserializarUser.Count; h++)
+                    {
+                        if (deserializarUser[h].NameUser == usuario.NameUser)
+                        {
+                            for (int t = 0; t < deserializarUser[h].VideosComprados.Count; t++)
+                            {
+                                if (deserializarUser[h].VideosComprados[t].Title == videoElegida.Title)
+                                {
+                                    comprado = "si";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (comprado == "si")
+                    {
+                        cola1.Add(videoElegida.Url);
+                        MessageBox.Show("Video agreado a la cola");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Para agregar a la cola, debe comprar el video");
+                        
+                    }
+                }
+                else
+                {
+                    cola1.Add(videoElegida.Url);
+                    MessageBox.Show("Video agreado a la cola");
+                }
+            }
+            else
+            {
+                cola1.Add(cancionElegida.Url);
+                MessageBox.Show("Cancion agreada a la cola");
+            }
+            
             
            
                 
@@ -4679,6 +4722,7 @@ namespace Entrega_3.Paneles
 
         private void btncupon1_Click(object sender, EventArgs e)
         {
+            panel38.Visible = false;
             panel37.Visible = true;
         }
 
@@ -4691,6 +4735,7 @@ namespace Entrega_3.Paneles
 
         //btncupon2 no se cambio nombre
         {
+            panel38.Visible = false;
             panel37.Visible = true;
         }
 
@@ -4698,10 +4743,12 @@ namespace Entrega_3.Paneles
         {
 
             panel37.Visible = true;
+            panel38.Visible = true;
         }
 
         private void btncupon3_Click(object sender, EventArgs e)//cupones mulan
         {
+            panel38.Visible = false;
             panel37.Visible = true;
 
         }
@@ -4709,12 +4756,15 @@ namespace Entrega_3.Paneles
         private void button5_Click_1(object sender, EventArgs e)
         {
             panel37.Visible = true;
+            panel38.Visible = true;
             //btncomprar2 no se cambio nombre
         }
 
         private void btncomprar3_Click(object sender, EventArgs e)
         {
             panel37.Visible = true;
+            panel38.Visible = true;
+            //comprar
         }
 
         private void button9_Click(object sender, EventArgs e)//Confirmar cupon
@@ -4785,6 +4835,92 @@ namespace Entrega_3.Paneles
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void panel31_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            //continuar tarjta comprar estreno
+            
+            List<User> deserializarUser = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+            List<Video> deserializarVideo = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+            Video videoComprado = new Video();
+            for (int t = 0; t < deserializarVideo.Count(); t++)
+            {
+                if (deserializarVideo[t].Title == videoClick)
+                {
+                    videoComprado = deserializarVideo[t];
+                }
+
+            }
+            int error2 = 0;
+            if (textBox3.Text == "" || textBox4.Text == "" || comboBox5.SelectedItem == null || comboBox4.SelectedItem == null)
+            {
+                MessageBox.Show("Rellene todos los datos");
+            }
+            else
+            { 
+                int cvv = 0;
+                
+                List<int> numeros = new List<int>();
+                for (int a = 0; a < 10; a++)
+                {
+                    numeros.Add(a);
+                }
+
+                if (txtNumeroTarjeta.Text != "")
+                {
+                    for (int b = 0; b < txtNumeroTarjeta.Text.Length; b++)
+                    {
+                        if (numeros.Contains((int)Char.GetNumericValue(txtNumeroTarjeta.Text[b])) == true)
+                        {
+
+                        }
+                        else
+                        {
+                            error2++;
+                        }
+                    }
+                }
+
+                try
+                {
+
+                    cvv += Int32.Parse(txtCodigoSeguridadTarjeta.Text);
+                }
+                catch (FormatException)
+                {
+
+                    error2 ++;
+                }
+                if (error2 == 0)
+                {
+                    for (int c = 0; c < deserializarUser.Count(); c++)
+                    {
+                        if (deserializarUser[c].NameUser == usuario.NameUser)
+                        {
+                            MessageBox.Show("Su estreno ha sido comprado!");
+                            deserializarUser[c].VideosComprados.Add(videoComprado);
+                            serializar.Serialize(deserializarUser, File.Open("data.bin", FileMode.Create));
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Error, ingrese nuevamente su forma de pago");
+                }
+
+            }
+            textBox3.Clear(); 
+            textBox4.Clear();
+            
 
         }
     }

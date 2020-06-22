@@ -277,6 +277,17 @@
             this.b15 = new System.Windows.Forms.Button();
             this.b16 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverNormalidad)).BeginInit();
@@ -345,6 +356,7 @@
             this.panel2.SuspendLayout();
             this.panelSubMenuAjustes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel38.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -725,7 +737,7 @@
             this.SubirArchivo.Controls.Add(this.listBox1);
             this.SubirArchivo.Location = new System.Drawing.Point(201, 74);
             this.SubirArchivo.Name = "SubirArchivo";
-            this.SubirArchivo.Size = new System.Drawing.Size(400, 338);
+            this.SubirArchivo.Size = new System.Drawing.Size(374, 345);
             this.SubirArchivo.TabIndex = 42;
             this.SubirArchivo.Visible = false;
             // 
@@ -750,7 +762,7 @@
             this.panel5.Controls.Add(this.txtTitle);
             this.panel5.Location = new System.Drawing.Point(0, 25);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(382, 313);
+            this.panel5.Size = new System.Drawing.Size(382, 298);
             this.panel5.TabIndex = 11;
             this.panel5.Visible = false;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint_1);
@@ -985,7 +997,7 @@
             this.panel4.Controls.Add(this.label15);
             this.panel4.Location = new System.Drawing.Point(201, 229);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(385, 318);
+            this.panel4.Size = new System.Drawing.Size(374, 319);
             this.panel4.TabIndex = 11;
             this.panel4.Visible = false;
             // 
@@ -1007,6 +1019,7 @@
             this.panel31.Size = new System.Drawing.Size(374, 305);
             this.panel31.TabIndex = 23;
             this.panel31.Visible = false;
+            this.panel31.Paint += new System.Windows.Forms.PaintEventHandler(this.panel31_Paint);
             // 
             // label39
             // 
@@ -1298,7 +1311,7 @@
             this.panel30.Controls.Add(this.label38);
             this.panel30.Location = new System.Drawing.Point(358, 200);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(325, 183);
+            this.panel30.Size = new System.Drawing.Size(325, 179);
             this.panel30.TabIndex = 44;
             this.panel30.Visible = false;
             // 
@@ -1346,6 +1359,7 @@
             // panel37
             // 
             this.panel37.BackColor = System.Drawing.Color.DarkRed;
+            this.panel37.Controls.Add(this.panel38);
             this.panel37.Controls.Add(this.button9);
             this.panel37.Controls.Add(this.label48);
             this.panel37.Controls.Add(this.textBox2);
@@ -3462,6 +3476,147 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel38.Controls.Add(this.label49);
+            this.panel38.Controls.Add(this.label53);
+            this.panel38.Controls.Add(this.comboBox4);
+            this.panel38.Controls.Add(this.comboBox5);
+            this.panel38.Controls.Add(this.button14);
+            this.panel38.Controls.Add(this.label54);
+            this.panel38.Controls.Add(this.label55);
+            this.panel38.Controls.Add(this.textBox3);
+            this.panel38.Controls.Add(this.label56);
+            this.panel38.Controls.Add(this.textBox4);
+            this.panel38.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel38.Location = new System.Drawing.Point(0, 0);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(251, 154);
+            this.panel38.TabIndex = 63;
+            this.panel38.Visible = false;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.Lavender;
+            this.label49.Location = new System.Drawing.Point(198, 39);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(33, 16);
+            this.label49.TabIndex = 24;
+            this.label49.Text = "Año";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.ForeColor = System.Drawing.Color.Lavender;
+            this.label53.Location = new System.Drawing.Point(141, 39);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(33, 16);
+            this.label53.TabIndex = 23;
+            this.label53.Text = "Mes";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.comboBox4.Location = new System.Drawing.Point(137, 58);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(51, 21);
+            this.comboBox4.TabIndex = 22;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"});
+            this.comboBox5.Location = new System.Drawing.Point(195, 58);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(51, 21);
+            this.comboBox5.TabIndex = 21;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(91, 117);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 19;
+            this.button14.Text = "Continuar";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label54.Location = new System.Drawing.Point(6, 89);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(118, 16);
+            this.label54.TabIndex = 18;
+            this.label54.Text = "codigo seguridad";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label55.Location = new System.Drawing.Point(4, 57);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(124, 16);
+            this.label55.TabIndex = 17;
+            this.label55.Text = "Fecha caducacion";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(137, 85);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(48, 20);
+            this.textBox3.TabIndex = 16;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label56.Location = new System.Drawing.Point(4, 14);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(103, 16);
+            this.label56.TabIndex = 15;
+            this.label56.Text = "Numero tarjeta";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(113, 16);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(124, 20);
+            this.textBox4.TabIndex = 14;
+            // 
             // FormAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3587,6 +3742,8 @@
             this.panel2.PerformLayout();
             this.panelSubMenuAjustes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel38.ResumeLayout(false);
+            this.panel38.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3842,5 +3999,16 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
