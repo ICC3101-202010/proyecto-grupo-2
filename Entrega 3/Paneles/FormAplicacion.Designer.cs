@@ -258,6 +258,24 @@
             this.b14 = new System.Windows.Forms.Button();
             this.b15 = new System.Windows.Forms.Button();
             this.b16 = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.btncupon2 = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.btncomprar3 = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.btncupon3 = new System.Windows.Forms.Button();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.btncomprar1 = new System.Windows.Forms.Button();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.btncupon1 = new System.Windows.Forms.Button();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverNormalidad)).BeginInit();
@@ -322,6 +340,10 @@
             this.panel2.SuspendLayout();
             this.panelSubMenuAjustes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel15.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel34.SuspendLayout();
+            this.panel37.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -652,9 +674,14 @@
             // 
             this.panelContenedorPincipal.AutoSize = true;
             this.panelContenedorPincipal.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelContenedorPincipal.Controls.Add(this.panel30);
-            this.panelContenedorPincipal.Controls.Add(this.panel4);
+            this.panelContenedorPincipal.Controls.Add(this.listCanciones);
             this.panelContenedorPincipal.Controls.Add(this.SubirArchivo);
+            this.panelContenedorPincipal.Controls.Add(this.panel4);
+            this.panelContenedorPincipal.Controls.Add(this.panel30);
+            this.panelContenedorPincipal.Controls.Add(this.panel37);
+            this.panelContenedorPincipal.Controls.Add(this.panel34);
+            this.panelContenedorPincipal.Controls.Add(this.panel18);
+            this.panelContenedorPincipal.Controls.Add(this.panel15);
             this.panelContenedorPincipal.Controls.Add(this.panel3);
             this.panelContenedorPincipal.Controls.Add(this.panel7);
             this.panelContenedorPincipal.Controls.Add(this.panel6);
@@ -663,7 +690,6 @@
             this.panelContenedorPincipal.Controls.Add(this.pic11);
             this.panelContenedorPincipal.Controls.Add(this.pic10);
             this.panelContenedorPincipal.Controls.Add(this.pic9);
-            this.panelContenedorPincipal.Controls.Add(this.label14);
             this.panelContenedorPincipal.Controls.Add(this.pic14);
             this.panelContenedorPincipal.Controls.Add(this.pic13);
             this.panelContenedorPincipal.Controls.Add(this.pic12);
@@ -671,10 +697,9 @@
             this.panelContenedorPincipal.Controls.Add(this.txtBusqueda);
             this.panelContenedorPincipal.Controls.Add(this.panel2);
             this.panelContenedorPincipal.Controls.Add(this.panel33);
-            this.panelContenedorPincipal.Controls.Add(this.listCanciones);
             this.panelContenedorPincipal.Location = new System.Drawing.Point(0, 0);
             this.panelContenedorPincipal.Name = "panelContenedorPincipal";
-            this.panelContenedorPincipal.Size = new System.Drawing.Size(1085, 618);
+            this.panelContenedorPincipal.Size = new System.Drawing.Size(1088, 621);
             this.panelContenedorPincipal.TabIndex = 31;
             this.panelContenedorPincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorPincipal_Paint);
             // 
@@ -685,9 +710,9 @@
             this.panel30.Controls.Add(this.button23);
             this.panel30.Controls.Add(this.button11);
             this.panel30.Controls.Add(this.label38);
-            this.panel30.Location = new System.Drawing.Point(358, 207);
+            this.panel30.Location = new System.Drawing.Point(358, 200);
             this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(323, 176);
+            this.panel30.Size = new System.Drawing.Size(325, 183);
             this.panel30.TabIndex = 44;
             this.panel30.Visible = false;
             // 
@@ -767,10 +792,9 @@
             this.panel31.Controls.Add(this.txtCodigoSeguridadTarjeta);
             this.panel31.Controls.Add(this.label43);
             this.panel31.Controls.Add(this.txtNumeroTarjeta);
-            this.panel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel31.Location = new System.Drawing.Point(0, 0);
+            this.panel31.Location = new System.Drawing.Point(0, 13);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(385, 318);
+            this.panel31.Size = new System.Drawing.Size(374, 305);
             this.panel31.TabIndex = 23;
             this.panel31.Visible = false;
             // 
@@ -1088,9 +1112,9 @@
             this.panel5.Controls.Add(this.txtAlbum);
             this.panel5.Controls.Add(this.txtGender);
             this.panel5.Controls.Add(this.txtTitle);
-            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Location = new System.Drawing.Point(0, 25);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 338);
+            this.panel5.Size = new System.Drawing.Size(382, 313);
             this.panel5.TabIndex = 11;
             this.panel5.Visible = false;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint_1);
@@ -1321,9 +1345,9 @@
             this.panel3.Controls.Add(this.pictureBox9);
             this.panel3.Controls.Add(this.btnPlay);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(200, 520);
+            this.panel3.Location = new System.Drawing.Point(200, 523);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(885, 98);
+            this.panel3.Size = new System.Drawing.Size(888, 98);
             this.panel3.TabIndex = 1;
             // 
             // VerCola
@@ -1549,7 +1573,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(200, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(885, 618);
+            this.panel6.Size = new System.Drawing.Size(888, 621);
             this.panel6.TabIndex = 36;
             this.panel6.Visible = false;
             // 
@@ -1569,10 +1593,9 @@
             this.panel23.Controls.Add(this.button15);
             this.panel23.Controls.Add(this.button13);
             this.panel23.Controls.Add(this.label25);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel23.Location = new System.Drawing.Point(0, 0);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(885, 618);
+            this.panel23.Size = new System.Drawing.Size(700, 618);
             this.panel23.TabIndex = 11;
             this.panel23.Visible = false;
             this.panel23.Paint += new System.Windows.Forms.PaintEventHandler(this.panel23_Paint);
@@ -1590,10 +1613,9 @@
             this.panel25.Controls.Add(this.label29);
             this.panel25.Controls.Add(this.button20);
             this.panel25.Controls.Add(this.label28);
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel25.Location = new System.Drawing.Point(0, 0);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(885, 618);
+            this.panel25.Size = new System.Drawing.Size(706, 618);
             this.panel25.TabIndex = 30;
             this.panel25.Visible = false;
             // 
@@ -1605,10 +1627,9 @@
             this.panel27.Controls.Add(this.listBox4);
             this.panel27.Controls.Add(this.label36);
             this.panel27.Controls.Add(this.listBox3);
-            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel27.Location = new System.Drawing.Point(0, 0);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(885, 618);
+            this.panel27.Size = new System.Drawing.Size(697, 618);
             this.panel27.TabIndex = 27;
             this.panel27.Visible = false;
             // 
@@ -1631,10 +1652,9 @@
             this.panel32.Controls.Add(this.btnAgregarCola);
             this.panel32.Controls.Add(this.btnReproducir);
             this.panel32.Controls.Add(this.label44);
-            this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel32.Location = new System.Drawing.Point(0, 0);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(885, 618);
+            this.panel32.Size = new System.Drawing.Size(700, 618);
             this.panel32.TabIndex = 4;
             this.panel32.Visible = false;
             // 
@@ -2561,9 +2581,9 @@
             // 
             this.pic11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic11.Image = global::Entrega_3.Properties.Resources.Imulan;
-            this.pic11.Location = new System.Drawing.Point(620, 149);
+            this.pic11.Location = new System.Drawing.Point(607, 152);
             this.pic11.Name = "pic11";
-            this.pic11.Size = new System.Drawing.Size(158, 117);
+            this.pic11.Size = new System.Drawing.Size(154, 117);
             this.pic11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic11.TabIndex = 35;
             this.pic11.TabStop = false;
@@ -2573,18 +2593,19 @@
             // 
             this.pic10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic10.Image = ((System.Drawing.Image)(resources.GetObject("pic10.Image")));
-            this.pic10.Location = new System.Drawing.Point(440, 152);
+            this.pic10.Location = new System.Drawing.Point(421, 155);
             this.pic10.Name = "pic10";
-            this.pic10.Size = new System.Drawing.Size(158, 117);
+            this.pic10.Size = new System.Drawing.Size(162, 117);
             this.pic10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic10.TabIndex = 34;
             this.pic10.TabStop = false;
+            this.pic10.Click += new System.EventHandler(this.pic10_Click);
             // 
             // pic9
             // 
             this.pic9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic9.Image = ((System.Drawing.Image)(resources.GetObject("pic9.Image")));
-            this.pic9.Location = new System.Drawing.Point(233, 152);
+            this.pic9.Location = new System.Drawing.Point(236, 155);
             this.pic9.Name = "pic9";
             this.pic9.Size = new System.Drawing.Size(158, 117);
             this.pic9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2596,7 +2617,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(347, 262);
+            this.label14.Location = new System.Drawing.Point(36, 20);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(342, 22);
             this.label14.TabIndex = 32;
@@ -2618,7 +2639,7 @@
             // 
             this.pic13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic13.Image = ((System.Drawing.Image)(resources.GetObject("pic13.Image")));
-            this.pic13.Location = new System.Drawing.Point(431, 330);
+            this.pic13.Location = new System.Drawing.Point(434, 333);
             this.pic13.Name = "pic13";
             this.pic13.Size = new System.Drawing.Size(158, 117);
             this.pic13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2630,7 +2651,7 @@
             // 
             this.pic12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic12.Image = ((System.Drawing.Image)(resources.GetObject("pic12.Image")));
-            this.pic12.Location = new System.Drawing.Point(232, 330);
+            this.pic12.Location = new System.Drawing.Point(235, 333);
             this.pic12.Name = "pic12";
             this.pic12.Size = new System.Drawing.Size(158, 117);
             this.pic12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2675,7 +2696,7 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 618);
+            this.panel2.Size = new System.Drawing.Size(200, 621);
             this.panel2.TabIndex = 0;
             // 
             // panelSubMenuAjustes
@@ -3202,6 +3223,228 @@
             this.b16.Visible = false;
             this.b16.Click += new System.EventHandler(this.b16_Click);
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Controls.Add(this.button5);
+            this.panel15.Controls.Add(this.panel19);
+            this.panel15.Controls.Add(this.btncupon2);
+            this.panel15.Location = new System.Drawing.Point(446, 271);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(151, 69);
+            this.panel15.TabIndex = 46;
+            this.panel15.Visible = false;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.Blue;
+            this.panel16.Location = new System.Drawing.Point(1, 38);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(10, 30);
+            this.panel16.TabIndex = 10;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(10, 38);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(136, 30);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Comprar";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Blue;
+            this.panel19.Location = new System.Drawing.Point(2, 1);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(10, 30);
+            this.panel19.TabIndex = 6;
+            // 
+            // btncupon2
+            // 
+            this.btncupon2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncupon2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncupon2.FlatAppearance.BorderSize = 0;
+            this.btncupon2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btncupon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncupon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncupon2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btncupon2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncupon2.Location = new System.Drawing.Point(11, 1);
+            this.btncupon2.Name = "btncupon2";
+            this.btncupon2.Size = new System.Drawing.Size(136, 30);
+            this.btncupon2.TabIndex = 5;
+            this.btncupon2.Text = "Cupones";
+            this.btncupon2.UseVisualStyleBackColor = false;
+            this.btncupon2.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.panel21);
+            this.panel18.Controls.Add(this.btncomprar3);
+            this.panel18.Controls.Add(this.panel22);
+            this.panel18.Controls.Add(this.btncupon3);
+            this.panel18.Location = new System.Drawing.Point(616, 269);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(139, 71);
+            this.panel18.TabIndex = 47;
+            this.panel18.Visible = false;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.Blue;
+            this.panel21.Location = new System.Drawing.Point(1, 38);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(10, 30);
+            this.panel21.TabIndex = 10;
+            // 
+            // btncomprar3
+            // 
+            this.btncomprar3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncomprar3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncomprar3.FlatAppearance.BorderSize = 0;
+            this.btncomprar3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btncomprar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncomprar3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncomprar3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btncomprar3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncomprar3.Location = new System.Drawing.Point(10, 38);
+            this.btncomprar3.Name = "btncomprar3";
+            this.btncomprar3.Size = new System.Drawing.Size(136, 30);
+            this.btncomprar3.TabIndex = 9;
+            this.btncomprar3.Text = "Comprar";
+            this.btncomprar3.UseVisualStyleBackColor = false;
+            this.btncomprar3.Click += new System.EventHandler(this.btncomprar3_Click);
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Blue;
+            this.panel22.Location = new System.Drawing.Point(2, 1);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(10, 30);
+            this.panel22.TabIndex = 6;
+            // 
+            // btncupon3
+            // 
+            this.btncupon3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncupon3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncupon3.FlatAppearance.BorderSize = 0;
+            this.btncupon3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btncupon3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncupon3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncupon3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btncupon3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncupon3.Location = new System.Drawing.Point(11, 1);
+            this.btncupon3.Name = "btncupon3";
+            this.btncupon3.Size = new System.Drawing.Size(136, 30);
+            this.btncupon3.TabIndex = 5;
+            this.btncupon3.Text = "Cupones";
+            this.btncupon3.UseVisualStyleBackColor = false;
+            this.btncupon3.Click += new System.EventHandler(this.btncupon3_Click);
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.panel35);
+            this.panel34.Controls.Add(this.btncomprar1);
+            this.panel34.Controls.Add(this.panel36);
+            this.panel34.Controls.Add(this.btncupon1);
+            this.panel34.Controls.Add(this.label14);
+            this.panel34.Location = new System.Drawing.Point(236, 265);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(145, 71);
+            this.panel34.TabIndex = 48;
+            this.panel34.Visible = false;
+            // 
+            // panel35
+            // 
+            this.panel35.BackColor = System.Drawing.Color.Blue;
+            this.panel35.Location = new System.Drawing.Point(1, 38);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(10, 30);
+            this.panel35.TabIndex = 10;
+            // 
+            // btncomprar1
+            // 
+            this.btncomprar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncomprar1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncomprar1.FlatAppearance.BorderSize = 0;
+            this.btncomprar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btncomprar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncomprar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncomprar1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btncomprar1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncomprar1.Location = new System.Drawing.Point(10, 38);
+            this.btncomprar1.Name = "btncomprar1";
+            this.btncomprar1.Size = new System.Drawing.Size(136, 30);
+            this.btncomprar1.TabIndex = 9;
+            this.btncomprar1.Text = "Comprar";
+            this.btncomprar1.UseVisualStyleBackColor = false;
+            this.btncomprar1.Click += new System.EventHandler(this.btncomprar1_Click);
+            // 
+            // panel36
+            // 
+            this.panel36.BackColor = System.Drawing.Color.Blue;
+            this.panel36.Location = new System.Drawing.Point(2, 1);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(10, 30);
+            this.panel36.TabIndex = 6;
+            // 
+            // btncupon1
+            // 
+            this.btncupon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncupon1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncupon1.FlatAppearance.BorderSize = 0;
+            this.btncupon1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btncupon1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncupon1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncupon1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btncupon1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncupon1.Location = new System.Drawing.Point(11, 1);
+            this.btncupon1.Name = "btncupon1";
+            this.btncupon1.Size = new System.Drawing.Size(136, 30);
+            this.btncupon1.TabIndex = 5;
+            this.btncupon1.Text = "Cupones";
+            this.btncupon1.UseVisualStyleBackColor = false;
+            this.btncupon1.Click += new System.EventHandler(this.btncupon1_Click);
+            // 
+            // panel37
+            // 
+            this.panel37.BackColor = System.Drawing.Color.DarkRed;
+            this.panel37.Controls.Add(this.label48);
+            this.panel37.Controls.Add(this.textBox2);
+            this.panel37.Location = new System.Drawing.Point(409, 342);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(251, 154);
+            this.panel37.TabIndex = 49;
+            this.panel37.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(71, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 0;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(48, 17);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(162, 22);
+            this.label48.TabIndex = 37;
+            this.label48.Text = "Ingrese su codigo";
+            this.label48.UseWaitCursor = true;
+            // 
             // FormAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3321,6 +3564,12 @@
             this.panel2.PerformLayout();
             this.panelSubMenuAjustes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel34.ResumeLayout(false);
+            this.panel34.PerformLayout();
+            this.panel37.ResumeLayout(false);
+            this.panel37.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3557,5 +3806,23 @@
         private System.Windows.Forms.Label lblPublicationYear;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Button btncupon2;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Button btncomprar1;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Button btncupon1;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Button btncomprar3;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Button btncupon3;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

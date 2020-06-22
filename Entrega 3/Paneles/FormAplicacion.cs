@@ -612,7 +612,8 @@ namespace Entrega_3.Paneles
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            if(panel27.Visible == true)
+            panel37.Visible = false;
+            if (panel27.Visible == true)
             {
                 panel27.Visible = false;
             }
@@ -1156,7 +1157,17 @@ namespace Entrega_3.Paneles
 
         private void pic9_Click(object sender, EventArgs e)
         {
+            if (panel34.Visible == true)
+            {
+                panel34.Visible = false;
+                panel15.Visible = false;
+                panel18.Visible = false;
 
+            }
+            else
+            {
+                panel34.Visible = true;
+            }
         }
 
         private void gustosMusicales_SelectedIndexChanged(object sender, EventArgs e)
@@ -4137,6 +4148,19 @@ namespace Entrega_3.Paneles
 
         private void pic11_Click(object sender, EventArgs e)//imagen mulan
         {
+            //nose pq pusiste esto aca jajaa saludos xdxd
+            if (panel18.Visible == true)
+            {
+                panel34.Visible = false;
+                panel15.Visible = false;
+                panel18.Visible = false;
+
+            }
+            else
+            {
+                panel18.Visible = true;
+            }
+            /* 
             for(int a = 0; a<usuario.VideosComprados.Count();a++)
             {
                 if (usuario.VideosComprados[a].Title=="mulan")
@@ -4150,14 +4174,70 @@ namespace Entrega_3.Paneles
                     //metodos para abrir botones de cupon y comprar
                 }
             }
-            
-            
+            */
+
+
+        }
+
+        private void pic10_Click(object sender, EventArgs e)
+        {
+            if (panel15.Visible == true)
+            {
+                panel34.Visible = false;
+                panel15.Visible = false;
+                panel18.Visible = false;
+
+            }
+            else
+            {
+                panel15.Visible = true;
+            }
+        }
+
+        private void btncupon1_Click(object sender, EventArgs e)
+        {
+            panel37.Visible = true;
+        }
+
+
+        //btncupon2 no se cambio nombre
+        
+        //btncupon2 no se cambio nombre
+        //btncupon2 no se cambio nombre
+        private void button12_Click(object sender, EventArgs e)
+
+        //btncupon2 no se cambio nombre
+        {
+            panel37.Visible = true;
+        }
+
+        private void btncomprar1_Click(object sender, EventArgs e)
+        {
+
+            panel37.Visible = true;
+        }
+
+        private void btncupon3_Click(object sender, EventArgs e)
+        {
+            panel37.Visible = true;
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            panel37.Visible = true;
+            //btncomprar2 no se cambio nombre
+        }
+
+        private void btncomprar3_Click(object sender, EventArgs e)
+        {
+            panel37.Visible = true;
         }
         /*
-         * Metodos click boton confirmar compra dentro del panel donde se abrira la info de pago :
-         * Video video = new Video("Aventuras", "2020", "mulan", 22, 22, "study", "keyword", "description", Mactor, d, "format", 1, 2, "url", 0, 0, listaPerfilesLikes);
-         * 
-        */
+* Metodos click boton confirmar compra dentro del panel donde se abrira la info de pago :
+* Video video = new Video("Aventuras", "2020", "mulan", 22, 22, "study", "keyword", "description", Mactor, d, "format", 1, 2, "url", 0, 0, listaPerfilesLikes);
+* 
+*/
 
     }
 }
