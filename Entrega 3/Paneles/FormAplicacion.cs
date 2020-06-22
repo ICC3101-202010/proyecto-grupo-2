@@ -4327,49 +4327,124 @@ namespace Entrega_3.Paneles
                     {
                         if (x.Title == listaStr[0])
                         {
-                            videoSonando = x;
-                            reproduciendo = "video";//Esto sirve para agregar en las playlists.
-                            Reproductor2.URL = x.Url;
-                            panel6.Visible = true;
-                            txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
-                            btnPausa.Visible = true;
-                            btnPlay.Visible = false;
-                            numlikes = x.Likes;
-                            NumLike.Text = numlikes.ToString();
-                            NumLike.Visible = true;
-
-                            numreproducciones = x.NReproduction;
-                            numreproducciones += 1; //REPRODUCCIONES
-                            x.NReproduction = numreproducciones;
-
-                            NumReproducciones.Text = numreproducciones.ToString();
-
-                            if (x.ProfileLikes.Count() > 0)
+                            string comprado = "";
+                            if (x.Title=="mulan" || x.Title == "joker" || x.Title == "avengers")
                             {
-                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                List<User> deserializarUser = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+                                for (int h=0;h<deserializarUser.Count;h++)
                                 {
-                                    manito.Visible = false;
+                                    if (deserializarUser[h].NameUser==usuario.NameUser)
+                                    {
+                                        for (int t = 0; t < deserializarUser[h].VideosComprados.Count; t++)
+                                        {
+                                            if (deserializarUser[h].VideosComprados[t].Title== x.Title)
+                                            {
+                                                comprado = "si";
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                if (comprado=="si")
+                                {
+                                    videoSonando = x;
+                                    reproduciendo = "video";//Esto sirve para agregar en las playlists.
+                                    Reproductor2.URL = x.Url;
+                                    panel6.Visible = true;
+                                    txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                                    btnPausa.Visible = true;
+                                    btnPlay.Visible = false;
+                                    numlikes = x.Likes;
+                                    NumLike.Text = numlikes.ToString();
+                                    NumLike.Visible = true;
+
+                                    numreproducciones = x.NReproduction;
+                                    numreproducciones += 1; //REPRODUCCIONES
+                                    x.NReproduction = numreproducciones;
+
+                                    NumReproducciones.Text = numreproducciones.ToString();
+
+                                    if (x.ProfileLikes.Count() > 0)
+                                    {
+                                        if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                        {
+                                            manito.Visible = false;
+                                        }
+                                        else
+                                        {
+                                            manito.Visible = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
+
+
+                                    e6.Visible = true;
+                                    e7.Visible = true;
+                                    e8.Visible = true;
+                                    e9.Visible = true;
+                                    e10.Visible = true;
+                                    panel27.Visible = false;
+                                    panel25.Visible = false;
+                                    panel23.Visible = false;
+                                    break;
+                                    //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Debe comprar la pelicula para poder verla");
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                videoSonando = x;
+                                reproduciendo = "video";//Esto sirve para agregar en las playlists.
+                                Reproductor2.URL = x.Url;
+                                panel6.Visible = true;
+                                txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                                btnPausa.Visible = true;
+                                btnPlay.Visible = false;
+                                numlikes = x.Likes;
+                                NumLike.Text = numlikes.ToString();
+                                NumLike.Visible = true;
+
+                                numreproducciones = x.NReproduction;
+                                numreproducciones += 1; //REPRODUCCIONES
+                                x.NReproduction = numreproducciones;
+
+                                NumReproducciones.Text = numreproducciones.ToString();
+
+                                if (x.ProfileLikes.Count() > 0)
+                                {
+                                    if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                    {
+                                        manito.Visible = false;
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
                                 }
                                 else
                                 {
                                     manito.Visible = true;
                                 }
-                            }
-                            else
-                            {
-                                manito.Visible = true;
-                            }
 
 
-                            e6.Visible = true;
-                            e7.Visible = true;
-                            e8.Visible = true;
-                            e9.Visible = true;
-                            e10.Visible = true;
-                            panel27.Visible = false;
-                            panel25.Visible = false;
-                            panel23.Visible = false;
-                            //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                                e6.Visible = true;
+                                e7.Visible = true;
+                                e8.Visible = true;
+                                e9.Visible = true;
+                                e10.Visible = true;
+                                panel27.Visible = false;
+                                panel25.Visible = false;
+                                panel23.Visible = false;
+                                break;
+                                //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                            }
                         }
                     }
                     serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
