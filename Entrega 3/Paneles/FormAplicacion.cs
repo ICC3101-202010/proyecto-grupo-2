@@ -37,6 +37,7 @@ namespace Entrega_3.Paneles
         List<string> cupones= new List<string>();
         List<string> cuponesUsados = new List<string>();
         static List<string> listaPerfilesLikes = new List<string>();
+        string videoClick = "";
 
 
         static List<string> premios = new List<string>();
@@ -74,7 +75,7 @@ namespace Entrega_3.Paneles
         Video video3 = new Video("Vgender3", "publicationYear3", "title3", 22, 22, "study3", "keyword3", "description3", Mactor3, d3, "format3", 111, 222, "url", 0, 0, listaPerfilesLikes);
         Video video4 = new Video("Vgender4", "publicationYear4", "title4", 22, 22, "study4", "keyword4", "description4", Mactor4, d4, "format4", 1111, 2222, "url", 0, 0, listaPerfilesLikes);
 
-
+       
 
         //hasta aqui
 
@@ -99,10 +100,106 @@ namespace Entrega_3.Paneles
         string cupon = "";
 
         string TipoCuenta;
+        //Crear peliculas
+
+        
         public FormAplicacion(Clases.User user)
         {
             InitializeComponent();
             usuario = user;
+            //mulan
+            List<Video> pelisNiki = new List<Video>();
+            List<String> premiosNiki = new List<string>();
+            List<Video> pelisLiu = new List<Video>();
+            List<String> premiosLiu = new List<string>();
+            Actor actor = new Actor("Liu", 32, "Yifei", "Varios", "China", "Actriz-Cantante-Modelo", pelisLiu, premiosLiu, 18);
+            Director director = new Director("Niki", 53, "Caro", "Varios", "Nueva Zelanda", "Directora-Productora-Guionista", pelisNiki, premiosNiki, 20);
+            List<string> profileLikes = new List<string>();
+            string ruta1 = Path.Combine(Application.StartupPath, "mulan.mp4");
+            Video mulanVideo = new Video("Aventuras", "2020",
+                         "mulan", 285, 4, "Walt-Disney", "mulan",
+                         "hija de un veterano de guerra que desafia la tradición", actor, director, "mp4", 0,100, ruta1, 0, 0,profileLikes);
+            pelisNiki.Add(mulanVideo);
+            premiosNiki.Add("Member of the New Zealand Order of Merit");
+            pelisLiu.Add(mulanVideo);
+            premiosLiu.Add("Best Actress China Film");
+            premiosLiu.Add("Best Actress Macau International");
+
+            //Joker
+            List<Video> pelisTodd = new List<Video>();
+            List<String> premiosTodd = new List<string>();
+            List<Video> pelisJoaquin = new List<Video>();
+            List<String> premiosJoaquin = new List<string>();
+            Actor actor2 = new Actor("Joaquin", 45, "Phoenix", "Varios", "Puerto Rico", "Actor-productor-guionista", pelisTodd, premiosTodd, 38);
+            Director director2 = new Director("Todd", 49, "Phillips", "Varios", "Estados unidos", "Director-Productor-Guionista-Actor", pelisTodd, premiosTodd, 26);
+            List<string> profileLikes2 = new List<string>();
+            string ruta2 = Path.Combine(Application.StartupPath, "joker.mp4");
+            Video jokerVideo = new Video("Crimen", "2019",
+                         "joker", 260, 4, "Dc", "joker",
+                         "Arthur sufre de un trastorno medico", actor2, director2, "mp4", 0, 100, ruta2, 0, 0, profileLikes2);
+            pelisTodd.Add(jokerVideo);
+            premiosTodd.Add("Globo de oro -mejor pelicula");
+            pelisJoaquin.Add(jokerVideo);
+            premiosJoaquin.Add("Best Actress Oscar");
+            premiosJoaquin.Add("Best Actress Globos de oro");
+
+            //Avenger
+            List<Video> pelisAyR= new List<Video>();
+            List<String> premiosAyR = new List<string>();
+            List<Video> pelisRobert = new List<Video>();
+            List<String> premiosRobert = new List<string>();
+            Actor actor3 = new Actor("Robert", 55, "Downey Jr", "Varios", "Estados Unidos", "Actor-Cantante-Empresario", pelisRobert, premiosRobert, 50);
+            Director director3 = new Director("Hermanos", 50, "Russo", "Varios", "Estados unidos", "Director-Productor-Guionista-Actor", pelisAyR, premiosAyR, 26);
+            List<string> profileLikes3 = new List<string>();
+            string ruta3 = Path.Combine(Application.StartupPath, "avengers.mp4");
+            Video avengerVideo = new Video("Ciencia Ficcion", "2019",
+                         "avengers", 266, 4, "Marvel", "avengers",
+                         "Secuela de Infinity War", actor3, director3, "mp4", 0, 100, ruta3, 0, 0, profileLikes3);
+            pelisAyR.Add(avengerVideo);
+            premiosAyR.Add("Premios Emmy");
+            pelisRobert.Add(avengerVideo);
+            premiosRobert.Add("Best Actress BAFTA");
+            premiosRobert.Add("Best Actress Globos de oro");
+
+            List<Video> videoAux111 = new List<Video>();
+           
+            
+            videoAux111 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+            string mulanSI = "";
+            string jokerSI = "";
+            string avengersSI = "";
+            for (int a=0;a<videoAux111.Count;a++)
+            {
+                if (videoAux111[a].Title=="mulan")
+                {
+                    mulanSI = "si";
+                }
+                if (videoAux111[a].Title == "joker")
+                {
+                    jokerSI = "si";
+                }
+                if (videoAux111[a].Title == "avengers")
+                {
+                    avengersSI = "si";
+                }
+            }
+            if (mulanSI=="")
+            {
+                videoAux111.Add(mulanVideo);
+            }
+            if (jokerSI == "")
+            {
+                videoAux111.Add(jokerVideo);
+            }
+            if (avengersSI == "")
+            {
+                videoAux111.Add(avengerVideo);
+            }
+            
+          
+            
+            serializar.Serialize(videoAux111, File.Open("Videos.bin", FileMode.Create));
+
             if (user.Plan == "Basico")
             {
                 DateTime fechaActual = DateTime.Now;
@@ -200,47 +297,50 @@ namespace Entrega_3.Paneles
             }
             else if (user.Plan == "Premium")
             {
+                int errores = 1;
                 DateTime fechaActual = DateTime.Now;
                 if (user.RegistrationDate.Month == fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
                 {
                     string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
                     Random rnd = new Random();
                     int numR = rnd.Next(2000000);
-                    int numR2 = rnd.Next(2000000);
+
 
                     cumpleaños = "si";
-                    cupon = user.NameUser+numR+"H"+numR2;
+                    cupon = user.NameUser + "-" + numR + "H";
                     List<string> todosCupones = serializar.Deserialize<List<string>>(File.Open("cupones.bin", FileMode.Open));
-                    if (todosCupones.Count > 0)
+
+                    for (int a = 0; a < todosCupones.Count(); a++)
                     {
-                        for (int c = 0; c < todosCupones.Count; c++)
+                        string[] separado = todosCupones[a].Split('-');
+
+                        errores--;
+                        if (separado[0] == user.NameUser)
                         {
-                            cupones.Add(todosCupones[c]);
-                        }
-                    }
-                    for (int a=0; a<cupones.Count(); a++)
-                    {
-                        if (cupones[a].Contains(user.NameUser))
-                        {
-                            MessageBox.Show("Su cupon es: "+cupones[a]); 
-                            
-                          
+                            MessageBox.Show("Su cupon es: " + todosCupones[a]);
+                            break;
+
                         }
                         else
                         {
-                            cupon = user.NameUser + numR + "H" + numR2;
-                            cupones.Add(cupon);
-                            MessageBox.Show("Por su cumpleaños, tiene un cupon para ver una pelicula en estreno! Su codigo es: " + cupon);
-                            Reproductor2.URL = ruta;
+                            errores++;
                         }
                     }
-                    
+                    if (errores > 0)
+                    {
+                        todosCupones.Add(cupon);
 
-                    serializar.Serialize(cupones, File.Open("cupones.bin", FileMode.Create));
-                    
-                    
+                        Reproductor2.URL = ruta;
+                        MessageBox.Show("Feliz cumpleaños!!, tiene un cupon para ver una pelicula en estreno! Su codigo es: " + cupon);
+
+                    }
+
+
+                    serializar.Serialize(todosCupones, File.Open("cupones.bin", FileMode.Create));
+
+
                 }
-                    
+
                 if (user.Profiles.Count == 0)
                 {
                     pic5.Visible = true;
@@ -278,45 +378,50 @@ namespace Entrega_3.Paneles
 
             else if (user.Plan == "Familiar")
             {
+                int errores = 1;
                 DateTime fechaActual = DateTime.Now;
                 if (user.RegistrationDate.Month == fechaActual.Month && user.RegistrationDate.Day == fechaActual.Day)
                 {
+                    string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
                     Random rnd = new Random();
                     int numR = rnd.Next(2000000);
-                    int numR2 = rnd.Next(2000000); 
-                    string ruta = Path.Combine(Application.StartupPath, "cumpleaños.mp3");
+
 
                     cumpleaños = "si";
-                    
+                    cupon = user.NameUser + "-" + numR + "H";
                     List<string> todosCupones = serializar.Deserialize<List<string>>(File.Open("cupones.bin", FileMode.Open));
-                    if (todosCupones.Count > 0)
+                    
+                    for (int a = 0; a < todosCupones.Count(); a++)
                     {
-                        for (int c = 0; c < todosCupones.Count; c++)
+                        string[] separado = todosCupones[a].Split('-');
+                      
+                        errores--;
+                        if (separado[0] == user.NameUser)
                         {
-                            cupones.Add(todosCupones[c]);
-                        }
-                    }
-                    for (int a = 0; a < cupones.Count(); a++)
-                    {
-                        if (cupones[a].Contains(user.NameUser))
-                        {
-                            MessageBox.Show("Su cupon es: " + cupones[a]);
-                            
-                            
+                            MessageBox.Show("Su cupon es: " + todosCupones[a]);
+                            break;
+
                         }
                         else
                         {
-                            cupon = user.NameUser + numR + "H" + numR2;
-                            cupones.Add(cupon);
-                            MessageBox.Show("Por su cumpleaños, tiene un cupon para ver una pelicula en estreno! Su codigo es: " + cupon); 
-                            Reproductor2.URL = ruta;
+                            errores++;
                         }
                     }
+                    if (errores > 0)
+                    {
+                        todosCupones.Add(cupon);
 
-                    serializar.Serialize(cupones, File.Open("cupones.bin", FileMode.Create));
+                        Reproductor2.URL = ruta;
+                        MessageBox.Show("Feliz cumpleaños!!, tiene un cupon para ver una pelicula en estreno! Su codigo es: " + cupon);
+
+                    }
+
+
+                    serializar.Serialize(todosCupones, File.Open("cupones.bin", FileMode.Create));
+
 
                 }
-   
+
                 if (user.Profiles.Count == 0)
                 {
                     pic5.Visible = true;
@@ -904,6 +1009,15 @@ namespace Entrega_3.Paneles
                 panelCrearUsuario.Visible = false;
                 List<String> gustosMusica = new List<string>();
                 List<String> gustosPelis = new List<string>();
+                List<Profile> seguidos=new List<Profile>(); ;
+                List<Profile> seguidores = new List<Profile>();
+                List<PlaylistSpotifai> playlistCancionSeguidas = new List<PlaylistSpotifai>();
+                List<PlaylistVideoEmptyClass> playlistVideoSeguidas = new List<PlaylistVideoEmptyClass>();
+                List<Album> albumSeguidos = new List<Album>();
+                List<Actor> actoresSeguidos = new List<Actor>();
+                List<Singer> cantantesSeguidos = new List<Singer>();
+                List<Director> directoresSeguidos = new List<Director>();
+                
                 for (int i = 0; i < gustosMusicales.Items.Count; i++)
                 {
                     if (gustosMusicales.GetItemChecked(i) == true)
@@ -925,7 +1039,7 @@ namespace Entrega_3.Paneles
 
                 }
                 List<Clases.User> todosUsuarios = new List<Clases.User>();
-                Clases.Profile perfil = new Clases.Profile(nomPerfil.Text, privacidadPerfil.SelectedItem.ToString(), gustosMusica, gustosPelis,playlistCanciones,playlistVideos,playlistFavoritasCanciones,playlistFavoritasVideos);
+                Clases.Profile perfil = new Clases.Profile(nomPerfil.Text, privacidadPerfil.SelectedItem.ToString(), gustosMusica, gustosPelis,playlistCanciones,playlistVideos,playlistFavoritasCanciones,playlistFavoritasVideos, seguidos, seguidores, playlistCancionSeguidas, playlistVideoSeguidas, albumSeguidos, actoresSeguidos, cantantesSeguidos, directoresSeguidos);
                 usuario.Profiles.Add(perfil);
 
                 List<Clases.User> deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
@@ -1155,19 +1269,102 @@ namespace Entrega_3.Paneles
             }
         }
 
-        private void pic9_Click(object sender, EventArgs e)
+        private void pic9_Click(object sender, EventArgs e) //imagen avenger
         {
-            if (panel34.Visible == true)
+            videoClick = "avengers";
+            int errores = 1;
+            List<User> usuarios = new List<User>();
+            usuarios = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+            for (int a = 0; a < usuarios.Count; a++)
             {
-                panel34.Visible = false;
-                panel15.Visible = false;
-                panel18.Visible = false;
+                if (usuarios[a].NameUser == usuario.NameUser)
+                {
 
+                    for (int b = 0; b < usuarios[a].VideosComprados.Count(); b++)
+                    {
+                        errores--;
+                        if (usuarios[a].VideosComprados[b].Title == "avengers")
+                        {
+                            string ruta = Path.Combine(Application.StartupPath, "avengers.mp4");
+                            Reproductor2.URL = ruta;
+                            panel6.Visible = true;
+                            List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                            foreach (Video x in videoAux0)
+                            {
+                                if (x.Title == "avengers")
+                                {
+                                    videoSonando = x;
+                                    reproduciendo = "video";//Esto sirve para agregar en las playlists.
+                                    Reproductor2.URL = x.Url;
+                                    panel6.Visible = true;
+                                    txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                                    btnPausa.Visible = true;
+                                    btnPlay.Visible = false;
+                                    numlikes = x.Likes;
+                                    NumLike.Text = numlikes.ToString();
+                                    NumLike.Visible = true;
+
+                                    numreproducciones = x.NReproduction;
+                                    numreproducciones += 1; //REPRODUCCIONES
+                                    x.NReproduction = numreproducciones;
+
+                                    NumReproducciones.Text = numreproducciones.ToString();
+
+                                    if (x.ProfileLikes.Count() > 0)
+                                    {
+                                        if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                        {
+                                            manito.Visible = false;
+                                        }
+                                        else
+                                        {
+                                            manito.Visible = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
+
+
+                                    e6.Visible = true;
+                                    e7.Visible = true;
+                                    e8.Visible = true;
+                                    e9.Visible = true;
+                                    e10.Visible = true;
+                                    panel27.Visible = false;
+                                    panel25.Visible = false;
+                                    panel23.Visible = false;
+                                    //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                                }
+                            }
+                            serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
+                            break;
+                            //aca poner para que se abra el panel del reproductor
+                        }
+                        else
+                        {
+                            errores++;
+                        }
+
+                    }
+                }
             }
-            else
+            if (errores > 0)
             {
-                panel34.Visible = true;
+                if (panel34.Visible == true)
+                {
+                    panel34.Visible = false;
+                    panel15.Visible = false;
+                    panel18.Visible = false;
+
+                }
+                else
+                {
+                    panel34.Visible = true;
+                }
             }
+            
         }
 
         private void gustosMusicales_SelectedIndexChanged(object sender, EventArgs e)
@@ -1235,54 +1432,110 @@ namespace Entrega_3.Paneles
             panel27.Visible = false;
             if (usuario.Plan == "Basico")
             {
-                if (usuario.Profiles.Count == 0)
+                DateTime fechaActual = DateTime.Now;
+                if (usuario.RegistrationDate.Month == fechaActual.Month && usuario.RegistrationDate.Day == fechaActual.Day)
                 {
-                    pic5.Visible = true;
-                    pic1.Visible = false;
-                    pic4.Visible = false;
-                    pic7.Visible = false;
-                    pic3.Visible = false;
-                    pic6.Visible = false;
-                    pic2.Visible = false;
-                    pic8.Visible = false;
-                    crear1.Visible = true;
-                    crear2.Visible = false;
-                    crear3.Visible = false;
-                    crear4.Visible = false;
-                    label8.Visible = false;
-                    button1.Visible = false;
-                    b1.Visible = false;
-                    b2.Visible = false;
-                    b3.Visible = false;
-                    b4.Visible = false;
-                    b13.Visible = false;
-                    b14.Visible = false;
-                    b15.Visible = false;
-                    b16.Visible = false;
+                    if (usuario.Profiles.Count == 0)
+                    {
+                        pic5.Visible = true;
+                        pic1.Visible = false;
+                        pic4.Visible = false;
+                        pic7.Visible = false;
+                        pic3.Visible = false;
+                        pic6.Visible = false;
+                        pic2.Visible = false;
+                        pic8.Visible = false;
+                        crear1.Visible = true;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
+                        label8.Visible = false;
+                        button1.Visible = false;
+                        b1.Visible = false;
+                        b2.Visible = false;
+                        b3.Visible = false;
+                        b4.Visible = false;
+                        b13.Visible = false;
+                        b14.Visible = false;
+                        b15.Visible = false;
+                        b16.Visible = false;
+                    }
+                    else
+                    {
+                        pic5.Visible = false;
+                        pic6.Visible = false;
+                        pic7.Visible = false;
+                        pic8.Visible = false;
+
+                        pic1.Visible = true;
+                        pic4.Visible = false;
+                        pic3.Visible = false;
+                        pic2.Visible = false;
+
+                        crear1.Visible = false;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
+
+                        label8.Text = usuario.Profiles[0].NameProfile;
+                        label8.Visible = true;
+                        button1.Visible = true;
+
+
+                    }
                 }
                 else
                 {
-                    pic5.Visible = false;
-                    pic6.Visible = false;
-                    pic7.Visible = false;
-                    pic8.Visible = false;
+                    if (usuario.Profiles.Count == 0)
+                    {
+                        pic5.Visible = true;
+                        pic1.Visible = false;
+                        pic4.Visible = false;
+                        pic7.Visible = false;
+                        pic3.Visible = false;
+                        pic6.Visible = false;
+                        pic2.Visible = false;
+                        pic8.Visible = false;
+                        crear1.Visible = true;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
+                        label8.Visible = false;
+                        button1.Visible = false;
+                        b1.Visible = false;
+                        b2.Visible = false;
+                        b3.Visible = false;
+                        b4.Visible = false;
+                        b13.Visible = false;
+                        b14.Visible = false;
+                        b15.Visible = false;
+                        b16.Visible = false;
+                    }
+                    else
+                    {
+                        pic5.Visible = false;
+                        pic6.Visible = false;
+                        pic7.Visible = false;
+                        pic8.Visible = false;
 
-                    pic1.Visible = true;
-                    pic4.Visible = false;
-                    pic3.Visible = false;
-                    pic2.Visible = false;
+                        pic1.Visible = true;
+                        pic4.Visible = false;
+                        pic3.Visible = false;
+                        pic2.Visible = false;
 
-                    crear1.Visible = false;
-                    crear2.Visible = false;
-                    crear3.Visible = false;
-                    crear4.Visible = false;
+                        crear1.Visible = false;
+                        crear2.Visible = false;
+                        crear3.Visible = false;
+                        crear4.Visible = false;
 
-                    label8.Text = usuario.Profiles[0].NameProfile;
-                    label8.Visible = true;
-                    button1.Visible = true;
+                        label8.Text = usuario.Profiles[0].NameProfile;
+                        label8.Visible = true;
+                        button1.Visible = true;
 
 
+                    }
                 }
+                
             }
             else if (usuario.Plan == "Premium")
             {
@@ -4148,50 +4401,205 @@ namespace Entrega_3.Paneles
 
         private void pic11_Click(object sender, EventArgs e)//imagen mulan
         {
+            videoClick = "mulan";
             //nose pq pusiste esto aca jajaa saludos xdxd
-            if (panel18.Visible == true)
+            //ver videos del usuario 
+            int errores = 1;
+            List<User> usuarios = new List<User>();
+            usuarios = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+            for(int a=0; a < usuarios.Count; a++)
             {
-                panel34.Visible = false;
-                panel15.Visible = false;
-                panel18.Visible = false;
-
-            }
-            else
-            {
-                panel18.Visible = true;
-            }
-            /* 
-            for(int a = 0; a<usuario.VideosComprados.Count();a++)
-            {
-                if (usuario.VideosComprados[a].Title=="mulan")
+                if (usuarios[a].NameUser == usuario.NameUser)
                 {
-                    string ruta = Path.Combine(Application.StartupPath, "mulan.mp4");
-                    Reproductor2.URL = ruta;
-                    //aca poner para que se abra el panel del reproductor
+                   
+                    for (int b = 0; b< usuarios[a].VideosComprados.Count(); b++)
+                    {
+                        errores--;
+                        if (usuarios[a].VideosComprados[b].Title== "mulan")
+                        {
+                            string ruta = Path.Combine(Application.StartupPath, "mulan.mp4");
+                            Reproductor2.URL = ruta;
+                            //aca poner para que se abra el panel del reproductor
+                            panel6.Visible = true;
+                            List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                            foreach (Video x in videoAux0)
+                            {
+                                if (x.Title == "mulan")
+                                {
+                                    videoSonando = x;
+                                    reproduciendo = "video";//Esto sirve para agregar en las playlists.
+                                    Reproductor2.URL = x.Url;
+                                    panel6.Visible = true;
+                                    txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                                    btnPausa.Visible = true;
+                                    btnPlay.Visible = false;
+                                    numlikes = x.Likes;
+                                    NumLike.Text = numlikes.ToString();
+                                    NumLike.Visible = true;
+
+                                    numreproducciones = x.NReproduction;
+                                    numreproducciones += 1; //REPRODUCCIONES
+                                    x.NReproduction = numreproducciones;
+
+                                    NumReproducciones.Text = numreproducciones.ToString();
+
+                                    if (x.ProfileLikes.Count() > 0)
+                                    {
+                                        if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                        {
+                                            manito.Visible = false;
+                                        }
+                                        else
+                                        {
+                                            manito.Visible = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
+
+
+                                    e6.Visible = true;
+                                    e7.Visible = true;
+                                    e8.Visible = true;
+                                    e9.Visible = true;
+                                    e10.Visible = true;
+                                    panel27.Visible = false;
+                                    panel25.Visible = false;
+                                    panel23.Visible = false;
+                                    //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                                }
+                            }
+                            serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
+                            break;
+                            
+                        }
+                        else
+                        {
+                            errores++;
+                        }
+
+                    }
+                }
+            }
+            if (errores > 0)
+            {
+                if (panel18.Visible == true)
+                {
+                    panel34.Visible = false;
+                    panel15.Visible = false;
+                    panel18.Visible = false;//boton cupones
+
                 }
                 else
                 {
-                    //metodos para abrir botones de cupon y comprar
+                    panel18.Visible = true;
                 }
             }
-            */
+            
+            
 
 
         }
 
-        private void pic10_Click(object sender, EventArgs e)
+        private void pic10_Click(object sender, EventArgs e)//imagen joker
         {
-            if (panel15.Visible == true)
+            videoClick = "joker";
+            int errores = 1;
+            List<User> usuarios = new List<User>();
+            usuarios = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+            for (int a = 0; a < usuarios.Count; a++)
             {
-                panel34.Visible = false;
-                panel15.Visible = false;
-                panel18.Visible = false;
+                if (usuarios[a].NameUser == usuario.NameUser)
+                {
 
+                    for (int b = 0; b < usuarios[a].VideosComprados.Count(); b++)
+                    {
+                        errores--;
+                        if (usuarios[a].VideosComprados[b].Title == "joker")
+                        {
+                            string ruta = Path.Combine(Application.StartupPath, "joker.mp4");
+                            Reproductor2.URL = ruta;
+                            panel6.Visible = true;
+                            List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                            foreach (Video x in videoAux0)
+                            {
+                                if (x.Title == "joker")
+                                {
+                                    videoSonando = x;
+                                    reproduciendo = "video";//Esto sirve para agregar en las playlists.
+                                    Reproductor2.URL = x.Url;
+                                    panel6.Visible = true;
+                                    txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                                    btnPausa.Visible = true;
+                                    btnPlay.Visible = false;
+                                    numlikes = x.Likes;
+                                    NumLike.Text = numlikes.ToString();
+                                    NumLike.Visible = true;
+
+                                    numreproducciones = x.NReproduction;
+                                    numreproducciones += 1; //REPRODUCCIONES
+                                    x.NReproduction = numreproducciones;
+
+                                    NumReproducciones.Text = numreproducciones.ToString();
+
+                                    if (x.ProfileLikes.Count() > 0)
+                                    {
+                                        if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                        {
+                                            manito.Visible = false;
+                                        }
+                                        else
+                                        {
+                                            manito.Visible = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
+
+
+                                    e6.Visible = true;
+                                    e7.Visible = true;
+                                    e8.Visible = true;
+                                    e9.Visible = true;
+                                    e10.Visible = true;
+                                    panel27.Visible = false;
+                                    panel25.Visible = false;
+                                    panel23.Visible = false;
+                                    //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                                }
+                            }
+                            serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
+                        
+                        break;
+                            //aca poner para que se abra el panel del reproductor
+                        }
+                        else
+                        {
+                            errores++;
+                        }
+
+                    }
+                }
             }
-            else
+            if (errores > 0)
             {
-                panel15.Visible = true;
+                if (panel15.Visible == true)
+                {
+                    panel34.Visible = false;
+                    panel15.Visible = false;
+                    panel18.Visible = false;
+
+                }
+                else
+                {
+                    panel15.Visible = true;
+                }
             }
+            
         }
 
         private void btncupon1_Click(object sender, EventArgs e)
@@ -4217,7 +4625,7 @@ namespace Entrega_3.Paneles
             panel37.Visible = true;
         }
 
-        private void btncupon3_Click(object sender, EventArgs e)
+        private void btncupon3_Click(object sender, EventArgs e)//cupones mulan
         {
             panel37.Visible = true;
 
@@ -4233,11 +4641,76 @@ namespace Entrega_3.Paneles
         {
             panel37.Visible = true;
         }
-        /*
-* Metodos click boton confirmar compra dentro del panel donde se abrira la info de pago :
-* Video video = new Video("Aventuras", "2020", "mulan", 22, 22, "study", "keyword", "description", Mactor, d, "format", 1, 2, "url", 0, 0, listaPerfilesLikes);
-* 
-*/
 
+        private void button9_Click(object sender, EventArgs e)//Confirmar cupon
+        {
+            
+            List<string> todosCupones = serializar.Deserialize<List<string>>(File.Open("cupones.bin", FileMode.Open));
+            List<User> deserializarUser = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+            List<Video> deserializarVideo = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+            Video videoComprado = new Video();
+            List<string> todosCuponesUsados = new List<string>();
+
+
+            todosCuponesUsados =serializar.Deserialize<List<string>>(File.Open("cuponesUsados.bin", FileMode.Open));
+   
+            for (int t = 0; t < deserializarVideo.Count(); t++)
+            {
+                if (deserializarVideo[t].Title == videoClick)
+                {
+                    videoComprado = deserializarVideo[t];
+                }
+
+            }
+            int errores = 1;
+            if (textBox2.Text!="")
+            {
+                for (int a = 0; a < todosCupones.Count(); a++)
+                {
+                    errores--;
+                    if (todosCupones[a] == textBox2.Text && todosCuponesUsados.Contains(todosCupones[a])==false)
+                    {
+                        MessageBox.Show("Su cupon ha sido utilizado con exito");
+                        todosCuponesUsados.Add(todosCupones[a]);
+                        for (int c = 0; c < deserializarUser.Count(); c++)
+                        {
+                            if (deserializarUser[c].NameUser == usuario.NameUser)
+                            {
+                                deserializarUser[c].VideosComprados.Add(videoComprado);
+                                serializar.Serialize(deserializarUser, File.Open("data.bin", FileMode.Create));
+                            }
+
+                        }
+                        
+                        serializar.Serialize(todosCuponesUsados, File.Open("cuponesUsados.bin", FileMode.Create));
+                        
+                        break;
+                    }
+                    else if (todosCupones[a] == textBox2.Text && todosCuponesUsados.Contains(todosCupones[a]) == true)
+                    {
+                        MessageBox.Show("Ups! su cupón ya ha sido utlizado antes");
+                        break;
+                    }
+                    else if (todosCupones[a] != textBox2.Text)
+                    {
+                        errores++;
+                    }
+                }
+                if (errores>0)
+                {
+                    MessageBox.Show("Ups! este cupón no existe");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Porfavor ingrese un codigo");
+            }
+            textBox2.Clear();
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
