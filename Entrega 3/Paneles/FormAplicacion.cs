@@ -4873,11 +4873,11 @@ namespace Entrega_3.Paneles
                     numeros.Add(a);
                 }
 
-                if (txtNumeroTarjeta.Text != "")
+                if (textBox4.Text != "")
                 {
-                    for (int b = 0; b < txtNumeroTarjeta.Text.Length; b++)
+                    for (int b = 0; b < textBox4.Text.Length; b++)
                     {
-                        if (numeros.Contains((int)Char.GetNumericValue(txtNumeroTarjeta.Text[b])) == true)
+                        if (numeros.Contains((int)Char.GetNumericValue(textBox4.Text[b])) == true)
                         {
 
                         }
@@ -4891,7 +4891,7 @@ namespace Entrega_3.Paneles
                 try
                 {
 
-                    cvv += Int32.Parse(txtCodigoSeguridadTarjeta.Text);
+                    cvv += Int32.Parse(textBox3.Text);
                 }
                 catch (FormatException)
                 {
@@ -4920,7 +4920,9 @@ namespace Entrega_3.Paneles
             }
             textBox3.Clear(); 
             textBox4.Clear();
-            
+            comboBox4.SelectedItem = null; 
+            comboBox5.SelectedItem = null;
+
 
         }
     }
