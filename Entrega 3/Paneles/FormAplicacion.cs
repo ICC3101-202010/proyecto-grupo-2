@@ -42,6 +42,7 @@ namespace Entrega_3.Paneles
         string videoClick = "";
         List<Profile> listaPerfiles = new List<Profile>();
         PlaylistSpotifai playlistElegidaCancion;
+        Profile perfilesSeguidos;
         List<PlaylistSpotifai> playlistCancionesPerfil;
 
 
@@ -5088,7 +5089,7 @@ namespace Entrega_3.Paneles
                 {
 
                     Reproductor2.URL = cola1[0];
-                    cola1.RemoveAt(0);
+
 
                     List<SongClass> songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
                     if (cola1.Count() > 0)
@@ -5193,6 +5194,7 @@ namespace Entrega_3.Paneles
                         }
                         serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
                     }
+                    cola1.RemoveAt(0);
                 }
             }
         }
@@ -5202,6 +5204,107 @@ namespace Entrega_3.Paneles
             {
                 string nueva = cola1[0];
                 Reproductor2.URL = nueva;
+                List<SongClass> songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+                if (cola1.Count() > 0)
+                {
+                    foreach (SongClass x in songAux0)
+                    {
+                        if (x.Url == cola1[0])
+                        {
+                            cancionSonando = x;
+                            reproduciendo = "musica";
+                            txtBarraMusica.Text = x.Title + " autor;" + x.Singer.Name;
+                            btnPausa.Visible = true;
+                            btnPlay.Visible = false;
+                            panel6.Visible = true;
+                            numlikes = x.Likes;
+                            NumLike.Text = numlikes.ToString();
+                            NumLike.Visible = true;
+
+                            numreproducciones = x.NReproduction;
+                            numreproducciones += 1; //REPRODUCCIONES
+                            x.NReproduction = numreproducciones;
+
+                            NumReproducciones.Text = numreproducciones.ToString();
+                            if (x.ProfileLikes.Count() > 0)
+                            {
+                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                {
+                                    manito.Visible = false;
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+                            e6.Visible = true;
+                            e7.Visible = true;
+                            e8.Visible = true;
+                            e9.Visible = true;
+                            e10.Visible = true;
+                            panel27.Visible = false;
+                            panel25.Visible = false;
+                            panel23.Visible = false;
+                        }
+                    }
+                    serializar.Serialize(songAux0, File.Open("Canciones.bin", FileMode.Create));
+                    List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                    foreach (Video x in videoAux0)
+                    {
+
+                        if (x.Url == cola1[0])
+                        {
+
+                            videoSonando = x;
+                            reproduciendo = "video";//Esto sirve para agregar en las playlists.
+
+                            panel6.Visible = true;
+                            txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                            btnPausa.Visible = true;
+                            btnPlay.Visible = false;
+                            numlikes = x.Likes;
+                            NumLike.Text = numlikes.ToString();
+                            NumLike.Visible = true;
+
+                            numreproducciones = x.NReproduction;
+                            numreproducciones += 1; //REPRODUCCIONES
+                            x.NReproduction = numreproducciones;
+
+                            NumReproducciones.Text = numreproducciones.ToString();
+
+                            if (x.ProfileLikes.Count() > 0)
+                            {
+                                if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                {
+                                    manito.Visible = false;
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                            }
+                            else
+                            {
+                                manito.Visible = true;
+                            }
+                            e6.Visible = true;
+                            e7.Visible = true;
+                            e8.Visible = true;
+                            e9.Visible = true;
+                            e10.Visible = true;
+                            panel27.Visible = false;
+                            panel25.Visible = false;
+                            panel23.Visible = false;
+                            break;
+
+                        }
+                    }
+                    serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
+                }
                 cola1.RemoveAt(0);
             }
             catch (ArgumentOutOfRangeException)
@@ -5281,6 +5384,7 @@ namespace Entrega_3.Paneles
                 listBox6.Items.Add("Este perfil no contiene playlist de canciones");
             }
         }
+
         private void btnSeguir_Click(object sender, EventArgs e)
         {
             for (int a = 0; a < usuario.Profiles.Count(); a++)
@@ -5288,6 +5392,13 @@ namespace Entrega_3.Paneles
                 if (perfilActual == usuario.Profiles[a])
                 {
                     usuario.Profiles[a].PlaylistCancionSeguidas.Add(playlistElegidaCancion);
+                }
+            }
+            for (int a = 0; a < usuario.Profiles.Count(); a++)
+            {
+                if (perfilActual == usuario.Profiles[a])
+                {
+                    usuario.Profiles[a].Seguidos.Add(perfilesSeguidos);
                 }
             }
         }
