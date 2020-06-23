@@ -651,7 +651,7 @@
             this.panelContenedorPincipal.Controls.Add(this.btnGender);
             this.panelContenedorPincipal.Location = new System.Drawing.Point(0, 0);
             this.panelContenedorPincipal.Name = "panelContenedorPincipal";
-            this.panelContenedorPincipal.Size = new System.Drawing.Size(1146, 1258);
+            this.panelContenedorPincipal.Size = new System.Drawing.Size(1149, 1261);
             this.panelContenedorPincipal.TabIndex = 31;
             this.panelContenedorPincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorPincipal_Paint);
             // 
@@ -677,7 +677,7 @@
             // listBox7
             // 
             this.listBox7.FormattingEnabled = true;
-            this.listBox7.Location = new System.Drawing.Point(484, 3);
+            this.listBox7.Location = new System.Drawing.Point(596, 6);
             this.listBox7.Name = "listBox7";
             this.listBox7.Size = new System.Drawing.Size(98, 69);
             this.listBox7.TabIndex = 20;
@@ -892,7 +892,6 @@
             this.panel6.Controls.Add(this.manito);
             this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.listBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(200, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(946, 1258);
@@ -2973,7 +2972,7 @@
             this.pic11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic11.Image = global::Entrega_3.Properties.Resources.Imulan;
-            this.pic11.Location = new System.Drawing.Point(592, 152);
+            this.pic11.Location = new System.Drawing.Point(595, 155);
             this.pic11.Name = "pic11";
             this.pic11.Size = new System.Drawing.Size(145, 95);
             this.pic11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2986,7 +2985,7 @@
             this.pic10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic10.Image = global::Entrega_3.Properties.Resources.Ijoker;
-            this.pic10.Location = new System.Drawing.Point(420, 152);
+            this.pic10.Location = new System.Drawing.Point(423, 155);
             this.pic10.Name = "pic10";
             this.pic10.Size = new System.Drawing.Size(145, 95);
             this.pic10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2999,7 +2998,7 @@
             this.pic9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic9.Image = ((System.Drawing.Image)(resources.GetObject("pic9.Image")));
-            this.pic9.Location = new System.Drawing.Point(243, 152);
+            this.pic9.Location = new System.Drawing.Point(246, 155);
             this.pic9.Name = "pic9";
             this.pic9.Size = new System.Drawing.Size(145, 95);
             this.pic9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3078,7 +3077,7 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 1258);
+            this.panel2.Size = new System.Drawing.Size(200, 1261);
             this.panel2.TabIndex = 0;
             // 
             // panelSubMenuAjustes

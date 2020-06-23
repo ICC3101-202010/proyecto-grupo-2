@@ -5119,7 +5119,7 @@ namespace Entrega_3.Paneles
                         {
                             if (x.Url == cola1[0])
                             {
-                                MessageBox.Show("Sie entra a if");
+      
                                 cancionSonando = x;
                                 reproduciendo = "musica";
                                 txtBarraMusica.Text = x.Title + " autor;" + x.Singer.Name;
