@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
 using Entrega_3.Clases;
+using System.Threading;
 
 namespace Entrega_3.Paneles
 {
@@ -4353,7 +4354,20 @@ namespace Entrega_3.Paneles
 
         private void VerCola_Click(object sender, EventArgs e) //Ver las canciones en la cola.
         {
-
+            if (cola1.Count()>0)
+            {
+                for (int a = 0; a < cola1.Count(); a++)
+                {
+                    listBox7.Items.Add(cola1[a]);
+                }
+            }
+            else
+            {
+                listBox7.Items.Add("no hay elementos");
+            }
+            listBox7.Visible = true;
+            Thread.Sleep(10);
+            listBox7.Visible = false;
         }
 
         private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
