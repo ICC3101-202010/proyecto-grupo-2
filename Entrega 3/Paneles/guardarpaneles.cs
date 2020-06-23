@@ -38,6 +38,7 @@ namespace Entrega_3.Paneles
         List<Clases.Profile> perfiles = new List<Clases.Profile>();
         Clases.User usuarioEscogido; 
         Clases.User usuarioEscogido2;
+        Clases.User usuarioEscogido3;
         List<Clases.User> usuarios;
         private void btnmodificar_Click(object sender, EventArgs e)
         {
@@ -45,6 +46,7 @@ namespace Entrega_3.Paneles
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             listBox4.Items.Clear();
+            listBox5.Items.Clear();
             label52.Text = "-";
             label55.Text = "-";
             label45.Text = "-";
@@ -101,7 +103,7 @@ namespace Entrega_3.Paneles
             
             //Deserializar usuarios 
             usuarios = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
-            for (int a = 0; a < usuarios.Count; a++)
+            for (int a = 0; a < usuarios.Count(); a++)
             {
                 listBox1.Items.Add(usuarios[a].NameUser);
             }
@@ -143,6 +145,7 @@ namespace Entrega_3.Paneles
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             listBox4.Items.Clear();
+            listBox5.Items.Clear();
             label52.Text = "-";
             label55.Text = "-";
             label45.Text = "-";
@@ -191,6 +194,7 @@ namespace Entrega_3.Paneles
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             listBox4.Items.Clear();
+            listBox5.Items.Clear();
             label52.Text = "-";
             label55.Text = "-";
             label45.Text = "-";
@@ -231,7 +235,7 @@ namespace Entrega_3.Paneles
             txtapellido.Text = "";
             txtnombre.Text = "";
             usuarios = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
-            for (int a = 0; a < usuarios.Count; a++)
+            for (int a = 0; a < usuarios.Count(); a++)
             {
                 listBox2.Items.Add(usuarios[a].NameUser);
             }
@@ -254,6 +258,10 @@ namespace Entrega_3.Paneles
                 panel6.Visible = true;
                 panel7.Visible = true;
                 panel8.Visible = true;
+            }
+            if (panel9.Visible==true)
+            {
+                panel9.Visible = false;
             }
             //Deserializar usuarios 
            
@@ -279,6 +287,7 @@ namespace Entrega_3.Paneles
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             listBox4.Items.Clear();
+            listBox5.Items.Clear();
             label52.Text = "-";
             label55.Text = "-";
             label45.Text = "-";
@@ -332,6 +341,16 @@ namespace Entrega_3.Paneles
             {
                 panel3.Visible = true;
                 panel4.Visible = true;
+                if (panel5.Visible == true || panel6.Visible == true || panel7.Visible == true || panel8.Visible== true || panel9.Visible == true)
+                {
+                    panel5.Visible = false;
+                    panel5.Visible = false;
+                    panel5.Visible = false;
+                    panel5.Visible = false;
+                    panel5.Visible = false;
+
+
+                }
                 label33.Text = "Modificara el usuario: " + usuarioEscogido.NameUser;
             }
             else
@@ -672,17 +691,10 @@ namespace Entrega_3.Paneles
                                 todosUsuarios.Add(deserializarUser[c]);
                             }
                         }
-                        if (deserializarUser.Count > 0)
-                        {
-                            for (int c = 0; c < deserializarUser.Count; c++)
-                            {
-                                todosUsuarios.Add(deserializarUser[c]);
-                            }
-                        }
+                        
                         todosUsuarios.Add(usuario);
                         serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
 
-                        MessageBox.Show("Registro Existoso");
                         
                     }
                     else
@@ -741,6 +753,7 @@ namespace Entrega_3.Paneles
                         {
                             deserializarUser = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
                             MessageBox.Show("Usuario Registrado con exito");
+                            panel8.Visible = false;
                             panel7.Visible = false;
                             panel6.Visible = false;
                             panel5.Visible = false;
@@ -760,8 +773,7 @@ namespace Entrega_3.Paneles
                         }
                         todosUsuarios.Add(usuario);
                         serializar.Serialize(todosUsuarios, File.Open("data.bin", FileMode.Create));
-                        this.Hide();
-                        forms1.Show();
+                        
 
                     }
                     else
@@ -803,6 +815,7 @@ namespace Entrega_3.Paneles
                     if (usuarios[a].NameUser == listBox1.SelectedItem.ToString())
                     {
                         usuarioEscogido = usuarios[a];
+                        break;
                     }
                 }
                    
@@ -869,12 +882,12 @@ namespace Entrega_3.Paneles
 
             if (txtemail.Text != "")
             {
-                if (txtEmailR.ToString().Contains("@") == false)
+                if (txtemail.ToString().Contains("@") == false)
                 {
                     MessageBox.Show("El correo es invalido");
 
                 }
-                else if (txtEmailR.ToString().Contains(".com") == false && txtEmailR.ToString().Contains(".cl") == false)
+                else if (txtemail.ToString().Contains(".com") == false && txtemail.ToString().Contains(".cl") == false)
                 {
                     MessageBox.Show("El correo es invalido");
 
@@ -962,8 +975,7 @@ namespace Entrega_3.Paneles
                 for (int a = 0; a < user.Count; a++)
                 {
                     if (user[a].NameUser == txtANombreUsuarioR.Text)
-                    {
-                        
+                    {   
                         errores++;
                         break;
                     }
@@ -1058,17 +1070,18 @@ namespace Entrega_3.Paneles
                     {
                         try
                         {
-                            int number = Int32.Parse(txtnumerocelularr.Text);
+                            user[a].NumPhone = Int32.Parse(txtnumerocelularr.Text);
                             serializar.Serialize(user, File.Open("data.bin", FileMode.Create));
                             MessageBox.Show("Numero de celular cambiado");
+                            break;
                         }
                         catch(FormatException)
                         {
                             MessageBox.Show("Ingrese un formato valido");
-                           
+                            break;
                         }
                         
-                        break;
+                       
                     }
                 }
 
@@ -1100,7 +1113,7 @@ namespace Entrega_3.Paneles
                         {
                             user[a].Nationality = txtnacionalidadR.SelectedItem.ToString();
                             serializar.Serialize(user, File.Open("data.bin", FileMode.Create));
-                            MessageBox.Show("Nacionalidad cambiada");
+                            MessageBox.Show("Fecha de nacimiento cambiada");
                             break;
                         }
                         
@@ -1111,6 +1124,7 @@ namespace Entrega_3.Paneles
             else
             {
                 MessageBox.Show("Por favor rellene los datos");
+              
             }
             
         }
@@ -1210,6 +1224,146 @@ namespace Entrega_3.Paneles
             this.Hide();
             Form1 form = new Form1();
             form.Show();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            panel9.Visible = false;
+            panel8.Visible = false;
+            panel7.Visible = false;
+            panel6.Visible = false;
+            panel5.Visible = false;
+            panel4.Visible = false;
+            panel3.Visible = false;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            //Eliminar usuario
+            List < Clases.User > us = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+            for (int a = 0; a < us.Count(); a++)
+            {
+                if (listBox5.SelectedItem!=null)
+                {
+                    if (us[a].NameUser == usuarioEscogido3.NameUser)
+                    {
+
+                        us.RemoveAt(a);
+
+                        MessageBox.Show("Usuario eliminado");
+                        break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un usuario");
+                    break;
+                }
+                
+
+            }
+            serializar.Serialize(us, File.Open("data.bin", FileMode.Create));
+            panel9.Visible = false;
+            panel8.Visible = false;
+            panel7.Visible = false;
+            panel6.Visible = false;
+            panel5.Visible = false;
+            panel4.Visible = false;
+            panel3.Visible = false;
+
+        }
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            List<Clases.User> u = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+            for (int a = 0; a < u.Count(); a++)
+            {
+                if (listBox5.SelectedItem != null)
+                {
+                    if (u[a].NameUser == listBox5.SelectedItem.ToString())
+                    {
+                        usuarioEscogido3 = u[a];
+                        break;
+                    }
+                }
+
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            listBox3.Items.Clear();
+            listBox4.Items.Clear();
+            listBox5.Items.Clear();
+            label52.Text = "-";
+            label55.Text = "-";
+            label45.Text = "-";
+            label50.Text = "-";
+            label46.Text = "-";
+            label51.Text = "-";
+            label58.Text = "-";
+            label44.Text = "-";
+            label53.Text = "-";
+            label49.Text = "-";
+            label37.Text = "-";
+            label57.Text = "-";
+            txtNumeroTarjeta.Text = "";
+            comboBox1.SelectedItem = null;
+            comboBox2.SelectedItem = null;
+            comboBox3.SelectedItem = null;
+            comboBox4.SelectedItem = null;
+            txtCodigoSeguridadTarjeta.Text = "";
+            txtNombreR.Text = "";
+            txtANombreUsuarioR.Text = "";
+            txtConfirmacionContraseñaR.Text = "";
+            txtContraseñaR.Text = "";
+            dateTimePicker1.Value = DateTime.Now;
+            txtEmailR.Text = "";
+            comboBox2.SelectedItem = null;
+            txtNombreR.Text = "";
+            textBox2.Text = "";
+            TxtApellidoR.Text = "";
+            textBox1.Text = "";
+
+            txtnumerocelularr.Text = "";
+            txtnacionalidadR.Text = "";
+            txtgeneroR.Text = "";
+            txtnombreUsuarioR.Text = "";
+            txtocupacionR.Text = "";
+            txtpsswd.Text = "";
+            txtemail.Text = "";
+            txtapellido.Text = "";
+            txtnombre.Text = "";
+            usuarios = serializar.Deserialize<List<Clases.User>>(File.Open("data.bin", FileMode.Open));
+            for (int a = 0; a < usuarios.Count(); a++)
+            {
+                listBox5.Items.Add(usuarios[a].NameUser);
+            }
+            if (panel9.Visible == true)
+            {
+                panel9.Visible = false;
+                panel8.Visible = false;
+                panel7.Visible = false;
+                panel6.Visible = false;
+                panel5.Visible = false;
+                panel4.Visible = false;
+                panel3.Visible = false;
+
+
+            }
+            else
+            {
+                panel3.Visible = true;
+                panel4.Visible = true;
+                panel5.Visible = true;
+                panel6.Visible = true;
+                panel7.Visible = true;
+                panel8.Visible = true;
+                panel9.Visible = true;
+            }
+
         }
     }
 }

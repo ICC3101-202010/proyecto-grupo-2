@@ -164,6 +164,12 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.button18 = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.button21 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverNormalidad)).BeginInit();
@@ -179,6 +185,7 @@
             this.panel8.SuspendLayout();
             this.panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -248,6 +255,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel2.Controls.Add(this.button21);
             this.panel2.Controls.Add(this.btnmodificar);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.btnverusuarios);
@@ -520,6 +528,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.panel9);
             this.panel8.Controls.Add(this.label37);
             this.panel8.Controls.Add(this.label40);
             this.panel8.Controls.Add(this.label44);
@@ -1991,6 +2000,96 @@
             this.label38.TabIndex = 17;
             this.label38.Text = "¿Estas seguro que \r\ndeseas cerrar tu sesión?";
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.button19);
+            this.panel9.Controls.Add(this.button20);
+            this.panel9.Controls.Add(this.listBox5);
+            this.panel9.Controls.Add(this.label42);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(684, 545);
+            this.panel9.TabIndex = 66;
+            this.panel9.Visible = false;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label42.Location = new System.Drawing.Point(19, 57);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(601, 27);
+            this.label42.TabIndex = 0;
+            this.label42.Text = "SELECCIONE EL USUARIO QUE QUIERE ELIMINAR: ";
+            // 
+            // button19
+            // 
+            this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button19.FlatAppearance.BorderSize = 0;
+            this.button19.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
+            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button19.Location = new System.Drawing.Point(141, 408);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(144, 43);
+            this.button19.TabIndex = 25;
+            this.button19.Text = "Volver";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button20.FlatAppearance.BorderSize = 0;
+            this.button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
+            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button20.Location = new System.Drawing.Point(382, 412);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(162, 34);
+            this.button20.TabIndex = 24;
+            this.button20.Text = "Continuar";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // listBox5
+            // 
+            this.listBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.Location = new System.Drawing.Point(213, 94);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(214, 277);
+            this.listBox5.TabIndex = 23;
+            this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button21.FlatAppearance.BorderSize = 0;
+            this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
+            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button21.Location = new System.Drawing.Point(10, 308);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(182, 40);
+            this.button21.TabIndex = 46;
+            this.button21.Text = " Eliminar usuario";
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
             // guardarpaneles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2028,6 +2127,8 @@
             this.panel30.ResumeLayout(false);
             this.panel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2170,5 +2271,11 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.ListBox listBox5;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button button21;
     }
 }
