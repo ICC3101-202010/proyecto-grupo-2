@@ -60,6 +60,7 @@ namespace Entrega_3
             {
                 int error = 1;
                 int avanzar = 0;
+                int admin = 0;
                 Clases.User us = new Clases.User();
                 for (int d = 0; d < deserializarUser.Count; d++)
                 {
@@ -67,7 +68,15 @@ namespace Entrega_3
                     if (deserializarUser[d].NameUser == txtUsuario.Text && deserializarUser[d].Password ==txtContraseña.Text)
                     {
                         us = deserializarUser[d];
-                        avanzar++;
+                        if (us.NameUser == "administrador")
+                        {
+                            admin++;
+                        }
+                        else
+                        {
+                            avanzar++;
+                        }
+                        
                     }
                     else
                     {
@@ -84,6 +93,12 @@ namespace Entrega_3
                     this.Hide();
                     FormAplicacion formAplicacion = new FormAplicacion(us);
                     formAplicacion.Show();
+                }
+                if(admin>0)
+                {
+                    this.Hide();
+                    guardarpaneles formAdmin = new guardarpaneles();
+                    formAdmin.Show();
                 }
 
 
