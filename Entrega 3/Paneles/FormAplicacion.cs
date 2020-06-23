@@ -5399,6 +5399,7 @@ namespace Entrega_3.Paneles
                 if (perfilActual == usuario.Profiles[a])
                 {
                     usuario.Profiles[a].Seguidos.Add(perfilesSeguidos);
+                    MessageBox.Show("Has empezado a seguir esta playlist junto con el perfil");
                 }
             }
         }
@@ -5411,6 +5412,7 @@ namespace Entrega_3.Paneles
                 if (playlistCancionesPerfil[a].Nombre == algo[0])
                 {
                     playlistElegidaCancion = playlistCancionesPerfil[a];
+                    
                 }
             }
         }
