@@ -16,6 +16,7 @@ namespace Entrega_3.Paneles
 
     public partial class FormAplicacion : Form
     {
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer(); //Timer
         Profile perfilCambiar;
         Profile perfilActual;
         string algo; // para ver si era usica o video.
@@ -106,6 +107,15 @@ namespace Entrega_3.Paneles
         
         public FormAplicacion(Clases.User user)
         {
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(TimerTickHandler);
+            timer.Start();
+            void TimerTickHandler(object sender, EventArgs e)
+            {
+                timer.Stop();
+                ReproducirCola();
+                timer.Start();
+            }
             InitializeComponent();
             usuario = user;
             //mulan
@@ -1286,8 +1296,8 @@ namespace Entrega_3.Paneles
                         errores--;
                         if (usuarios[a].VideosComprados[b].Title == "avengers")
                         {
-                            string ruta = Path.Combine(Application.StartupPath, "avengers.mp4");
-                            Reproductor2.URL = ruta;
+                            string ruta32 = Path.Combine(Application.StartupPath, "avengers.mp4");
+                            Reproductor2.URL = ruta32;
                             panel6.Visible = true;
                             List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
                             foreach (Video x in videoAux0)
@@ -1326,8 +1336,6 @@ namespace Entrega_3.Paneles
                                     {
                                         manito.Visible = true;
                                     }
-
-
                                     e6.Visible = true;
                                     e7.Visible = true;
                                     e8.Visible = true;
@@ -1336,7 +1344,7 @@ namespace Entrega_3.Paneles
                                     panel27.Visible = false;
                                     panel25.Visible = false;
                                     panel23.Visible = false;
-                                    //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                                    
                                 }
                             }
                             serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
@@ -1347,7 +1355,6 @@ namespace Entrega_3.Paneles
                         {
                             errores++;
                         }
-
                     }
                 }
             }
@@ -1356,14 +1363,12 @@ namespace Entrega_3.Paneles
                 if (panel34.Visible == true)
                 {
                     panel34.Visible = false;
-                    
-
                 }
-                
                 else
                 {
                     panel34.Visible = true;
-                    
+                    panel18.Visible = false;
+                    panel15.Visible = false;
                 }
             }
             
@@ -1946,11 +1951,15 @@ namespace Entrega_3.Paneles
                 listCanciones.Items.Clear();
                 listCanciones.Visible = true;
             }
+            listCanciones.Items.Clear();
+
+
             try
             {
                 int entero = 0;
-                string answer = txtBusqueda.Text;
-                string[] listaStr = answer.Split(',');//TIENE QUE IR EN EL FORMS
+                string answer = txtBusqueda.Text.ToUpper();
+                string[] listaStr = answer.Split(' ');//TIENE QUE IR EN EL FORMS
+
 
                 try
                 {
@@ -1997,12 +2006,14 @@ namespace Entrega_3.Paneles
                 }
                 else //STRINGS
                 {
-                    string answer2 = answer.ToUpper(); //Ponerlo en el FORMS
+                    //UN SOLLO FILTRO.
+                    //filtro por titulos de videos y canciones.
+                    string answer2 = listaStr[0].ToUpper(); //Ponerlo en el FORMS
                     var title = from s in canciones //Filtro por Titutlo de la cancion. Y video.
-                                where s.Title.ToUpper() == answer2
+                                where s.Title.ToUpper() == answer2.ToUpper()
                                 select s;
                     var title2 = from s in videos
-                                 where s.Title.ToUpper() == answer2
+                                 where s.Title.ToUpper() == answer2.ToUpper()
                                  select s;
                     foreach (SongClass ojb2 in title)
                     {
@@ -2013,11 +2024,13 @@ namespace Entrega_3.Paneles
                         listCanciones.Items.Add(ojb2);
                     }
 
+
+
                     var keyWord = from s in canciones //Filtro por palabra clave
-                                  where s.Keyword.ToUpper() == answer2
+                                  where s.Keyword.ToUpper() == answer.ToUpper()
                                   select s;
                     var keyword2 = from s in videos
-                                   where s.Keyword.ToUpper() == answer2
+                                   where s.Keyword.ToUpper() == answer.ToUpper()
                                    select s;
                     foreach (SongClass x in keyWord)
                     {
@@ -2027,12 +2040,13 @@ namespace Entrega_3.Paneles
                     {
                         listCanciones.Items.Add(z);
                     }
+
                     //Busqueda por persona. Se buscara por director/Actor, Singer/Composer. Todo sera buscado por nombres.
                     var persona = from s in canciones
-                                  where s.Singer.Name.ToUpper() == answer2 || s.Composer == answer2
+                                  where s.Singer.Name.ToUpper() == answer.ToUpper() || s.Composer == answer.ToUpper()
                                   select s;
                     var persona2 = from s in videos
-                                   where s.Director.Name.ToUpper() == answer2 || s.MainActor.Name == answer2
+                                   where s.Director.Name.ToUpper() == answer.ToUpper() || s.MainActor.Name == answer.ToUpper()
                                    select s;
                     foreach (SongClass x in persona)
                     {
@@ -2044,12 +2058,12 @@ namespace Entrega_3.Paneles
                     }
 
                     //Busqueda por caracteristica de personas. Se buscara director en videos y singer en canciones.
-                    // En Ambos se buscara por Gender o Nacionalidad
+                    // En Ambos se buscara por Gender o Nacionalidad.
                     var person = from s in canciones
-                                 where s.Singer.Gender.ToUpper() == answer2 || s.Singer.Nationality.ToUpper() == answer2
+                                 where s.Singer.Gender.ToUpper() == answer.ToUpper() || s.Singer.Nationality == answer.ToUpper()
                                  select s;
                     var person2 = from s in videos
-                                  where s.Director.Gender.ToUpper() == answer2 || s.Director.Nationality.ToUpper() == answer2
+                                  where s.Director.Gender.ToUpper() == answer.ToUpper() || s.Director.Nationality == answer.ToUpper()
                                   select s;
                     foreach (SongClass x123 in person)
                     {
@@ -2061,10 +2075,10 @@ namespace Entrega_3.Paneles
                     }
 
                     var category = from s in canciones //Categoria = Genero de musica, en el caso de video a que tipo pertenece.
-                                   where s.Gender.ToUpper() == answer2
+                                   where s.Gender.ToUpper() == answer.ToUpper()
                                    select s;
                     var category2 = from s in videos
-                                    where s.Gender.ToUpper() == answer2
+                                    where s.Gender.ToUpper() == answer.ToUpper()
                                     select s;
 
                     foreach (SongClass y2 in category)
@@ -2076,63 +2090,151 @@ namespace Entrega_3.Paneles
                         listCanciones.Items.Add(z1);
                     }
                 }
+
+
                 //Multiples filtrosss ----------------------------------------------------- Por ahora con strings
                 if (listaStr.Count() >= 2)
                 {
-                    var Multi1 = from s in canciones //Genero y palabra clave
-                                 where (s.Gender.ToUpper() == listaStr[0].ToUpper() && s.Keyword.ToUpper() == listaStr[1].ToUpper()) || (s.Gender.ToUpper() == listaStr[1].ToUpper() && s.Keyword.ToUpper() == listaStr[0].ToUpper())
-                                 select s;
-                    var multi2 = from s in videos
-                                 where (s.Gender.ToUpper() == listaStr[0].ToUpper() && s.Keyword.ToUpper() == listaStr[1].ToUpper()) || (s.Gender.ToUpper() == listaStr[1].ToUpper() && s.Keyword.ToUpper() == listaStr[0].ToUpper())
-                                 select s;
-                    foreach (SongClass j in Multi1)
+                    string and1 = "and";
+
+                    string or1 = "or";
+
+
+                    if (listaStr[1] == and1.ToUpper()) //Ejemplo, se tienen que mostrar todas las canciones y videos que contenga Gender y keyword deseada.
                     {
-                        listCanciones.Items.Add(j);
+                        //BIEN
+                        var Multi1 = from s in canciones //Genero y palabra clave
+                                     where s.Gender.ToUpper() == listaStr[0].ToUpper() || s.Gender.ToUpper() == listaStr[2].ToUpper()
+                                     where s.Keyword.ToUpper() == listaStr[2].ToUpper() || s.Keyword.ToUpper() == listaStr[0].ToUpper()
+                                     select s;
+                        var multi2 = from s in videos
+                                     where s.Gender.ToUpper() == listaStr[0].ToUpper() || s.Gender.ToUpper() == listaStr[2].ToUpper()
+                                     where s.Keyword.ToUpper() == listaStr[2].ToUpper() || s.Keyword.ToUpper() == listaStr[0].ToUpper()
+                                     select s;
+                        foreach (SongClass j in Multi1)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        foreach (Video j in multi2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+
+                        //Palabra clave y persona //BIEN
+                        var Mezcla = from s in canciones
+                                     where s.Keyword.ToUpper() == listaStr[0].ToUpper() || s.Keyword.ToUpper() == listaStr[2].ToUpper()
+                                     where (s.Singer.Name.ToUpper() == listaStr[2].ToUpper() || s.Composer.ToUpper() == listaStr[2].ToUpper()) || (s.Singer.Name.ToUpper() == listaStr[0].ToUpper() || s.Composer.ToUpper() == listaStr[0].ToUpper())
+                                     select s;
+                        var Mezcla2 = from s in videos
+                                      where s.Keyword.ToUpper() == listaStr[0].ToUpper() || s.Keyword.ToUpper() == listaStr[2].ToUpper()
+                                      where (s.Director.Name.ToUpper() == listaStr[2].ToUpper() || s.MainActor.Name.ToUpper() == listaStr[2].ToUpper()) || (s.Director.Name.ToUpper() == listaStr[0].ToUpper() || s.MainActor.Name.ToUpper() == listaStr[0].ToUpper())
+                                      select s;
+                        foreach (SongClass j in Mezcla)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+
+                        foreach (Video j in Mezcla2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        /*
+                        //Palabra clave y caracteristica de la persona.
+                        var anakin = from s in canciones
+                                     where s.Keyword.ToUpper() == listaStr[0].ToUpper() || s.Keyword.ToUpper() == listaStr[2].ToUpper()
+                                     where s.Singer.Gender.ToUpper() == listaStr[1].ToUpper() || s.Singer.Nationality.ToUpper() == listaStr[1].ToUpper() || (s.Singer.Gender.ToUpper() == listaStr[0].ToUpper() || s.Singer.Nationality.ToUpper() == listaStr[0].ToUpper())
+                                     select s;
+                        var anakin2 = from s in videos
+                                      where (s.Keyword.ToUpper() == listaStr[0].ToUpper() && (s.Director.Gender.ToUpper() == listaStr[1].ToUpper() || s.Director.Nationality.ToUpper() == listaStr[1].ToUpper())) || (s.Keyword.ToUpper() == listaStr[1].ToUpper() && (s.Director.Gender.ToUpper() == listaStr[0].ToUpper() || s.Director.Nationality.ToUpper() == listaStr[0].ToUpper()))
+                                      select s;
+                        foreach (SongClass j in anakin)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        foreach (Video j in anakin2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        */
+
+
+                        //Palabra clave y titutlo. //BIEN
+                        var zelda1 = from s in canciones
+                                     where s.Keyword.ToUpper() == listaStr[0].ToUpper() || s.Keyword.ToUpper() == listaStr[2].ToUpper()
+                                     where s.Title.ToUpper() == listaStr[0].ToUpper() || s.Title.ToUpper() == listaStr[2].ToUpper()
+                                     select s;
+                        var zelda2 = from s in videos
+                                     where s.Keyword.ToUpper() == listaStr[0].ToUpper() || s.Keyword.ToUpper() == listaStr[2].ToUpper()
+                                     where s.Title.ToUpper() == listaStr[0].ToUpper() || s.Title.ToUpper() == listaStr[2].ToUpper()
+                                     select s;
+                        foreach (SongClass j in zelda1)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        foreach (Video j in zelda2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+
+
                     }
-                    foreach (Video j in multi2)
+                    else if (listaStr[1] == or1.ToUpper()) //Mismo orden que en el and.
                     {
-                        listCanciones.Items.Add(j);
-                    }
-                    //Palabra clave y persona
-                    var Mezcla = from s in canciones
-                                 where (s.Keyword.ToUpper() == listaStr[0].ToUpper() && (s.Singer.Name.ToUpper() == listaStr[1].ToUpper() || s.Composer.ToUpper() == listaStr[1].ToUpper())) || (s.Keyword.ToUpper() == listaStr[1].ToUpper() && (s.Singer.Name.ToUpper() == listaStr[0].ToUpper() || s.Composer.ToUpper() == listaStr[0].ToUpper()))
-                                 select s;
-                    var Mezcla2 = from s in videos
-                                  where (s.Keyword.ToUpper() == listaStr[0].ToUpper() && (s.Director.Name.ToUpper() == listaStr[1].ToUpper() || s.MainActor.Name.ToUpper() == listaStr[1].ToUpper())) || (s.Keyword.ToUpper() == listaStr[1].ToUpper() && (s.Director.Name.ToUpper() == listaStr[0].ToUpper() || s.MainActor.Name.ToUpper() == listaStr[0].ToUpper()))
-                                  select s;
-                    foreach (SongClass j in Mezcla)
-                    {
-                        listCanciones.Items.Add(j);
-                    }
-                    foreach (Video j in Mezcla2)
-                    {
-                        listCanciones.Items.Add(j);
+                        var Multi1d = from s in canciones //Genero y palabra clave
+                                      where (s.Gender.ToUpper() == listaStr[0].ToUpper() || s.Gender.ToUpper() == listaStr[2].ToUpper()) || (s.Keyword.ToUpper() == listaStr[2].ToUpper() || s.Keyword.ToUpper() == listaStr[0].ToUpper())
+                                      select s;
+                        var multi2 = from s in videos
+                                     where (s.Gender.ToUpper() == listaStr[0].ToUpper() || s.Gender.ToUpper() == listaStr[2].ToUpper()) || (s.Keyword.ToUpper() == listaStr[2].ToUpper() || s.Keyword.ToUpper() == listaStr[0].ToUpper())
+                                     select s;
+                        foreach (SongClass j in Multi1d)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        foreach (Video j in multi2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+
+                        //Palabra clave y persona
+                        var Mezcla = from s in canciones
+                                     where (s.Keyword.ToUpper() == listaStr[0].ToUpper() || (s.Singer.Name.ToUpper() == listaStr[2].ToUpper() || s.Composer.ToUpper() == listaStr[2].ToUpper())) || (s.Keyword.ToUpper() == listaStr[2].ToUpper() && (s.Singer.Name.ToUpper() == listaStr[0].ToUpper() || s.Composer.ToUpper() == listaStr[0].ToUpper()))
+                                     select s;
+                        var Mezcla2 = from s in videos
+                                      where (s.Keyword.ToUpper() == listaStr[0].ToUpper() || (s.Director.Name.ToUpper() == listaStr[2].ToUpper() || s.MainActor.Name.ToUpper() == listaStr[2].ToUpper())) || (s.Keyword.ToUpper() == listaStr[2].ToUpper() || (s.Director.Name.ToUpper() == listaStr[0].ToUpper() || s.MainActor.Name.ToUpper() == listaStr[0].ToUpper()))
+                                      select s;
+                        foreach (SongClass j in Mezcla)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+
+                        foreach (Video j in Mezcla2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        //PALABRA CLAVE Y TITULO.
+                        var zelda1 = from s in canciones
+                                     where s.Keyword.ToUpper() == listaStr[0].ToUpper() | s.Keyword.ToUpper() == listaStr[2].ToUpper() || s.Title.ToUpper() == listaStr[0].ToUpper() | s.Title.ToUpper() == listaStr[2].ToUpper()
+                                     select s;
+                        var zelda2 = from s in videos
+                                     where (s.Keyword.ToUpper() == listaStr[0].ToUpper() | s.Keyword.ToUpper() == listaStr[2].ToUpper()) | (s.Title.ToUpper() == listaStr[0].ToUpper() | s.Title.ToUpper() == listaStr[2].ToUpper())
+                                     select s;
+                        foreach (SongClass j in zelda1)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+                        foreach (Video j in zelda2)
+                        {
+                            listCanciones.Items.Add(j);
+                        }
+
                     }
 
-                    //Palabra clave y caracteristica de la persona.
-                    var anakin = from s in canciones
-                                 where (s.Keyword == listaStr[0] && (s.Singer.Gender.ToUpper() == listaStr[1].ToUpper() || s.Singer.Nationality.ToUpper() == listaStr[1].ToUpper())) || (s.Keyword.ToUpper() == listaStr[1].ToUpper() && (s.Singer.Gender.ToUpper() == listaStr[0].ToUpper() || s.Singer.Nationality.ToUpper() == listaStr[0].ToUpper()))
-                                 select s;
-                    var anakin2 = from s in videos
-                                  where (s.Keyword == listaStr[0] && (s.Director.Gender.ToUpper() == listaStr[1].ToUpper() || s.Director.Nationality.ToUpper() == listaStr[1].ToUpper())) || (s.Keyword.ToUpper() == listaStr[1].ToUpper() && (s.Director.Gender.ToUpper() == listaStr[0].ToUpper() || s.Director.Nationality.ToUpper() == listaStr[0].ToUpper()))
-                                  select s;
-                    foreach (SongClass j in anakin)
-                    {
-                        listCanciones.Items.Add(j);
-                    }
-                    foreach (Video j in anakin2)
-                    {
-                        listCanciones.Items.Add(j);
-                    }
+
                 }
                 if (listCanciones.Items.Count == 0)// ESto es cuando no pudo encontrar nada relacionado con canciones y videos.
                 {
                     MessageBox.Show("No se pudo encontrar nada relacionado. Intente de nuevo.");
                 }
-
-                //Multiples filtro a la vez.
-
-
 
             }
 
@@ -2140,7 +2242,7 @@ namespace Entrega_3.Paneles
             {
                 MessageBox.Show("Terminos no validos.");
             }
-            
+
         }
             
 
@@ -4492,12 +4594,12 @@ namespace Entrega_3.Paneles
                     {
                         cola1.Add(videoElegida.Url);
                         MessageBox.Show("Video agreado a la cola");
-                        
+
                     }
                     else
                     {
                         MessageBox.Show("Para agregar a la cola, debe comprar el video");
-                        
+
                     }
                 }
                 else
@@ -4511,11 +4613,8 @@ namespace Entrega_3.Paneles
                 cola1.Add(cancionElegida.Url);
                 MessageBox.Show("Cancion agreada a la cola");
             }
-            
-            
-           
-                
-            
+            ReproducirCola();
+
         }
 
         private void pic11_Click(object sender, EventArgs e)//imagen mulan
@@ -4609,20 +4708,15 @@ namespace Entrega_3.Paneles
                     panel34.Visible = false;
                     panel15.Visible = false;
                     panel18.Visible = false;//boton cupones
-
                 }
                 else
                 {
                     panel18.Visible = true;
-                  
+                    panel34.Visible = false;
+                    panel15.Visible = false;
                 }
             }
-            
-            
-
-
         }
-
         private void pic10_Click(object sender, EventArgs e)//imagen joker
         {
             videoClick = "joker";
@@ -4639,8 +4733,8 @@ namespace Entrega_3.Paneles
                         errores--;
                         if (usuarios[a].VideosComprados[b].Title == "joker")
                         {
-                            string ruta = Path.Combine(Application.StartupPath, "joker.mp4");
-                            Reproductor2.URL = ruta;
+                            string ruta23 = Path.Combine(Application.StartupPath, "joker.mp4");
+                            Reproductor2.URL = ruta23;
                             panel6.Visible = true;
                             List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
                             foreach (Video x in videoAux0)
@@ -4693,7 +4787,6 @@ namespace Entrega_3.Paneles
                                 }
                             }
                             serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
-                        
                         break;
                             //aca poner para que se abra el panel del reproductor
                         }
@@ -4701,7 +4794,6 @@ namespace Entrega_3.Paneles
                         {
                             errores++;
                         }
-
                     }
                 }
             }
@@ -4717,6 +4809,8 @@ namespace Entrega_3.Paneles
                 else
                 {
                     panel15.Visible = true;
+                    panel18.Visible = false;
+                    panel34.Visible = false;
                 }
             }
             
@@ -4931,6 +5025,182 @@ namespace Entrega_3.Paneles
         private void label43_Click(object sender, EventArgs e)
         {
 
+        }
+        //BOTONES DE BUSQUEDA
+        private void btnSeeAll_Click(object sender, EventArgs e)
+        {
+            
+            listCanciones.Visible = true;
+            listCanciones.Items.Clear();
+            foreach (SongClass x in canciones)
+            {
+                listCanciones.Items.Add(x);
+            }
+            foreach (Video x in videos)
+            {
+                listCanciones.Items.Add(x);
+            }
+        }
+
+        private void btnKeyword_Click(object sender, EventArgs e)
+        {
+            listCanciones.Visible = true;
+            listCanciones.Items.Clear();
+            foreach (SongClass x in canciones)
+            {
+                listCanciones.Items.Add("Keyword, titulo: " + x.Keyword + ", " + x.Title);
+            }
+            foreach (Video x in videos)
+            {
+                listCanciones.Items.Add("Keyword, titulo: " + x.Keyword + ", " + x.Title);
+            }
+        }
+
+        private void btnGender_Click(object sender, EventArgs e)
+        {
+            
+            listCanciones.Visible = true;
+            listCanciones.Items.Clear();
+            foreach (SongClass x in canciones)
+            {
+                listCanciones.Items.Add("Categoria, titulo: " + x.Gender + ", " + x.Title);
+            }
+            foreach (Video x in videos)
+            {
+                listCanciones.Items.Add("Categoria, titulo: " + x.Gender + ", " + x.Title);
+            }
+        }
+        //HASTA ACA.
+
+        private void ReproducirCola()
+        {
+
+            if (Reproductor2.Ctlcontrols.currentPosition == 0)
+            {
+                if (cola1.Count > 0)
+                {
+
+                    Reproductor2.URL = cola1[0];
+                    cola1.RemoveAt(0);
+
+                    List<SongClass> songAux0 = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+                    if (cola1.Count() > 0)
+                    {
+                        foreach (SongClass x in songAux0)
+                        {
+                            if (x.Url == cola1[0])
+                            {
+                                MessageBox.Show("Sie entra a if");
+                                cancionSonando = x;
+                                reproduciendo = "musica";
+                                txtBarraMusica.Text = x.Title + " autor;" + x.Singer.Name;
+                                btnPausa.Visible = true;
+                                btnPlay.Visible = false;
+                                panel6.Visible = true;
+                                numlikes = x.Likes;
+                                NumLike.Text = numlikes.ToString();
+                                NumLike.Visible = true;
+
+                                numreproducciones = x.NReproduction;
+                                numreproducciones += 1; //REPRODUCCIONES
+                                x.NReproduction = numreproducciones;
+
+                                NumReproducciones.Text = numreproducciones.ToString();
+                                if (x.ProfileLikes.Count() > 0)
+                                {
+                                    if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                    {
+                                        manito.Visible = false;
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+
+                                e6.Visible = true;
+                                e7.Visible = true;
+                                e8.Visible = true;
+                                e9.Visible = true;
+                                e10.Visible = true;
+                                panel27.Visible = false;
+                                panel25.Visible = false;
+                                panel23.Visible = false;
+                            }
+                        }
+                        serializar.Serialize(songAux0, File.Open("Canciones.bin", FileMode.Create));
+                        List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                        foreach (Video x in videoAux0)
+                        {
+
+                            if (x.Url == cola1[0])
+                            {
+
+                                videoSonando = x;
+                                reproduciendo = "video";//Esto sirve para agregar en las playlists.
+
+                                panel6.Visible = true;
+                                txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
+                                btnPausa.Visible = true;
+                                btnPlay.Visible = false;
+                                numlikes = x.Likes;
+                                NumLike.Text = numlikes.ToString();
+                                NumLike.Visible = true;
+
+                                numreproducciones = x.NReproduction;
+                                numreproducciones += 1; //REPRODUCCIONES
+                                x.NReproduction = numreproducciones;
+
+                                NumReproducciones.Text = numreproducciones.ToString();
+
+                                if (x.ProfileLikes.Count() > 0)
+                                {
+                                    if (true == x.ProfileLikes.Contains(perfilActual.NameProfile))
+                                    {
+                                        manito.Visible = false;
+                                    }
+                                    else
+                                    {
+                                        manito.Visible = true;
+                                    }
+                                }
+                                else
+                                {
+                                    manito.Visible = true;
+                                }
+                                e6.Visible = true;
+                                e7.Visible = true;
+                                e8.Visible = true;
+                                e9.Visible = true;
+                                e10.Visible = true;
+                                panel27.Visible = false;
+                                panel25.Visible = false;
+                                panel23.Visible = false;
+                                break;
+                                //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
+                            }
+                        }
+                        serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
+                    }
+                }
+            }
+        }
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nueva = cola1[0];
+                Reproductor2.URL = nueva;
+                cola1.RemoveAt(0);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Cola vacia");
+            }
         }
     }
 }
