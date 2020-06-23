@@ -64,7 +64,6 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnContinuar2 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtGeneroR = new System.Windows.Forms.ComboBox();
@@ -77,6 +76,8 @@
             this.btnVolverNormalidad = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,7 +89,7 @@
             // 
             // txtNombreR
             // 
-            this.txtNombreR.Location = new System.Drawing.Point(186, 88);
+            this.txtNombreR.Location = new System.Drawing.Point(204, 123);
             this.txtNombreR.Name = "txtNombreR";
             this.txtNombreR.Size = new System.Drawing.Size(100, 20);
             this.txtNombreR.TabIndex = 4;
@@ -99,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaShell;
-            this.label1.Location = new System.Drawing.Point(99, 88);
+            this.label1.Location = new System.Drawing.Point(117, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 18);
             this.label1.TabIndex = 3;
@@ -107,7 +108,7 @@
             // 
             // TxtApellidoR
             // 
-            this.TxtApellidoR.Location = new System.Drawing.Point(186, 117);
+            this.TxtApellidoR.Location = new System.Drawing.Point(204, 152);
             this.TxtApellidoR.Name = "TxtApellidoR";
             this.TxtApellidoR.Size = new System.Drawing.Size(100, 20);
             this.TxtApellidoR.TabIndex = 6;
@@ -118,7 +119,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaShell;
-            this.label2.Location = new System.Drawing.Point(76, 177);
+            this.label2.Location = new System.Drawing.Point(94, 212);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 18);
             this.label2.TabIndex = 5;
@@ -126,7 +127,7 @@
             // 
             // txtEmailR
             // 
-            this.txtEmailR.Location = new System.Drawing.Point(186, 146);
+            this.txtEmailR.Location = new System.Drawing.Point(204, 181);
             this.txtEmailR.Name = "txtEmailR";
             this.txtEmailR.Size = new System.Drawing.Size(100, 20);
             this.txtEmailR.TabIndex = 8;
@@ -136,15 +137,15 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaShell;
-            this.label3.Location = new System.Drawing.Point(7, 206);
+            this.label3.Location = new System.Drawing.Point(25, 241);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 18);
+            this.label3.Size = new System.Drawing.Size(156, 18);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Confirme Contraseña";
+            this.label3.Text = "Confirme contraseña";
             // 
             // txtContraseñaR
             // 
-            this.txtContraseñaR.Location = new System.Drawing.Point(186, 176);
+            this.txtContraseñaR.Location = new System.Drawing.Point(204, 211);
             this.txtContraseñaR.Name = "txtContraseñaR";
             this.txtContraseñaR.PasswordChar = '*';
             this.txtContraseñaR.Size = new System.Drawing.Size(100, 20);
@@ -155,7 +156,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SeaShell;
-            this.label4.Location = new System.Drawing.Point(118, 146);
+            this.label4.Location = new System.Drawing.Point(136, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 18);
             this.label4.TabIndex = 9;
@@ -163,7 +164,7 @@
             // 
             // txtNumerocelularR
             // 
-            this.txtNumerocelularR.Location = new System.Drawing.Point(444, 117);
+            this.txtNumerocelularR.Location = new System.Drawing.Point(462, 152);
             this.txtNumerocelularR.Name = "txtNumerocelularR";
             this.txtNumerocelularR.Size = new System.Drawing.Size(100, 20);
             this.txtNumerocelularR.TabIndex = 16;
@@ -173,7 +174,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Linen;
-            this.label5.Location = new System.Drawing.Point(307, 91);
+            this.label5.Location = new System.Drawing.Point(325, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 18);
             this.label5.TabIndex = 15;
@@ -181,7 +182,7 @@
             // 
             // txtANombreUsuarioR
             // 
-            this.txtANombreUsuarioR.Location = new System.Drawing.Point(444, 88);
+            this.txtANombreUsuarioR.Location = new System.Drawing.Point(462, 123);
             this.txtANombreUsuarioR.Name = "txtANombreUsuarioR";
             this.txtANombreUsuarioR.Size = new System.Drawing.Size(100, 20);
             this.txtANombreUsuarioR.TabIndex = 14;
@@ -191,7 +192,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SeaShell;
-            this.label6.Location = new System.Drawing.Point(99, 118);
+            this.label6.Location = new System.Drawing.Point(117, 153);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 18);
             this.label6.TabIndex = 13;
@@ -199,7 +200,7 @@
             // 
             // txtConfirmacionContraseñaR
             // 
-            this.txtConfirmacionContraseñaR.Location = new System.Drawing.Point(186, 204);
+            this.txtConfirmacionContraseñaR.Location = new System.Drawing.Point(204, 239);
             this.txtConfirmacionContraseñaR.Name = "txtConfirmacionContraseñaR";
             this.txtConfirmacionContraseñaR.PasswordChar = '*';
             this.txtConfirmacionContraseñaR.Size = new System.Drawing.Size(100, 20);
@@ -210,22 +211,22 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Linen;
-            this.label7.Location = new System.Drawing.Point(316, 124);
+            this.label7.Location = new System.Drawing.Point(334, 159);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 18);
+            this.label7.Size = new System.Drawing.Size(116, 18);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Numero Celular";
+            this.label7.Text = "Número celular";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Linen;
-            this.label10.Location = new System.Drawing.Point(355, 153);
+            this.label10.Location = new System.Drawing.Point(373, 188);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 18);
             this.label10.TabIndex = 18;
-            this.label10.Text = "Genero";
+            this.label10.Text = "Género";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
@@ -233,18 +234,18 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SeaShell;
-            this.label9.Location = new System.Drawing.Point(82, 234);
+            this.label9.Location = new System.Drawing.Point(100, 269);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 18);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Ocupacion";
+            this.label9.Text = "Ocupación";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Linen;
-            this.label8.Location = new System.Drawing.Point(328, 182);
+            this.label8.Location = new System.Drawing.Point(346, 217);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 18);
             this.label8.TabIndex = 23;
@@ -252,7 +253,7 @@
             // 
             // txtOcupacionR
             // 
-            this.txtOcupacionR.Location = new System.Drawing.Point(186, 234);
+            this.txtOcupacionR.Location = new System.Drawing.Point(204, 269);
             this.txtOcupacionR.Name = "txtOcupacionR";
             this.txtOcupacionR.Size = new System.Drawing.Size(100, 20);
             this.txtOcupacionR.TabIndex = 24;
@@ -260,7 +261,8 @@
             // btnContinuar1
             // 
             this.btnContinuar1.BackColor = System.Drawing.Color.Silver;
-            this.btnContinuar1.Location = new System.Drawing.Point(410, 327);
+            this.btnContinuar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContinuar1.Location = new System.Drawing.Point(428, 362);
             this.btnContinuar1.Name = "btnContinuar1";
             this.btnContinuar1.Size = new System.Drawing.Size(75, 23);
             this.btnContinuar1.TabIndex = 25;
@@ -271,15 +273,16 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.radioButton5);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.btnContinuar2);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.radioButton4);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(622, 424);
+            this.panel1.Size = new System.Drawing.Size(622, 391);
             this.panel1.TabIndex = 27;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -288,6 +291,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.comboBox1);
@@ -298,9 +302,11 @@
             this.panel2.Controls.Add(this.txtCodigoSeguridadTarjeta);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.txtNumeroTarjeta);
-            this.panel2.Location = new System.Drawing.Point(0, 36);
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(622, 388);
+            this.panel2.Size = new System.Drawing.Size(622, 391);
             this.panel2.TabIndex = 11;
             this.panel2.Visible = false;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
@@ -310,7 +316,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Lavender;
-            this.label17.Location = new System.Drawing.Point(334, 140);
+            this.label17.Location = new System.Drawing.Point(408, 153);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 19);
             this.label17.TabIndex = 13;
@@ -321,7 +327,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Lavender;
-            this.label16.Location = new System.Drawing.Point(246, 140);
+            this.label16.Location = new System.Drawing.Point(329, 155);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 19);
             this.label16.TabIndex = 12;
@@ -329,6 +335,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Enero",
@@ -343,7 +350,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboBox2.Location = new System.Drawing.Point(233, 162);
+            this.comboBox2.Location = new System.Drawing.Point(318, 178);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(63, 21);
             this.comboBox2.TabIndex = 11;
@@ -351,6 +358,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "2020",
@@ -364,13 +372,14 @@
             "2028",
             "2029",
             "2030"});
-            this.comboBox1.Location = new System.Drawing.Point(321, 161);
+            this.comboBox1.Location = new System.Drawing.Point(403, 178);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(63, 21);
             this.comboBox1.TabIndex = 10;
             // 
             // btnVolverTarjeta
             // 
+            this.btnVolverTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolverTarjeta.Location = new System.Drawing.Point(144, 327);
             this.btnVolverTarjeta.Name = "btnVolverTarjeta";
             this.btnVolverTarjeta.Size = new System.Drawing.Size(75, 23);
@@ -381,6 +390,7 @@
             // 
             // btnContinuarTarjeta
             // 
+            this.btnContinuarTarjeta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinuarTarjeta.Location = new System.Drawing.Point(382, 327);
             this.btnContinuarTarjeta.Name = "btnContinuarTarjeta";
             this.btnContinuarTarjeta.Size = new System.Drawing.Size(75, 23);
@@ -394,26 +404,26 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(46, 229);
+            this.label15.Location = new System.Drawing.Point(140, 237);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(143, 19);
+            this.label15.Size = new System.Drawing.Size(175, 19);
             this.label15.TabIndex = 5;
-            this.label15.Text = "codigo seguridad";
+            this.label15.Text = "Código de seguridad:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(49, 164);
+            this.label14.Location = new System.Drawing.Point(143, 181);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(149, 19);
+            this.label14.Size = new System.Drawing.Size(169, 19);
             this.label14.TabIndex = 3;
-            this.label14.Text = "Fecha caducacion";
+            this.label14.Text = "Fecha de caducidad:";
             // 
             // txtCodigoSeguridadTarjeta
             // 
-            this.txtCodigoSeguridadTarjeta.Location = new System.Drawing.Point(207, 228);
+            this.txtCodigoSeguridadTarjeta.Location = new System.Drawing.Point(325, 233);
             this.txtCodigoSeguridadTarjeta.Name = "txtCodigoSeguridadTarjeta";
             this.txtCodigoSeguridadTarjeta.PasswordChar = '*';
             this.txtCodigoSeguridadTarjeta.Size = new System.Drawing.Size(48, 20);
@@ -424,15 +434,15 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(49, 99);
+            this.label12.Location = new System.Drawing.Point(143, 116);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(121, 19);
+            this.label12.Size = new System.Drawing.Size(150, 19);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Numero tarjeta";
+            this.label12.Text = "Número de tarjeta:";
             // 
             // txtNumeroTarjeta
             // 
-            this.txtNumeroTarjeta.Location = new System.Drawing.Point(212, 102);
+            this.txtNumeroTarjeta.Location = new System.Drawing.Point(301, 114);
             this.txtNumeroTarjeta.Name = "txtNumeroTarjeta";
             this.txtNumeroTarjeta.Size = new System.Drawing.Size(149, 20);
             this.txtNumeroTarjeta.TabIndex = 0;
@@ -442,11 +452,11 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.radioButton5.Location = new System.Drawing.Point(53, 208);
+            this.radioButton5.Location = new System.Drawing.Point(135, 247);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(267, 23);
+            this.radioButton5.Size = new System.Drawing.Size(300, 23);
             this.radioButton5.TabIndex = 13;
-            this.radioButton5.Text = "plan familiar(4 personas) $7,990";
+            this.radioButton5.Text = "Plan FAMILIAR (4 personas) - $7,990";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -454,17 +464,18 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.radioButton1.Location = new System.Drawing.Point(53, 114);
+            this.radioButton1.Location = new System.Drawing.Point(135, 153);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(117, 23);
+            this.radioButton1.Size = new System.Drawing.Size(127, 23);
             this.radioButton1.TabIndex = 10;
-            this.radioButton1.Text = "plan Basico";
+            this.radioButton1.Text = "Plan BÁSICO";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // btnContinuar2
             // 
-            this.btnContinuar2.Location = new System.Drawing.Point(299, 287);
+            this.btnContinuar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContinuar2.Location = new System.Drawing.Point(251, 327);
             this.btnContinuar2.Name = "btnContinuar2";
             this.btnContinuar2.Size = new System.Drawing.Size(75, 23);
             this.btnContinuar2.TabIndex = 9;
@@ -472,32 +483,22 @@
             this.btnContinuar2.UseVisualStyleBackColor = true;
             this.btnContinuar2.Click += new System.EventHandler(this.btnContinuar2_Click);
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Consolas", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Lime;
-            this.label13.Location = new System.Drawing.Point(79, 42);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(360, 32);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Seleccione su membresia";
-            // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.radioButton4.Location = new System.Drawing.Point(50, 166);
+            this.radioButton4.Location = new System.Drawing.Point(132, 205);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(261, 23);
+            this.radioButton4.Size = new System.Drawing.Size(284, 23);
             this.radioButton4.TabIndex = 5;
-            this.radioButton4.Text = "plan premiun (personal) $3,990";
+            this.radioButton4.Text = "Plan PREMIUM (personal) - $3,990";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(135, 327);
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Location = new System.Drawing.Point(153, 362);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 29;
@@ -507,18 +508,21 @@
             // 
             // txtGeneroR
             // 
+            this.txtGeneroR.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
+            this.txtGeneroR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtGeneroR.FormattingEnabled = true;
             this.txtGeneroR.Items.AddRange(new object[] {
             "Mujer",
             "Hombre",
             "Otro"});
-            this.txtGeneroR.Location = new System.Drawing.Point(444, 150);
+            this.txtGeneroR.Location = new System.Drawing.Point(462, 185);
             this.txtGeneroR.Name = "txtGeneroR";
             this.txtGeneroR.Size = new System.Drawing.Size(100, 21);
             this.txtGeneroR.TabIndex = 30;
             // 
             // txtNacionalidadR
             // 
+            this.txtNacionalidadR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtNacionalidadR.FormattingEnabled = true;
             this.txtNacionalidadR.Items.AddRange(new object[] {
             "Argentina",
@@ -547,7 +551,7 @@
             "Surinam",
             "Uruguay",
             "Venezuela"});
-            this.txtNacionalidadR.Location = new System.Drawing.Point(444, 178);
+            this.txtNacionalidadR.Location = new System.Drawing.Point(462, 213);
             this.txtNacionalidadR.Name = "txtNacionalidadR";
             this.txtNacionalidadR.Size = new System.Drawing.Size(100, 21);
             this.txtNacionalidadR.TabIndex = 31;
@@ -558,16 +562,17 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.SeaShell;
-            this.label18.Location = new System.Drawing.Point(10, 270);
+            this.label18.Location = new System.Drawing.Point(28, 305);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(156, 18);
+            this.label18.Size = new System.Drawing.Size(154, 18);
             this.label18.TabIndex = 32;
-            this.label18.Text = "Fecha de Nacimiento";
+            this.label18.Text = "Fecha de nacimiento";
             // 
             // fechaNacimiento
             // 
             this.fechaNacimiento.Checked = false;
-            this.fechaNacimiento.Location = new System.Drawing.Point(186, 267);
+            this.fechaNacimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fechaNacimiento.Location = new System.Drawing.Point(204, 302);
             this.fechaNacimiento.Name = "fechaNacimiento";
             this.fechaNacimiento.Size = new System.Drawing.Size(209, 20);
             this.fechaNacimiento.TabIndex = 33;
@@ -575,17 +580,17 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Consolas", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Lime;
-            this.label11.Location = new System.Drawing.Point(128, 36);
+            this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.CadetBlue;
+            this.label11.Location = new System.Drawing.Point(139, 45);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(330, 32);
+            this.label11.Size = new System.Drawing.Size(306, 29);
             this.label11.TabIndex = 34;
-            this.label11.Text = "Bienvenido a SPOTFlIX";
+            this.label11.Text = "INFORMACIÓN DE PAGO:";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Blue;
+            this.panel3.BackColor = System.Drawing.Color.CadetBlue;
             this.panel3.Controls.Add(this.btnMaximizar);
             this.panel3.Controls.Add(this.btnVolverNormalidad);
             this.panel3.Controls.Add(this.btnMinimizar);
@@ -600,6 +605,7 @@
             // btnMaximizar
             // 
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
             this.btnMaximizar.Location = new System.Drawing.Point(541, -2);
             this.btnMaximizar.Name = "btnMaximizar";
@@ -625,6 +631,7 @@
             // btnMinimizar
             // 
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
             this.btnMinimizar.Location = new System.Drawing.Point(499, -2);
             this.btnMinimizar.Name = "btnMinimizar";
@@ -637,6 +644,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(583, -2);
             this.btnCerrar.Name = "btnCerrar";
@@ -646,15 +654,37 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.CadetBlue;
+            this.label13.Location = new System.Drawing.Point(115, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(370, 29);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "SELECCIONE SU MEMBRESÍA:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.CadetBlue;
+            this.label19.Location = new System.Drawing.Point(25, 56);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(444, 29);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "INGRESE LOS DATOS DE REGISTRO:";
+            // 
             // FormsRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(622, 424);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.fechaNacimiento);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.txtNacionalidadR);
@@ -679,6 +709,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombreR);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormsRegistro";
             this.Text = "v";
@@ -720,7 +751,6 @@
         private System.Windows.Forms.Button btnContinuar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnContinuar2;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Panel panel2;
@@ -747,5 +777,7 @@
         private System.Windows.Forms.PictureBox btnVolverNormalidad;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label19;
     }
 }
