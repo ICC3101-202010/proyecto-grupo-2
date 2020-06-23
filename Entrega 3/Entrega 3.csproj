@@ -161,5 +161,20 @@
   <ItemGroup>
     <None Include="bin\Debug\Iavengers.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\68efee22285cbd0f9f75c3699e1db64e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aebf4bb1d3320a7bc1bcce908ded9b7b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
