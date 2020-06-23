@@ -4366,8 +4366,8 @@ namespace Entrega_3.Paneles
                 listBox7.Items.Add("no hay elementos");
             }
             listBox7.Visible = true;
-            Thread.Sleep(10);
-            listBox7.Visible = false;
+           
+            
         }
 
         private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
@@ -4913,6 +4913,7 @@ namespace Entrega_3.Paneles
                     if (todosCupones[a] == textBox2.Text && todosCuponesUsados.Contains(todosCupones[a])==false)
                     {
                         MessageBox.Show("Su cupon ha sido utilizado con exito");
+                        
                         todosCuponesUsados.Add(todosCupones[a]);
                         for (int c = 0; c < deserializarUser.Count(); c++)
                         {
@@ -4925,7 +4926,9 @@ namespace Entrega_3.Paneles
                         }
                         
                         serializar.Serialize(todosCuponesUsados, File.Open("cuponesUsados.bin", FileMode.Create));
-                        
+                        panel34.Visible = false;
+                        panel18.Visible = false;
+                        panel15.Visible = false;
                         break;
                     }
                     else if (todosCupones[a] == textBox2.Text && todosCuponesUsados.Contains(todosCupones[a]) == true)
@@ -5025,6 +5028,10 @@ namespace Entrega_3.Paneles
                             MessageBox.Show("Su estreno ha sido comprado!");
                             deserializarUser[c].VideosComprados.Add(videoComprado);
                             serializar.Serialize(deserializarUser, File.Open("data.bin", FileMode.Create));
+                            panel34.Visible = false;
+                            panel18.Visible = false;
+                            panel15.Visible = false;
+                            break;
                         }
 
                     }
@@ -5429,6 +5436,16 @@ namespace Entrega_3.Paneles
                     
                 }
             }
+        }
+
+        private void btnSeeAll_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void listBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
