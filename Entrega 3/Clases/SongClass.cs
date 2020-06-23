@@ -79,7 +79,7 @@ namespace Entrega_3.Clases
         }
         public override string ToString()
         {
-            return Title + ": " + Composer + " " + Gender + " " + PublicationYear + " " + Duration + " " + Memory + " " + Study + " " + Keyword + " " + Singer.Name + " " + Album.NameAlbum;
+            return Title + " " + Composer + " " + Gender + " " + PublicationYear + " " + Duration + " " + Memory + " " + Study + " " + Keyword + " " + Singer.Name + " " + Album.NameAlbum;
         }
     }
 }

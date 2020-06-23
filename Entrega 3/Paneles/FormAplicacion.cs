@@ -41,8 +41,8 @@ namespace Entrega_3.Paneles
         static List<string> listaPerfilesLikes = new List<string>();
         string videoClick = "";
         List<Profile> listaPerfiles = new List<Profile>();
-        List<PlaylistSpotifai> listaPlaylistCancionesPerfiles = new List<PlaylistSpotifai>();
-        List<PlaylistVideoEmptyClass> listaPlaylistVideosPerfiles = new List<PlaylistVideoEmptyClass>();
+        PlaylistSpotifai playlistElegidaCancion;
+        List<PlaylistSpotifai> playlistCancionesPerfil;
 
 
         static List<string> premios = new List<string>();
@@ -2415,138 +2415,141 @@ namespace Entrega_3.Paneles
             //if (txt=="");malo
             //subir los try de los int 
             //else{
-            panel5.Visible = false;
-            btnAgregarInfo.Visible = false;
+
             List<SongClass> songAux123 = new List<SongClass>();
             List<Video> videoAux123 = new List<Video>();
-
-
-
 
             int startIndex = ArchivoMP3.Length - 4;
             int final = 4;
             String substring = ArchivoMP3.Substring(startIndex, final);
-            try
+            if (txtTitle.Text == "" || txtSinger.Text == "" || txtComposer.Text == "" || txtAlbum.Text == "" || txtGender.Text == "" || txtPublicationYear.Text == "" || txtStudy.Text == "" || txtKeyword.Text == "" || txtAlbum.Text == "")
             {
-                //VER QUE SEAN MINUSCULAS Y MAYUSCULAS
-                if (substring == ".mp3")
+                MessageBox.Show("Rellene todos los datos");
+            }
+            else
+            {
+                try
                 {
-                    string title = "";
-                    string singer12 = "";
-                    string composer = "";
-                    string album12 = "";
-                    string gender = "";
-                    string publicationYear = ""; //Tiene que ser en el formato de data time
-                    string study = "";
-                    string keyWord = "";
-
-                    title = txtTitle.Text;
-                    singer12 = txtSinger.Text;
-                    composer = txtComposer.Text;
-                    album12 = txtAlbum.Text;
-                    gender = txtGender.Text;
-                    publicationYear = txtPublicationYear.Text;
-                    study = txtStudy.Text;
-                    keyWord = txtKeyword.Text;
-
-                    Singer singer123 = new Singer(canciones, listaAlbum, premios, "voiceType", "genders", 22, discograpich, singer12, 12, "Lastname", "genero", "nationality", "ocupacion");
-                    Album album123 = new Album(album12, "gender", "producer", singer, date);
-
-                    //Preguntarle al pefil si quiere rellenar los datos de Singer y Album
-                    double duration123 = Reproductor.Ctlcontrols.currentItem.duration;
-                    SongClass ob = new SongClass(gender, publicationYear, title, duration123, 123, study, keyWord, composer, singer123, album123, ArchivoMP3, 123, 123, rutaArchivoMP3,0,0, listaPerfilesLikes);
-                    //Deserializando
-
-                    List<SongClass> songAux = new List<SongClass>();
-                    
-                    try
+                    //VER QUE SEAN MINUSCULAS Y MAYUSCULAS
+                    if (substring == ".mp3")
                     {
-                        songAux = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+                        string title = "";
+                        string singer12 = "";
+                        string composer = "";
+                        string album12 = "";
+                        string gender = "";
+                        string publicationYear = ""; //Tiene que ser en el formato de data time
+                        string study = "";
+                        string keyWord = "";
+
+                        title = txtTitle.Text;
+                        singer12 = txtSinger.Text;
+                        composer = txtComposer.Text;
+                        album12 = txtAlbum.Text;
+                        gender = txtGender.Text;
+                        publicationYear = txtPublicationYear.Text;
+                        study = txtStudy.Text;
+                        keyWord = txtKeyword.Text;
+
+                        Singer singer123 = new Singer(canciones, listaAlbum, premios, "voiceType", "genders", 22, discograpich, singer12, 12, "Lastname", "genero", "nationality", "ocupacion");
+                        Album album123 = new Album(album12, "gender", "producer", singer, date);
+
+                        //Preguntarle al pefil si quiere rellenar los datos de Singer y Album
+                        double duration123 = Reproductor.Ctlcontrols.currentItem.duration;
+                        SongClass ob = new SongClass(gender, publicationYear, title, duration123, 123, study, keyWord, composer, singer123, album123, ArchivoMP3, 123, 123, rutaArchivoMP3, 0, 0, listaPerfilesLikes);
+                        //Deserializando
+
+                        List<SongClass> songAux = new List<SongClass>();
+
+                        try
+                        {
+                            songAux = serializar.Deserialize<List<SongClass>>(File.Open("Canciones.bin", FileMode.Open));
+                        }
+                        catch (System.Runtime.Serialization.SerializationException)
+                        {
+
+                        }
+                        foreach (SongClass x in songAux)
+                        {
+                            songAux123.Add(x);
+                        }
+                        songAux123.Add(ob);
+                        serializar.Serialize(songAux123, File.Open("Canciones.bin", FileMode.Create));
                     }
-                    catch (System.Runtime.Serialization.SerializationException)
+
+
+                    else if (substring == ".mp4")
                     {
 
+                        string title = "";
+                        string actor = "";
+                        string composer = "";
+                        string director = "";
+                        string gender = "";
+                        string publicationYear = ""; //Tiene que ser en el formato de data time
+                        string study = "";
+                        string keyWord = "";
+                        string description = "";
+
+
+
+                        title = txtTitle.Text;
+                        director = txtSinger.Text;
+                        composer = txtComposer.Text;
+                        actor = txtAlbum.Text;
+                        gender = txtGender.Text;
+                        publicationYear = txtPublicationYear.Text;
+                        study = txtStudy.Text;
+                        keyWord = txtKeyword.Text;
+                        description = txtAlbum.Text;
+
+                        Actor Mactor123 = new Actor("name4", 22, actor, "gender4", "nationality4", "Ocupacion4", videos, premios, 22);
+                        Director d123 = new Director(director, 22, "LastD", "gender", "nationality", "ocupation", videos, premios, 22);
+                        double duration123 = Reproductor.Ctlcontrols.currentItem.duration; //SOn segundos
+
+                        Video ob2 = new Video(gender, publicationYear, title, duration123, 123, study, keyWord, description, Mactor123, d123, ArchivoMP3, 123, 123, rutaArchivoMP3, 0, 0, listaPerfilesLikes);
+
+                        //videos123.Add(ob2);
+                        List<Video> videoAux = new List<Video>();
+                        try
+                        {
+                            videoAux = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
+                        }
+                        catch (System.Runtime.Serialization.SerializationException)
+                        {
+
+                        }
+                        foreach (Video x in videoAux)
+                        {
+                            videoAux123.Add(x);
+                        }
+                        videoAux123.Add(ob2);
+                        serializar.Serialize(videoAux123, File.Open("Videos.bin", FileMode.Create));
+                        // Lo hicimos xq para que no se repitieran las canciones
                     }
-                    foreach(SongClass x in songAux)
-                    {
-                        songAux123.Add(x);
-                    }
-                    songAux123.Add(ob);
-                    serializar.Serialize(songAux123, File.Open("Canciones.bin", FileMode.Create));
+                }
+                catch
+                {
+                    MessageBox.Show("ERROR");
                 }
 
+                MessageBox.Show("Su archivo ha sido guardado.");
+                panel5.Visible = false;
+                btnAgregarInfo.Visible = false;
+                //Limpiando los txt.
 
-                else if (substring == ".mp4")
-                {
+                txtTitle.Clear();
+                txtSinger.Clear();
+                txtComposer.Clear();
+                txtAlbum.Clear();
+                txtGender.Clear();
+                txtPublicationYear.Clear();
+                txtStudy.Clear();
+                txtKeyword.Clear();
+                txtAlbum.Clear();
 
-                    string title = "";
-                    string actor = "";
-                    string composer = "";
-                    string director = "";
-                    string gender = "";
-                    string publicationYear = ""; //Tiene que ser en el formato de data time
-                    string study = "";
-                    string keyWord = "";
-                    string description = "";
-
-
-
-                    title = txtTitle.Text;
-                    director = txtSinger.Text;
-                    composer = txtComposer.Text;
-                    actor = txtAlbum.Text;
-                    gender = txtGender.Text;
-                    publicationYear = txtPublicationYear.Text;
-                    study = txtStudy.Text;
-                    keyWord = txtKeyword.Text;
-                    description = txtAlbum.Text;
-
-                    Actor Mactor123 = new Actor("name4", 22, actor, "gender4", "nationality4", "Ocupacion4", videos, premios, 22);
-                    Director d123 = new Director(director, 22, "LastD", "gender", "nationality", "ocupation", videos, premios, 22);
-                    double duration123 = Reproductor.Ctlcontrols.currentItem.duration; //SOn segundos
-
-                    Video ob2 = new Video(gender, publicationYear, title, duration123, 123, study, keyWord, description, Mactor123, d123, ArchivoMP3, 123, 123, rutaArchivoMP3,0,0,listaPerfilesLikes);
-
-                    //videos123.Add(ob2);
-                    List<Video> videoAux = new List<Video>();
-                    try
-                    {
-                        videoAux = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
-                    }
-                    catch (System.Runtime.Serialization.SerializationException)
-                    {
-
-                    }
-                    foreach(Video x in videoAux)
-                    {
-                        videoAux123.Add(x);
-                    }
-                    videoAux123.Add(ob2);
-                    serializar.Serialize(videoAux123, File.Open("Videos.bin", FileMode.Create)); 
-                    // Lo hicimos xq para que no se repitieran las canciones
-                }
+                listBox1.Items.Clear();
             }
-            catch
-            {
-                MessageBox.Show("ERROR");
-            }
-
-            MessageBox.Show("Su ha archivo ha sido guardada.");
-            
-            
-            //Limpiando los txt.
-
-            txtTitle.Clear();
-            txtSinger.Clear();
-            txtComposer.Clear();
-            txtAlbum.Clear();
-            txtGender.Clear();
-            txtPublicationYear.Clear();
-            txtStudy.Clear();
-            txtKeyword.Clear();
-            txtAlbum.Clear();
-
-            listBox1.Items.Clear();
 
         }
 
@@ -5247,6 +5250,7 @@ namespace Entrega_3.Paneles
 
         private void listBox5_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            playlistCancionesPerfil = new List<PlaylistSpotifai>();
             listBox6.Items.Clear();
             int error = 1;
             //Perfiles, Playlist.
@@ -5255,7 +5259,7 @@ namespace Entrega_3.Paneles
             {
                 string algo = listBox5.SelectedItem.ToString();
                 string[] listaString1 = algo.Split(' ');
-                if(listaString1[0] == x.NameProfile)
+                if (listaString1[0] == x.NameProfile)
                 {
                     error--;
                     if (x.PlaylistCanciones.Count > 0)
@@ -5263,6 +5267,7 @@ namespace Entrega_3.Paneles
                         for (int a = 0; a < x.PlaylistCanciones.Count(); a++)
                         {
                             listBox6.Items.Add(x.PlaylistCanciones[a]);
+                            playlistCancionesPerfil.Add(x.PlaylistCanciones[a]);
                         }
                     }
                     else
@@ -5271,20 +5276,32 @@ namespace Entrega_3.Paneles
                     }
                 }
             }
-            if(error > 0)
+            if (error > 0)
             {
                 listBox6.Items.Add("Este perfil no contiene playlist de canciones");
             }
         }
-
         private void btnSeguir_Click(object sender, EventArgs e)
         {
-           
+            for (int a = 0; a < usuario.Profiles.Count(); a++)
+            {
+                if (perfilActual == usuario.Profiles[a])
+                {
+                    usuario.Profiles[a].PlaylistCancionSeguidas.Add(playlistElegidaCancion);
+                }
+            }
         }
 
         private void listBox6_SelectedIndexChanged(object sender, EventArgs e) //unavez que seleccione la playlist la empizo a seguir
         {
-
+            for (int a = 0; a < playlistCancionesPerfil.Count(); a++)
+            {
+                string[] algo = listBox6.SelectedItem.ToString().Split(' ');
+                if (playlistCancionesPerfil[a].Nombre == algo[0])
+                {
+                    playlistElegidaCancion = playlistCancionesPerfil[a];
+                }
+            }
         }
     }
 }
