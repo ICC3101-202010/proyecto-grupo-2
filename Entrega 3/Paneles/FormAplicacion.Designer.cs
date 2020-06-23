@@ -254,7 +254,7 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBuscarSeguir = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -292,6 +292,11 @@
             this.btnSeeAll = new System.Windows.Forms.Button();
             this.btnKeyword = new System.Windows.Forms.Button();
             this.btnGender = new System.Windows.Forms.Button();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnSeguir = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolverNormalidad)).BeginInit();
@@ -362,6 +367,7 @@
             this.panel15.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -751,7 +757,7 @@
             this.panelContenedorPincipal.Location = new System.Drawing.Point(0, 0);
             this.panelContenedorPincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContenedorPincipal.Name = "panelContenedorPincipal";
-            this.panelContenedorPincipal.Size = new System.Drawing.Size(1524, 1542);
+            this.panelContenedorPincipal.Size = new System.Drawing.Size(1524, 1545);
             this.panelContenedorPincipal.TabIndex = 31;
             this.panelContenedorPincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorPincipal_Paint);
             // 
@@ -776,11 +782,10 @@
             this.panel6.Controls.Add(this.Reproductor2);
             this.panel6.Controls.Add(this.pictureBox4);
             this.panel6.Controls.Add(this.listBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(267, 0);
+            this.panel6.Location = new System.Drawing.Point(267, 166);
             this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1257, 1542);
+            this.panel6.Size = new System.Drawing.Size(315, 1370);
             this.panel6.TabIndex = 36;
             this.panel6.Visible = false;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
@@ -801,11 +806,10 @@
             this.panel23.Controls.Add(this.button15);
             this.panel23.Controls.Add(this.button13);
             this.panel23.Controls.Add(this.label25);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Location = new System.Drawing.Point(0, 198);
             this.panel23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1257, 1542);
+            this.panel23.Size = new System.Drawing.Size(361, 1338);
             this.panel23.TabIndex = 11;
             this.panel23.Visible = false;
             this.panel23.Paint += new System.Windows.Forms.PaintEventHandler(this.panel23_Paint);
@@ -823,11 +827,10 @@
             this.panel25.Controls.Add(this.label29);
             this.panel25.Controls.Add(this.button20);
             this.panel25.Controls.Add(this.label28);
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel25.Location = new System.Drawing.Point(0, 0);
+            this.panel25.Location = new System.Drawing.Point(0, 143);
             this.panel25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(1257, 1542);
+            this.panel25.Size = new System.Drawing.Size(276, 1393);
             this.panel25.TabIndex = 30;
             this.panel25.Visible = false;
             // 
@@ -839,11 +842,10 @@
             this.panel27.Controls.Add(this.listBox4);
             this.panel27.Controls.Add(this.label36);
             this.panel27.Controls.Add(this.listBox3);
-            this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel27.Location = new System.Drawing.Point(0, 0);
+            this.panel27.Location = new System.Drawing.Point(0, 126);
             this.panel27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(1257, 1542);
+            this.panel27.Size = new System.Drawing.Size(394, 1410);
             this.panel27.TabIndex = 27;
             this.panel27.Visible = false;
             // 
@@ -865,11 +867,10 @@
             this.panel32.Controls.Add(this.btnAgregarCola);
             this.panel32.Controls.Add(this.btnReproducir);
             this.panel32.Controls.Add(this.label44);
-            this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel32.Location = new System.Drawing.Point(0, 0);
+            this.panel32.Location = new System.Drawing.Point(0, 94);
             this.panel32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(1257, 1542);
+            this.panel32.Size = new System.Drawing.Size(329, 1442);
             this.panel32.TabIndex = 4;
             this.panel32.Visible = false;
             // 
@@ -3095,7 +3096,7 @@
             this.pic11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic11.Image = global::Entrega_3.Properties.Resources.Imulan;
-            this.pic11.Location = new System.Drawing.Point(804, 180);
+            this.pic11.Location = new System.Drawing.Point(804, 183);
             this.pic11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic11.Name = "pic11";
             this.pic11.Size = new System.Drawing.Size(193, 117);
@@ -3109,7 +3110,7 @@
             this.pic10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic10.Image = global::Entrega_3.Properties.Resources.Ijoker;
-            this.pic10.Location = new System.Drawing.Point(556, 177);
+            this.pic10.Location = new System.Drawing.Point(556, 180);
             this.pic10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic10.Name = "pic10";
             this.pic10.Size = new System.Drawing.Size(193, 117);
@@ -3123,7 +3124,7 @@
             this.pic9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic9.Image = ((System.Drawing.Image)(resources.GetObject("pic9.Image")));
-            this.pic9.Location = new System.Drawing.Point(320, 180);
+            this.pic9.Location = new System.Drawing.Point(320, 183);
             this.pic9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pic9.Name = "pic9";
             this.pic9.Size = new System.Drawing.Size(193, 117);
@@ -3209,7 +3210,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 1542);
+            this.panel2.Size = new System.Drawing.Size(267, 1545);
             this.panel2.TabIndex = 0;
             // 
             // panelSubMenuAjustes
@@ -3506,23 +3507,29 @@
             // panel33
             // 
             this.panel33.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel33.Controls.Add(this.textBox5);
+            this.panel33.Controls.Add(this.btnVer);
+            this.panel33.Controls.Add(this.btnSeguir);
+            this.panel33.Controls.Add(this.pictureBox7);
+            this.panel33.Controls.Add(this.listBox6);
+            this.panel33.Controls.Add(this.listBox5);
+            this.panel33.Controls.Add(this.txtBuscarSeguir);
             this.panel33.Location = new System.Drawing.Point(1015, 0);
             this.panel33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(185, 635);
             this.panel33.TabIndex = 45;
             // 
-            // textBox5
+            // txtBuscarSeguir
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Location = new System.Drawing.Point(21, 80);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(147, 28);
-            this.textBox5.TabIndex = 28;
-            this.textBox5.Tag = "";
+            this.txtBuscarSeguir.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscarSeguir.Location = new System.Drawing.Point(21, 36);
+            this.txtBuscarSeguir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarSeguir.Multiline = true;
+            this.txtBuscarSeguir.Name = "txtBuscarSeguir";
+            this.txtBuscarSeguir.Size = new System.Drawing.Size(99, 28);
+            this.txtBuscarSeguir.TabIndex = 28;
+            this.txtBuscarSeguir.Tag = "";
+            this.txtBuscarSeguir.TextChanged += new System.EventHandler(this.txtBuscarSeguir_TextChanged);
             // 
             // panel15
             // 
@@ -4033,6 +4040,59 @@
             this.btnGender.UseVisualStyleBackColor = true;
             this.btnGender.Click += new System.EventHandler(this.btnGender_Click);
             // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 16;
+            this.listBox5.Location = new System.Drawing.Point(19, 83);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(146, 148);
+            this.listBox5.TabIndex = 29;
+            this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged_1);
+            // 
+            // listBox6
+            // 
+            this.listBox6.FormattingEnabled = true;
+            this.listBox6.ItemHeight = 16;
+            this.listBox6.Location = new System.Drawing.Point(21, 248);
+            this.listBox6.Name = "listBox6";
+            this.listBox6.Size = new System.Drawing.Size(145, 164);
+            this.listBox6.TabIndex = 30;
+            this.listBox6.SelectedIndexChanged += new System.EventHandler(this.listBox6_SelectedIndexChanged);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(128, 36);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(33, 28);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 29;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // btnSeguir
+            // 
+            this.btnSeguir.Location = new System.Drawing.Point(17, 459);
+            this.btnSeguir.Name = "btnSeguir";
+            this.btnSeguir.Size = new System.Drawing.Size(68, 34);
+            this.btnSeguir.TabIndex = 31;
+            this.btnSeguir.Text = "Seguir";
+            this.btnSeguir.UseVisualStyleBackColor = true;
+            this.btnSeguir.Click += new System.EventHandler(this.btnSeguir_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(91, 459);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(82, 34);
+            this.btnVer.TabIndex = 32;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // FormAplicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4162,6 +4222,7 @@
             this.panel15.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4428,9 +4489,14 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBuscarSeguir;
         private System.Windows.Forms.Button btnGender;
         private System.Windows.Forms.Button btnKeyword;
         private System.Windows.Forms.Button btnSeeAll;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnSeguir;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.ListBox listBox5;
     }
 }

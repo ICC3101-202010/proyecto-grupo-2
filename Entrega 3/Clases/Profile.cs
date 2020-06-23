@@ -6,6 +6,7 @@ namespace Entrega_3.Clases
     [Serializable]
     public class Profile
     {
+
         private string nameProfile;
         private string profileType;
         private List<string> pleasuresMusic;
@@ -64,5 +65,9 @@ namespace Entrega_3.Clases
         public List<Actor> ActoresSeguidos { get => actoresSeguidos; set => actoresSeguidos = value; }
         public List<Singer> CantantesSeguidos { get => cantantesSeguidos; set => cantantesSeguidos = value; }
         public List<Director> DirectoresSeguidos { get => directoresSeguidos; set => directoresSeguidos = value; }
+        public override string ToString()
+        {
+            return nameProfile + " " + profileType;
+        }
     }
 }

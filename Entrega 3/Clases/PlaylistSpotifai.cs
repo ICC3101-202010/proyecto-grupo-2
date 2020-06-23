@@ -29,7 +29,7 @@ namespace Entrega_3.Clases
 
         public override string ToString()
         {
-            return Nombre+":" + Privacidad;
+            return Nombre +" " + Privacidad;
         }
     }
 }

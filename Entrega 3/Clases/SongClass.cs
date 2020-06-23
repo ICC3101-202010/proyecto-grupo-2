@@ -79,8 +79,7 @@ namespace Entrega_3.Clases
         }
         public override string ToString()
         {
-            Console.WriteLine("Aca puede ver el titutlo de la cancion, el compositor, genero, año de publicacion, duracion, memoria de la misma, estudio donde se grabo, palabra clase, cantante, album y la letra que usted añadio.");
-            return Title + " " + Composer + " " + Gender + " " + PublicationYear + " " + Duration + " " + Memory + " " + Study + " " + Keyword + " " + Singer.Name + " " + Album.NameAlbum;
+            return Title + ": " + Composer + " " + Gender + " " + PublicationYear + " " + Duration + " " + Memory + " " + Study + " " + Keyword + " " + Singer.Name + " " + Album.NameAlbum;
         }
     }
 }

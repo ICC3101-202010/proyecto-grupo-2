@@ -40,6 +40,9 @@ namespace Entrega_3.Paneles
         List<string> cuponesUsados = new List<string>();
         static List<string> listaPerfilesLikes = new List<string>();
         string videoClick = "";
+        List<Profile> listaPerfiles = new List<Profile>();
+        List<PlaylistSpotifai> listaPlaylistCancionesPerfiles = new List<PlaylistSpotifai>();
+        List<PlaylistVideoEmptyClass> listaPlaylistVideosPerfiles = new List<PlaylistVideoEmptyClass>();
 
 
         static List<string> premios = new List<string>();
@@ -1296,8 +1299,7 @@ namespace Entrega_3.Paneles
                         errores--;
                         if (usuarios[a].VideosComprados[b].Title == "avengers")
                         {
-                            string ruta32 = Path.Combine(Application.StartupPath, "avengers.mp4");
-                            Reproductor2.URL = ruta32;
+
                             panel6.Visible = true;
                             List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
                             foreach (Video x in videoAux0)
@@ -1306,7 +1308,6 @@ namespace Entrega_3.Paneles
                                 {
                                     videoSonando = x;
                                     reproduciendo = "video";//Esto sirve para agregar en las playlists.
-                                    Reproductor2.URL = x.Url;
                                     panel6.Visible = true;
                                     txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
                                     btnPausa.Visible = true;
@@ -1347,6 +1348,8 @@ namespace Entrega_3.Paneles
                                     
                                 }
                             }
+                            string ruta32 = Path.Combine(Application.StartupPath, "avengers.mp4");
+                            Reproductor2.URL = ruta32;
                             serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
                             break;
                             //aca poner para que se abra el panel del reproductor
@@ -1355,7 +1358,9 @@ namespace Entrega_3.Paneles
                         {
                             errores++;
                         }
+
                     }
+                    break;
                 }
             }
             if (errores > 0)
@@ -1937,10 +1942,7 @@ namespace Entrega_3.Paneles
             {
 
             }
-
-
-
-
+            
             if (listCanciones.Visible == true)
             {
                 listCanciones.Visible = false;
@@ -4635,8 +4637,6 @@ namespace Entrega_3.Paneles
                         errores--;
                         if (usuarios[a].VideosComprados[b].Title== "mulan")
                         {
-                            string ruta = Path.Combine(Application.StartupPath, "mulan.mp4");
-                            Reproductor2.URL = ruta;
                             //aca poner para que se abra el panel del reproductor
                             panel6.Visible = true;
                             List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
@@ -4646,7 +4646,7 @@ namespace Entrega_3.Paneles
                                 {
                                     videoSonando = x;
                                     reproduciendo = "video";//Esto sirve para agregar en las playlists.
-                                    Reproductor2.URL = x.Url;
+
                                     panel6.Visible = true;
                                     txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
                                     btnPausa.Visible = true;
@@ -4689,6 +4689,8 @@ namespace Entrega_3.Paneles
                                     //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
                                 }
                             }
+                            string ruta = Path.Combine(Application.StartupPath, "mulan.mp4");
+                            Reproductor2.URL = ruta;
                             serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
                             break;
                             
@@ -4699,6 +4701,7 @@ namespace Entrega_3.Paneles
                         }
 
                     }
+                    break;
                 }
             }
             if (errores > 0)
@@ -4733,8 +4736,6 @@ namespace Entrega_3.Paneles
                         errores--;
                         if (usuarios[a].VideosComprados[b].Title == "joker")
                         {
-                            string ruta23 = Path.Combine(Application.StartupPath, "joker.mp4");
-                            Reproductor2.URL = ruta23;
                             panel6.Visible = true;
                             List<Video> videoAux0 = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
                             foreach (Video x in videoAux0)
@@ -4743,7 +4744,6 @@ namespace Entrega_3.Paneles
                                 {
                                     videoSonando = x;
                                     reproduciendo = "video";//Esto sirve para agregar en las playlists.
-                                    Reproductor2.URL = x.Url;
                                     panel6.Visible = true;
                                     txtBarraMusica.Text = x.Title + " Director;" + x.Director.Name;
                                     btnPausa.Visible = true;
@@ -4786,8 +4786,10 @@ namespace Entrega_3.Paneles
                                     //MATI AQUI TIENE SE TIENE QUE ABRIR UN PANEL jajja buena
                                 }
                             }
+                            string ruta23 = Path.Combine(Application.StartupPath, "joker.mp4");
+                            Reproductor2.URL = ruta23;
                             serializar.Serialize(videoAux0, File.Open("Videos.bin", FileMode.Create));
-                        break;
+                            break;
                             //aca poner para que se abra el panel del reproductor
                         }
                         else
@@ -4795,6 +4797,7 @@ namespace Entrega_3.Paneles
                             errores++;
                         }
                     }
+                    break;
                 }
             }
             if (errores > 0)
@@ -4942,6 +4945,7 @@ namespace Entrega_3.Paneles
         private void button14_Click(object sender, EventArgs e)
         {
             //continuar tarjta comprar estreno
+            panel37.Visible = false;
             
             List<User> deserializarUser = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
             List<Video> deserializarVideo = serializar.Deserialize<List<Video>>(File.Open("Videos.bin", FileMode.Open));
@@ -5201,6 +5205,86 @@ namespace Entrega_3.Paneles
             {
                 MessageBox.Show("Cola vacia");
             }
+        }
+        //Seguiento de perfiles, albumes etc.
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            string answer = txtBuscarSeguir.Text;
+            var perfilesasd = from s in listaPerfiles
+                              where s.NameProfile.ToUpper() == answer.ToUpper()
+                              select s;
+
+            foreach (Profile j in perfilesasd)
+            {
+                listBox5.Items.Add(j);
+            }
+        }
+
+        private void txtBuscarSeguir_TextChanged(object sender, EventArgs e)
+        {
+            listBox5.Items.Clear();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+           
+            List<User> usuarios = new List<User>();
+            usuarios = serializar.Deserialize<List<User>>(File.Open("data.bin", FileMode.Open));
+            for (int a = 0; a < usuarios.Count; a++)
+            {
+
+
+                for (int b = 0; b < usuarios[a].Profiles.Count(); b++)
+                {
+                    listaPerfiles.Add(usuarios[a].Profiles[b]);
+                }
+            }
+            foreach (Profile j in listaPerfiles)
+            {
+                listBox5.Items.Add(j);
+            }
+        }
+
+        private void listBox5_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            listBox6.Items.Clear();
+            int error = 1;
+            //Perfiles, Playlist.
+            //Hacer if para que se diferencie 
+            foreach (Profile x in listaPerfiles)
+            {
+                string algo = listBox5.SelectedItem.ToString();
+                string[] listaString1 = algo.Split(' ');
+                if(listaString1[0] == x.NameProfile)
+                {
+                    error--;
+                    if (x.PlaylistCanciones.Count > 0)
+                    {
+                        for (int a = 0; a < x.PlaylistCanciones.Count(); a++)
+                        {
+                            listBox6.Items.Add(x.PlaylistCanciones[a]);
+                        }
+                    }
+                    else
+                    {
+                        error++;
+                    }
+                }
+            }
+            if(error > 0)
+            {
+                listBox6.Items.Add("Este perfil no contiene playlist de canciones");
+            }
+        }
+
+        private void btnSeguir_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void listBox6_SelectedIndexChanged(object sender, EventArgs e) //unavez que seleccione la playlist la empizo a seguir
+        {
+
         }
     }
 }
